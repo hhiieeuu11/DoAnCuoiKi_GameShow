@@ -1,0 +1,694 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="&gt;&gt;btnClosed.Name" xml:space="preserve">
+    <value>btnClosed</value>
+  </data>
+  <data name="&gt;&gt;btnClosed.Type" xml:space="preserve">
+    <value>Guna.UI2.WinForms.Guna2CircleButton, Guna.UI2, Version=2.0.0.6, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;btnClosed.Parent" xml:space="preserve">
+    <value>guna2CustomGradientPanel1</value>
+  </data>
+  <data name="&gt;&gt;btnClosed.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;label4.Name" xml:space="preserve">
+    <value>label4</value>
+  </data>
+  <data name="&gt;&gt;label4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label4.Parent" xml:space="preserve">
+    <value>guna2CustomGradientPanel1</value>
+  </data>
+  <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;iconButton3.Name" xml:space="preserve">
+    <value>iconButton3</value>
+  </data>
+  <data name="&gt;&gt;iconButton3.Type" xml:space="preserve">
+    <value>FontAwesome.Sharp.IconButton, FontAwesome.Sharp, Version=5.13.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;iconButton3.Parent" xml:space="preserve">
+    <value>guna2CustomGradientPanel1</value>
+  </data>
+  <data name="&gt;&gt;iconButton3.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;label3.Name" xml:space="preserve">
+    <value>label3</value>
+  </data>
+  <data name="&gt;&gt;label3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label3.Parent" xml:space="preserve">
+    <value>guna2CustomGradientPanel1</value>
+  </data>
+  <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;iconButton2.Name" xml:space="preserve">
+    <value>iconButton2</value>
+  </data>
+  <data name="&gt;&gt;iconButton2.Type" xml:space="preserve">
+    <value>FontAwesome.Sharp.IconButton, FontAwesome.Sharp, Version=5.13.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;iconButton2.Parent" xml:space="preserve">
+    <value>guna2CustomGradientPanel1</value>
+  </data>
+  <data name="&gt;&gt;iconButton2.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;iconButton1.Name" xml:space="preserve">
+    <value>iconButton1</value>
+  </data>
+  <data name="&gt;&gt;iconButton1.Type" xml:space="preserve">
+    <value>FontAwesome.Sharp.IconButton, FontAwesome.Sharp, Version=5.13.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;iconButton1.Parent" xml:space="preserve">
+    <value>guna2CustomGradientPanel1</value>
+  </data>
+  <data name="&gt;&gt;iconButton1.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;label2.Name" xml:space="preserve">
+    <value>label2</value>
+  </data>
+  <data name="&gt;&gt;label2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
+    <value>guna2CustomGradientPanel1</value>
+  </data>
+  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;label1.Name" xml:space="preserve">
+    <value>label1</value>
+  </data>
+  <data name="&gt;&gt;label1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
+    <value>guna2CustomGradientPanel1</value>
+  </data>
+  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;lblTitle.Name" xml:space="preserve">
+    <value>lblTitle</value>
+  </data>
+  <data name="&gt;&gt;lblTitle.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblTitle.Parent" xml:space="preserve">
+    <value>guna2CustomGradientPanel1</value>
+  </data>
+  <data name="&gt;&gt;lblTitle.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="guna2CustomGradientPanel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="guna2CustomGradientPanel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>715, 483</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="guna2CustomGradientPanel1.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;guna2CustomGradientPanel1.Name" xml:space="preserve">
+    <value>guna2CustomGradientPanel1</value>
+  </data>
+  <data name="&gt;&gt;guna2CustomGradientPanel1.Type" xml:space="preserve">
+    <value>Guna.UI2.WinForms.Guna2CustomGradientPanel, Guna.UI2, Version=2.0.0.6, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;guna2CustomGradientPanel1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;guna2CustomGradientPanel1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="btnClosed.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Stretch</value>
+  </data>
+  <data name="btnClosed.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9pt</value>
+  </data>
+  <data name="btnClosed.HoverState.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAYAAAA6/NlyAAAABGdBTUEAALGPC/xhBQAABJFJREFUaEPt
+        mu2LFVUcx+9qZa5ablQm5sOL6J24Ue/EKFLxlZIg5hv/AQV9owgWWCjIthQLYa+KiNIXsW3LbiomiApW
+        Kj6sT5ES2IOrC4ul1d4959Dpe+75Xe7cM2fuzDkz996x5gsfLnfmnO/5njt3Zn5n7i0VKlSoUKFGkrIT
+        dIHHaMt/RFLOKHG+CvSCIyUhfsKrANLgN3Ac+z8E69DvSXJ4ACRlB8KvKDH2GV7/ogm5oj6UQ5j8Bvg9
+        Qs45lBBrEfRcIHh6GLsJNmHiD9MoOVC5/DzCHQ2FzZYr4GUasU2ScgpC7AKcQjUfxj7FuJ2UoIVS5xZj
+        +62hms93GP9pStICSTkTg35jhGg1P5YmJhZRoiZK32pOGYO3i1+QZwEla5IYO2AZuJ2cx6SbdE4ztsUy
+        YPth7BNKmKH0refv0GB5QYg1lDQD6erpZGiQfDGKnI9T4pTSFZRtkLzxDiVOIX10XctFVQuPgPHANhdU
+        DX6BXm37o/gdeWdTck9xvtwwjUNVXboE1LewLwP7kjCCfs9S//l4P2rsj2N7pa+3VClnN47ie+qppYr+
+        5JO+hPZPUU8tIfZZ2jXiMvX0kJTTYXDfMIxjDP1mkoOWnvSA0c5ETTZcLnJ+wmgXD2NLqLejOH8tZJaM
+        rxC+fh2r3qvt9vaXIyb7ttEuKdvIwVGc7zaMXBioHNmg9KQHjXZXsH0OtahJr8KC7Vw4SC6O4vxrw8iV
+        w5jMo+SmJeVUfOWqq6yzeN9Fe2rSj4RMLxduk5OjhLhuMXOlH5OyHek+vD5DW2ri/K1AX3+8ihDOJ0NG
+        fnyBAA+Ra7Q4f9Po58/k5GJyTSgpp1mN/DlY8YwS5z1G+7QsJeeEUueW3SgN75J7vYRYb2mblpXknlD6
+        Hmwz8uUiPOuLiqr0fbrfaJ+WZeTuoOwezkVPtqr6q3d6GOsmZwepRyg2MzeuYjLhq7EQG7G9/pzW140h
+        o78ftnt7rNI/qDuDgW332fdp/xHsn05btfSR/pz2+zJObo6qBfNBlYu2Csqs3obQzlaGmhWZCyfIyVFC
+        rLaYJUEd2fC6lPP3jHZVoo60+n3K1j6OXeTiKH1rcr1w3Uc/vZ4NKn4hMIh+tiN91WiXhBQ/yXA+bJjF
+        8S31rCn5QiC8yhLiA0u7RvwKjynU20NCvGExbYQ6wvOpt8tkq6hVlp60vmq7HuGeSl9vqcHVT5Z28yju
+        0JHxfdJ5DfSBHwLbksCQdyElTyHGNlvM84cQH1HilFIrHf0U0T5QPriLnB7FRpQ4fwX8ExggXzC2lZJm
+        KPWg2zZY+1EXug5KmaH0V/u4MVh7Yexn5Gq8MEkl9d+q/JzPY6Vy+TlK1kSpS78QNywBWskfoIV/clFL
+        PvVjtD1MsxnFV/kFStJC6UpIFQitvHoPY9w2/1NPiNcRJIuHBY24V7n1pKqTs5SUsxBqD1Dnli2wLwwf
+        6Mfwn0cj5Ux6SbkDqHrYNoGk3AK98MugNm6VGHsJoXeCYyDux/E/wWmwFyzHRKeSywMsKZ/Ah9CNCS2r
+        TIrzV/H+RWyfSy0KFSpUqND/XKXSvy7qcoftSkaRAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="btnClosed.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        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
+        ir4zD4tChgAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="btnClosed.Location" type="System.Drawing.Point, System.Drawing">
+    <value>652, 3</value>
+  </data>
+  <data name="btnClosed.Size" type="System.Drawing.Size, System.Drawing">
+    <value>60, 60</value>
+  </data>
+  <data name="btnClosed.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;btnClosed.Name" xml:space="preserve">
+    <value>btnClosed</value>
+  </data>
+  <data name="&gt;&gt;btnClosed.Type" xml:space="preserve">
+    <value>Guna.UI2.WinForms.Guna2CircleButton, Guna.UI2, Version=2.0.0.6, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;btnClosed.Parent" xml:space="preserve">
+    <value>guna2CustomGradientPanel1</value>
+  </data>
+  <data name="&gt;&gt;btnClosed.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="label4.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Times New Roman, 12pt, style=Bold</value>
+  </data>
+  <data name="label4.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 381</value>
+  </data>
+  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>709, 74</value>
+  </data>
+  <data name="label4.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>Cảm ơn đã chơi game của tụi mình!! </value>
+  </data>
+  <data name="label4.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="&gt;&gt;label4.Name" xml:space="preserve">
+    <value>label4</value>
+  </data>
+  <data name="&gt;&gt;label4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label4.Parent" xml:space="preserve">
+    <value>guna2CustomGradientPanel1</value>
+  </data>
+  <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="iconButton3.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="iconButton3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="iconButton3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>49, 308</value>
+  </data>
+  <data name="iconButton3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>43, 42</value>
+  </data>
+  <data name="iconButton3.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;iconButton3.Name" xml:space="preserve">
+    <value>iconButton3</value>
+  </data>
+  <data name="&gt;&gt;iconButton3.Type" xml:space="preserve">
+    <value>FontAwesome.Sharp.IconButton, FontAwesome.Sharp, Version=5.13.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;iconButton3.Parent" xml:space="preserve">
+    <value>guna2CustomGradientPanel1</value>
+  </data>
+  <data name="&gt;&gt;iconButton3.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="label3.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Times New Roman, 12pt, style=Bold</value>
+  </data>
+  <data name="label3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>98, 296</value>
+  </data>
+  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>544, 74</value>
+  </data>
+  <data name="label3.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Bạn có 15 giây để trả lời câu hỏi bằng cách click chọn 1 trong 4 đáp án của hệ thống. Sau 15s, hệ thống sẽ ghi nhận bạn không có câu trả lời nếu bạn không chọn áp án
+</value>
+  </data>
+  <data name="label3.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;label3.Name" xml:space="preserve">
+    <value>label3</value>
+  </data>
+  <data name="&gt;&gt;label3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label3.Parent" xml:space="preserve">
+    <value>guna2CustomGradientPanel1</value>
+  </data>
+  <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="iconButton2.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="iconButton2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="iconButton2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>49, 216</value>
+  </data>
+  <data name="iconButton2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>43, 42</value>
+  </data>
+  <data name="iconButton2.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;iconButton2.Name" xml:space="preserve">
+    <value>iconButton2</value>
+  </data>
+  <data name="&gt;&gt;iconButton2.Type" xml:space="preserve">
+    <value>FontAwesome.Sharp.IconButton, FontAwesome.Sharp, Version=5.13.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;iconButton2.Parent" xml:space="preserve">
+    <value>guna2CustomGradientPanel1</value>
+  </data>
+  <data name="&gt;&gt;iconButton2.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="iconButton1.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="iconButton1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>49, 148</value>
+  </data>
+  <data name="iconButton1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>43, 42</value>
+  </data>
+  <data name="iconButton1.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;iconButton1.Name" xml:space="preserve">
+    <value>iconButton1</value>
+  </data>
+  <data name="&gt;&gt;iconButton1.Type" xml:space="preserve">
+    <value>FontAwesome.Sharp.IconButton, FontAwesome.Sharp, Version=5.13.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;iconButton1.Parent" xml:space="preserve">
+    <value>guna2CustomGradientPanel1</value>
+  </data>
+  <data name="&gt;&gt;iconButton1.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="label2.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Times New Roman, 12pt, style=Bold</value>
+  </data>
+  <data name="label2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>98, 204</value>
+  </data>
+  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>544, 74</value>
+  </data>
+  <data name="label2.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Bạn có 15 giây để trả lời câu hỏi bằng cách click chọn 1 trong 4 đáp án của hệ thống. Sau 15s, hệ thống sẽ ghi nhận bạn không có câu trả lời nếu bạn không chọn áp án
+</value>
+  </data>
+  <data name="label2.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;label2.Name" xml:space="preserve">
+    <value>label2</value>
+  </data>
+  <data name="&gt;&gt;label2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
+    <value>guna2CustomGradientPanel1</value>
+  </data>
+  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="label1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Times New Roman, 12pt, style=Bold</value>
+  </data>
+  <data name="label1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>98, 136</value>
+  </data>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>544, 62</value>
+  </data>
+  <data name="label1.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Mỗi gameshow sẽ có 10 câu hỏi trắc nghiệm nhanh. Độ khó các câu hỏi sẽ tăng dần qua từng câu</value>
+  </data>
+  <data name="label1.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;label1.Name" xml:space="preserve">
+    <value>label1</value>
+  </data>
+  <data name="&gt;&gt;label1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
+    <value>guna2CustomGradientPanel1</value>
+  </data>
+  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="lblTitle.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 19.8000011pt, style=Bold</value>
+  </data>
+  <data name="lblTitle.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblTitle.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 36</value>
+  </data>
+  <data name="lblTitle.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="lblTitle.Size" type="System.Drawing.Size, System.Drawing">
+    <value>708, 74</value>
+  </data>
+  <data name="lblTitle.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="lblTitle.Text" xml:space="preserve">
+    <value>HOW TO PLAY?</value>
+  </data>
+  <data name="lblTitle.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="&gt;&gt;lblTitle.Name" xml:space="preserve">
+    <value>lblTitle</value>
+  </data>
+  <data name="&gt;&gt;lblTitle.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblTitle.Parent" xml:space="preserve">
+    <value>guna2CustomGradientPanel1</value>
+  </data>
+  <data name="&gt;&gt;lblTitle.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>50</value>
+  </metadata>
+  <data name="$this.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="$this.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        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
+</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>715, 595</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Form1</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>HowToPlay</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+</root>

@@ -22,3 +22,4 @@ C:\Users\HOME\OneDrive\Máy tính\GameShow\Sever\obj\Debug\Sever.Host.resources
 C:\Users\HOME\OneDrive\Máy tính\GameShow\Sever\obj\Debug\Sever.Home.resources
 C:\Users\HOME\OneDrive\Máy tính\GameShow\Sever\obj\Debug\Sever.Nearest_Game.resources
 C:\Users\HOME\OneDrive\Máy tính\GameShow\Sever\obj\Debug\Sever.IsBroadcasting.resources
+C:\Users\HOME\OneDrive\Máy tính\GameShow\Sever\obj\Debug\Sever.AboutUs.resources
