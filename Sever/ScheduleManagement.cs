@@ -238,12 +238,16 @@ namespace Sever
                 }
             }
         }
-        private void grvSchedule_CellClick(object sender, DataGridViewCellEventArgs e) 
+        private void grvSchedule_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            refreshForm();
+            int rowIndex = e.RowIndex;
+            if (rowIndex >= 0) setDataIntoForm(Host.listGameShow[rowIndex]);
+            //
             currentColum = e.ColumnIndex;
             currentRow = e.RowIndex;
             // click the first cell of the ID column
-            if (currentRow == -1 && currentColum == 0)  
+            if (currentRow == -1 && currentColum == 0)
             {
                 numColumSort = 0;
                 getScheduleFromFile(fileSchedulePath, numColumSort);
