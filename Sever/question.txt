@@ -1,0 +1,80 @@
+!01
+@Có bao nhiêu châu lục trên thế giời
+&7
+&4
+&5
+&6
+#6
+$Châu Á, Châu Âu, Châu Mỹ, Châu Phi, Châu Đại Dương, Châu Nam Cực
+!02
+@1 + 1 = ?
+&8
+&5
+&3
+&2
+#2
+$Kiến thức lớp 1
+!03
+@Để lấy dữ liệu vừa nhập vào trong textbox có tên là txtQuestion ta dùng cách nào dưới đây?
+&txtQuestion.Text
+&txtQuestion.Data
+&txtQuestion.Content
+&txtQuestion.Tag
+#txtQuestion.Text
+$Trong textbox có thuộc tính Data và Content. Tag là thuộc tính bạn có thể lưu bất cứ thí gì mà bạn thích, nhưng dữ liệu vừa nhập vào sẽ được lưu vào thuộc tính Text
+!04
+@3 * 2 = ?
+&6
+&7
+&3
+&5
+#6
+$Kiến thức lớp 1
+!05
+@100+ 1 = ?
+&99
+&101
+&110
+&2
+#101
+$Kiến thức lớp 1
+!06
+@Để xuất giá trị của mảng đa chiều, Console.WriteLines(___):
+&myArray[1,3];
+&myArray(1),(3);
+&myArray{1}{3};
+&myArray[1][3];
+#myArray[1][3];
+$Mảng 1 chiều sẽ là myArray[1] hoặc myArray[3]
+!07
+@Mọi class đều trực tiếp hoặc gián tiếp mở rộng lớp nào sau đây:
+&Class
+&Console
+&System
+&Object
+#Object
+$Tất cả cá kiểu dữ liệu trong C# đều thuộc kiểu object
+!08
+@Để ẩn control X ta có thể chọn cách nào sao đây?
+&X.Hide()
+&X.Close()
+&X.Hint()
+&X.Show()
+#X.Hide()
+$Show dùng để hiển thị, Close dùng để đóng form ,Hint không có trong winform
+!09
+@Cách nào dưới đây dùng đề ép kiểu chuổi x ="132" thành số nguyên?
+&int.Convert(x)
+&double.Parse(x)
+&int.Parse(x)
+&String.Parse(x);
+#int.Parse(x)
+$Để tránh trường hợp lỗi nên dùng int.TryParse sẽ tốt hơn
+!10
+@Trong C# : 1 + "99" = ?
+&"991"
+&199
+&"199"
+&100
+#"199"
+$Trong C#, nếu cộng một số với một chuỗi kết quả bạn nhận được là một chuỗi.
