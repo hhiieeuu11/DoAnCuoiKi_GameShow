@@ -13,6 +13,7 @@ using System.Windows.Forms;
 namespace Sever
 {
     //sdaaaaaaaaaaaaaaaâfmfljlvkjk
+    //thaibao
     public partial class Home : Form
     {
        // List<GameShow> listGameShow = new List<GameShow>();
