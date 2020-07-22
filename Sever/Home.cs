@@ -17,6 +17,7 @@ namespace Sever
     /// ytgyhjk
     /// </summary>
     //sdaaaaaaaaaaaaaaaâfmfljlvkjk
+    //thaibao
     public partial class Home : Form
     {
        // List<GameShow> listGameShow = new List<GameShow>();
