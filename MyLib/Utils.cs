@@ -34,7 +34,13 @@ namespace MyLib
             }
         }
 
-        public static void getScheduleFromFile(string pathFile, ref List<GameShow> listGameShow) //Get Data question from file question.txt
+
+        /// <summary>
+        /// Get Data question from file 
+        /// </summary>
+        /// <param name="pathFile"></param>
+        /// <param name="listGameShow"></param>
+        public static void getScheduleFromFile(string pathFile, ref List<GameShow> listGameShow)
         {
             StreamReader sr = new StreamReader(pathFile);
             string line = null;
@@ -163,7 +169,7 @@ namespace MyLib
         /// </summary>
         /// <param name="nearestGame"></param>
         /// <returns></returns>
-        public int calcWaitingTime(GameShow nearestGame)
+        public static int calcWaitingTime(GameShow nearestGame)
         {
             return (int)(nearestGame.StartTime.Subtract(DateTime.Now).TotalSeconds);
 

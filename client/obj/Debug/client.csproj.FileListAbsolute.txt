@@ -19,3 +19,4 @@ C:\Users\HOME\OneDrive\Máy tính\GameShow\client\bin\Debug\DTOProject.pdb
 C:\Users\HOME\OneDrive\Máy tính\GameShow\client\bin\Debug\MyLib.pdb
 C:\Users\HOME\OneDrive\Máy tính\GameShow\client\obj\Debug\client.HowToPlay.resources
 C:\Users\HOME\OneDrive\Máy tính\GameShow\client\bin\Debug\FontAwesome.Sharp.dll
+C:\Users\HOME\OneDrive\Máy tính\GameShow\client\obj\Debug\client.AboutUs.resources

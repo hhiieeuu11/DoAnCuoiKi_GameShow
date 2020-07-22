@@ -48,12 +48,12 @@
             this.btnAnswerB = new Guna.UI2.WinForms.Guna2Button();
             this.btnAnswerC = new Guna.UI2.WinForms.Guna2Button();
             this.btnAnswerD = new Guna.UI2.WinForms.Guna2Button();
+            this.btnAnswerA = new Guna.UI2.WinForms.Guna2Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pnlBtnHelp = new System.Windows.Forms.Panel();
             this.btnAudience = new Guna.UI2.WinForms.Guna2Button();
             this.btnCallPhone = new Guna.UI2.WinForms.Guna2Button();
             this.btn5050 = new Guna.UI2.WinForms.Guna2Button();
-            this.btnAnswerA = new Guna.UI2.WinForms.Guna2Button();
             this.pnlRight.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grvLstScore)).BeginInit();
             this.pnlLeft.SuspendLayout();
@@ -68,9 +68,9 @@
             // 
             this.pnlRight.Controls.Add(this.grvLstScore);
             this.pnlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pnlRight.Location = new System.Drawing.Point(976, 0);
+            this.pnlRight.Location = new System.Drawing.Point(974, 0);
             this.pnlRight.Name = "pnlRight";
-            this.pnlRight.Size = new System.Drawing.Size(286, 753);
+            this.pnlRight.Size = new System.Drawing.Size(286, 703);
             this.pnlRight.TabIndex = 7;
             // 
             // grvLstScore
@@ -140,7 +140,7 @@
             this.pnlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlLeft.Location = new System.Drawing.Point(0, 0);
             this.pnlLeft.Name = "pnlLeft";
-            this.pnlLeft.Size = new System.Drawing.Size(977, 753);
+            this.pnlLeft.Size = new System.Drawing.Size(977, 703);
             this.pnlLeft.TabIndex = 7;
             // 
             // pnlQuestion
@@ -151,7 +151,7 @@
             this.pnlQuestion.Controls.Add(this.btnAnswerD);
             this.pnlQuestion.Controls.Add(this.btnAnswerA);
             this.pnlQuestion.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlQuestion.Location = new System.Drawing.Point(0, 442);
+            this.pnlQuestion.Location = new System.Drawing.Point(0, 392);
             this.pnlQuestion.Name = "pnlQuestion";
             this.pnlQuestion.Size = new System.Drawing.Size(977, 311);
             this.pnlQuestion.TabIndex = 17;
@@ -298,6 +298,23 @@
             this.btnAnswerD.TabIndex = 17;
             this.btnAnswerD.Text = "D. None of these";
             // 
+            // btnAnswerA
+            // 
+            this.btnAnswerA.BorderRadius = 20;
+            this.btnAnswerA.CheckedState.Parent = this.btnAnswerA;
+            this.btnAnswerA.CustomImages.Parent = this.btnAnswerA;
+            this.btnAnswerA.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.btnAnswerA.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold);
+            this.btnAnswerA.ForeColor = System.Drawing.Color.White;
+            this.btnAnswerA.HoverState.Parent = this.btnAnswerA;
+            this.btnAnswerA.Location = new System.Drawing.Point(30, 159);
+            this.btnAnswerA.Name = "btnAnswerA";
+            this.btnAnswerA.ShadowDecoration.Parent = this.btnAnswerA;
+            this.btnAnswerA.Size = new System.Drawing.Size(450, 70);
+            this.btnAnswerA.TabIndex = 16;
+            this.btnAnswerA.Text = "A. to identify the bank of the user";
+            this.btnAnswerA.Click += new System.EventHandler(this.btnAnswerA_Click);
+            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.pnlBtnHelp);
@@ -369,31 +386,14 @@
             this.btn5050.Text = "50/50";
             this.btn5050.UseTransparentBackground = true;
             // 
-            // btnAnswerA
-            // 
-            this.btnAnswerA.BorderRadius = 20;
-            this.btnAnswerA.CheckedState.Parent = this.btnAnswerA;
-            this.btnAnswerA.CustomImages.Parent = this.btnAnswerA;
-            this.btnAnswerA.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.btnAnswerA.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold);
-            this.btnAnswerA.ForeColor = System.Drawing.Color.White;
-            this.btnAnswerA.HoverState.Parent = this.btnAnswerA;
-            this.btnAnswerA.Location = new System.Drawing.Point(30, 159);
-            this.btnAnswerA.Name = "btnAnswerA";
-            this.btnAnswerA.ShadowDecoration.Parent = this.btnAnswerA;
-            this.btnAnswerA.Size = new System.Drawing.Size(450, 70);
-            this.btnAnswerA.TabIndex = 16;
-            this.btnAnswerA.Text = "A. to identify the bank of the user";
-            this.btnAnswerA.Click += new System.EventHandler(this.btnAnswerA_Click);
-            // 
             // Playgame
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.ClientSize = new System.Drawing.Size(1262, 753);
+            this.ClientSize = new System.Drawing.Size(1260, 703);
             this.Controls.Add(this.pnlLeft);
             this.Controls.Add(this.pnlRight);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Playgame";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Playgame";

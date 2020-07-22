@@ -1,12 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using DTOProject.DTO;
 using MyLib;
@@ -18,11 +13,9 @@ namespace client
     {
         List<GameShow> listGameShow = new List<GameShow>();
         string filePath = "../../../Schedule_Game.txt";
-        //string fileSchedulePath = Host.fileSchedulePath;
-        private static Form formHow = new HowToPlay();
+
         int numColumSort = 0;
         int currentColum = -1, currentRow = -1;
-
         int countDownTime;
 
         public MenuGame()
@@ -31,9 +24,7 @@ namespace client
             Utils.getScheduleFromFile(filePath, ref listGameShow);
             grvListGame.DataSource = listGameShow;
             setInforNearestGame();
-            lblTitle.Height = (int)(pnlLeft.Height * 0.1);
-            grvListGame.Height = (int)(pnlLeft.Height * 0.48);
-            pnlNearestGame.Height = (int)(pnlLeft.Height * 0.42);
+            reponsive();
         }
         public List<GameShow> getScheduleFromFile(string pathFile, int numColumSort)
         {
@@ -88,18 +79,13 @@ namespace client
                 lblGameID.Text = nearestGame.ID;
                 lblStartTime.Text = nearestGame.StartTime.ToString();
                 lblGameName.Text = nearestGame.Name;
-                //countDownTime = Utils.
+                countDownTime = Utils.calcWaitingTime(nearestGame);// get countdown time
+                tmrCountDown.Enabled = true;
+
             }
         }
         private void OpenChildForm(Form childForm)
         {
-            ////open only form
-            //if (currentChildForm != null)
-            //{
-            //    currentChildForm.Close();
-            //}
-            //currentChildForm = childForm;
-            //End
             childForm.TopLevel = false;
             childForm.FormBorderStyle = FormBorderStyle.None;
             childForm.Width = this.Width;
@@ -111,7 +97,7 @@ namespace client
             childForm.Show();
         }
 
-        private void MenuGame_SizeChanged(object sender, EventArgs e)
+        public void reponsive()
         {
             lblTitle.Height = (int)(this.Height * 0.1);
             grvListGame.Height = (int)(this.Height * 0.48);
@@ -119,6 +105,11 @@ namespace client
             pnlMenu.Width = (int)(this.Width * 0.42);
             pnlLeft.Width = (int)(this.Width * 0.48);
             pnlMenuControls.Location = new Point((pnlMenu.Width - pnlMenuControls.Width) / 2, (pnlMenu.Height - pnlMenuControls.Height) / 2);
+        }
+
+        private void MenuGame_SizeChanged(object sender, EventArgs e)
+        {
+            reponsive();
         }
 
 
@@ -130,10 +121,11 @@ namespace client
         private void tmrCountDown_Tick(object sender, EventArgs e)
         {
             countDownTime--;
-            lblCountDown.Text = countDownTime / 60 + ":" + ((countDownTime % 60) >= 10 ? (countDownTime % 60).ToString() : "0" + countDownTime % 60);
+            lblTimeEnterGame.Text = lblCountDown.Text = countDownTime / 60 + ":" + ((countDownTime % 60) >= 10 ? (countDownTime % 60).ToString() : "0" + countDownTime % 60);
+            
             if (countDownTime <= 10)
             {
-                lblCountDown.ForeColor = Color.Red;
+                lblTimeEnterGame.ForeColor = lblCountDown.ForeColor = Color.Red;
                 if (countDownTime <= 0)
                 {
                     tmrCountDown.Enabled = false;
@@ -141,7 +133,15 @@ namespace client
             }
         }
 
+        private void btnAboutUs_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new AboutUs());
+        }
 
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new Playgame());
+        }
 
         private void grvListGame_CellClick(object sender, DataGridViewCellEventArgs e)
         {

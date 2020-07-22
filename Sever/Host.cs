@@ -98,6 +98,7 @@ namespace Sever
         private void btnAboutUs_Click(object sender, EventArgs e)
         {
             activateButton(sender, activeColor);
+            OpenChildForm(new AboutUsSV());
         }
 
         private void OpenChildForm(Form childForm)

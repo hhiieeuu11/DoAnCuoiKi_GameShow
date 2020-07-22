@@ -10,11 +10,15 @@ using System.Windows.Forms;
 
 namespace Sever
 {
-    public partial class AboutUs : Form
+    public partial class AboutUsSV : Form
     {
-        public AboutUs()
+        public AboutUsSV()
         {
             InitializeComponent();
+        }
+        private void AboutUsSV_SizeChanged(object sender, EventArgs e)
+        {
+            pnlGrCard.Location = new Point((pnlContent.Width - pnlGrCard.Width) / 2, pnlGrCard.Location.Y);
         }
     }
 }

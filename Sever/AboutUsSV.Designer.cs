@@ -1,6 +1,6 @@
 ﻿namespace Sever
 {
-    partial class AboutUs
+    partial class AboutUsSV
     {
         /// <summary>
         /// Required designer variable.
@@ -30,14 +30,18 @@
         {
             this.SuspendLayout();
             // 
-            // AboutUs
+            // AboutUsSV
             // 
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.ClientSize = new System.Drawing.Size(977, 603);
+            this.ClientSize = new System.Drawing.Size(995, 650);
+            this.ForeColor = System.Drawing.Color.OrangeRed;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "AboutUs";
-            this.Text = "AboutUs";
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Name = "AboutUsSV";
+            this.Text = "AboutUsSV";
+            this.SizeChanged += new System.EventHandler(this.AboutUsSV_SizeChanged);
             this.ResumeLayout(false);
 
         }
