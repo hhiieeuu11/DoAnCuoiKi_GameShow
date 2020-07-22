@@ -73,9 +73,6 @@ namespace Sever
                     tmrCountDown.Enabled = false;
                 }
             }
-
-
-
         }
 
 

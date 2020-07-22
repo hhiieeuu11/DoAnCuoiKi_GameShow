@@ -24,7 +24,7 @@ namespace client
 
         private void HowToPlay_SizeChanged(object sender, EventArgs e)
         {
-
+            pnlHow.Location = new Point((this.Width - pnlHow.Width) / 2, (this.Height - pnlHow.Height) / 2);
         }
     }
 }

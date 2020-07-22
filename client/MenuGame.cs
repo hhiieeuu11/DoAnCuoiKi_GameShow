@@ -22,7 +22,8 @@ namespace client
         private static Form formHow = new HowToPlay();
         int numColumSort = 0;
         int currentColum = -1, currentRow = -1;
-        int rowEdit = -1;
+
+        int countDownTime;
 
         public MenuGame()
         {
@@ -78,15 +79,16 @@ namespace client
             if (nearestGame == null)
             {
                 lblGameID.Text = "Hiện không có game nào phát sóng trong thời gian tới";
-                lblGameTime.Text = "";
+                lblStartTime.Text = "";
                 lblCountDown.Text = "";
                 lblGameName.Text = "";
             }
             else
             {
                 lblGameID.Text = nearestGame.ID;
-                lblGameTime.Text = nearestGame.StartTime.ToString();
+                lblStartTime.Text = nearestGame.StartTime.ToString();
                 lblGameName.Text = nearestGame.Name;
+                //countDownTime = Utils.
             }
         }
         private void OpenChildForm(Form childForm)
@@ -100,10 +102,11 @@ namespace client
             //End
             childForm.TopLevel = false;
             childForm.FormBorderStyle = FormBorderStyle.None;
-            childForm.Width = pnlLeft.Width;
+            childForm.Width = this.Width;
             childForm.Height = this.Height;
-            pnlLeft.Controls.Add(childForm);
-            pnlLeft.Tag = childForm;
+            childForm.Location = new Point(0, 0);
+            this.Controls.Add(childForm);
+            this.Tag = childForm;
             childForm.BringToFront();
             childForm.Show();
         }
@@ -113,7 +116,9 @@ namespace client
             lblTitle.Height = (int)(this.Height * 0.1);
             grvListGame.Height = (int)(this.Height * 0.48);
             pnlNearestGame.Height = (int)(this.Height * 0.42);
-            pnlMenu.Width = this.Width - pnlLeft.Width;
+            pnlMenu.Width = (int)(this.Width * 0.42);
+            pnlLeft.Width = (int)(this.Width * 0.48);
+            pnlMenuControls.Location = new Point((pnlMenu.Width - pnlMenuControls.Width) / 2, (pnlMenu.Height - pnlMenuControls.Height) / 2);
         }
 
 
@@ -121,7 +126,22 @@ namespace client
         {
             OpenChildForm(new HowToPlay());
         }
-        
+
+        private void tmrCountDown_Tick(object sender, EventArgs e)
+        {
+            countDownTime--;
+            lblCountDown.Text = countDownTime / 60 + ":" + ((countDownTime % 60) >= 10 ? (countDownTime % 60).ToString() : "0" + countDownTime % 60);
+            if (countDownTime <= 10)
+            {
+                lblCountDown.ForeColor = Color.Red;
+                if (countDownTime <= 0)
+                {
+                    tmrCountDown.Enabled = false;
+                }
+            }
+        }
+
+
 
         private void grvListGame_CellClick(object sender, DataGridViewCellEventArgs e)
         {

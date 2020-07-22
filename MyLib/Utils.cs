@@ -158,6 +158,16 @@ namespace MyLib
             return gameIsBroadcasting;
         }
 
+        /// <summary>
+        /// Calculate the time distance with the nearest game
+        /// </summary>
+        /// <param name="nearestGame"></param>
+        /// <returns></returns>
+        public int calcWaitingTime(GameShow nearestGame)
+        {
+            return (int)(nearestGame.StartTime.Subtract(DateTime.Now).TotalSeconds);
+
+        }
 
 
 

@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HowToPlay));
-            this.guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.pnlHow = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.btnClosed = new Guna.UI2.WinForms.Guna2CircleButton();
             this.label4 = new System.Windows.Forms.Label();
             this.iconButton3 = new FontAwesome.Sharp.IconButton();
@@ -39,31 +39,31 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
-            this.guna2CustomGradientPanel1.SuspendLayout();
+            this.pnlHow.SuspendLayout();
             this.SuspendLayout();
             // 
-            // guna2CustomGradientPanel1
+            // pnlHow
             // 
-            this.guna2CustomGradientPanel1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2CustomGradientPanel1.BorderColor = System.Drawing.Color.Cyan;
-            this.guna2CustomGradientPanel1.BorderRadius = 30;
-            this.guna2CustomGradientPanel1.BorderThickness = 2;
-            this.guna2CustomGradientPanel1.Controls.Add(this.btnClosed);
-            this.guna2CustomGradientPanel1.Controls.Add(this.label4);
-            this.guna2CustomGradientPanel1.Controls.Add(this.iconButton3);
-            this.guna2CustomGradientPanel1.Controls.Add(this.label3);
-            this.guna2CustomGradientPanel1.Controls.Add(this.iconButton2);
-            this.guna2CustomGradientPanel1.Controls.Add(this.iconButton1);
-            this.guna2CustomGradientPanel1.Controls.Add(this.label2);
-            this.guna2CustomGradientPanel1.Controls.Add(this.label1);
-            this.guna2CustomGradientPanel1.Controls.Add(this.lblTitle);
-            this.guna2CustomGradientPanel1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.guna2CustomGradientPanel1.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.guna2CustomGradientPanel1.FillColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.guna2CustomGradientPanel1.FillColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            resources.ApplyResources(this.guna2CustomGradientPanel1, "guna2CustomGradientPanel1");
-            this.guna2CustomGradientPanel1.Name = "guna2CustomGradientPanel1";
-            this.guna2CustomGradientPanel1.ShadowDecoration.Parent = this.guna2CustomGradientPanel1;
+            this.pnlHow.BackColor = System.Drawing.Color.Transparent;
+            this.pnlHow.BorderColor = System.Drawing.Color.Cyan;
+            this.pnlHow.BorderRadius = 30;
+            this.pnlHow.BorderThickness = 2;
+            this.pnlHow.Controls.Add(this.btnClosed);
+            this.pnlHow.Controls.Add(this.label4);
+            this.pnlHow.Controls.Add(this.iconButton3);
+            this.pnlHow.Controls.Add(this.label3);
+            this.pnlHow.Controls.Add(this.iconButton2);
+            this.pnlHow.Controls.Add(this.iconButton1);
+            this.pnlHow.Controls.Add(this.label2);
+            this.pnlHow.Controls.Add(this.label1);
+            this.pnlHow.Controls.Add(this.lblTitle);
+            this.pnlHow.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.pnlHow.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.pnlHow.FillColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.pnlHow.FillColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            resources.ApplyResources(this.pnlHow, "pnlHow");
+            this.pnlHow.Name = "pnlHow";
+            this.pnlHow.ShadowDecoration.Parent = this.pnlHow;
             // 
             // btnClosed
             // 
@@ -153,18 +153,18 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             resources.ApplyResources(this, "$this");
             this.BackColor = System.Drawing.Color.Silver;
-            this.Controls.Add(this.guna2CustomGradientPanel1);
+            this.Controls.Add(this.pnlHow);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "HowToPlay";
             this.Opacity = 0.1D;
             this.SizeChanged += new System.EventHandler(this.HowToPlay_SizeChanged);
-            this.guna2CustomGradientPanel1.ResumeLayout(false);
+            this.pnlHow.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel1;
+        private Guna.UI2.WinForms.Guna2CustomGradientPanel pnlHow;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblTitle;
