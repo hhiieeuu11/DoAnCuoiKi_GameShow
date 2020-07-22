@@ -12,19 +12,13 @@ using System.Windows.Forms;
 
 namespace Sever
 {
-    /// <summary>
-    /// /awrsetdryftugyhjlk;l,';.'/
-    /// ytgyhjk
-    /// </summary>
-    //sdaaaaaaaaaaaaaaaâfmfljlvkjk
-    //thaibao
+    ///nbhbmb,bjjhhkfkjjhgskjdakjsadassad
     public partial class Home : Form
     {
+        //hgfgjdfdgjjh
        // List<GameShow> listGameShow = new List<GameShow>();
         string filePath = "../../../Schedule_Game.txt";
         private Form currentChildForm;
-
-        //test
         public Home()
         {
             
