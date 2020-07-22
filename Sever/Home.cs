@@ -12,6 +12,7 @@ using System.Windows.Forms;
 
 namespace Sever
 {
+    //sdaaaaaaaaaaaaaaaâfmfljlvkjk
     public partial class Home : Form
     {
        // List<GameShow> listGameShow = new List<GameShow>();
