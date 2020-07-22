@@ -12,12 +12,7 @@ using System.Windows.Forms;
 
 namespace Sever
 {
-    /// <summary>
-    /// /awrsetdryftugyhjlk;l,';.'/
-    /// ytgyhjk
-    /// </summary>
-    //sdaaaaaaaaaaaaaaaâfmfljlvkjk
-    //thaibao
+    
     public partial class Home : Form
     {
        // List<GameShow> listGameShow = new List<GameShow>();
