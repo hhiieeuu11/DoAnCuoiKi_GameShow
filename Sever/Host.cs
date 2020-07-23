@@ -9,6 +9,8 @@ namespace Sever
 {
     public partial class Host : Form
     {
+
+
         public static string fileQuestionPath = "../../question.txt";
         public static string fileSchedulePath = "../../../Schedule_Game.txt";
         public static List<Question> listQuestion = new List<Question>();

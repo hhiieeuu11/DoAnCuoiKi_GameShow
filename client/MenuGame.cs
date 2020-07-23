@@ -13,7 +13,7 @@ namespace client
     {
         List<GameShow> listGameShow = new List<GameShow>();
         string filePath = "../../../Schedule_Game.txt";
-
+        Form currentChildForm=null;
         int numColumSort = 0;
         int currentColum = -1, currentRow = -1;
         int countDownTime;
@@ -86,6 +86,13 @@ namespace client
         }
         private void OpenChildForm(Form childForm)
         {
+            //open only form
+            if (currentChildForm != null)
+            {
+                currentChildForm.Close();
+            }
+            currentChildForm = childForm;
+            //End
             childForm.TopLevel = false;
             childForm.FormBorderStyle = FormBorderStyle.None;
             childForm.Width = this.Width;
@@ -105,6 +112,7 @@ namespace client
             pnlMenu.Width = (int)(this.Width * 0.42);
             pnlLeft.Width = (int)(this.Width * 0.48);
             pnlMenuControls.Location = new Point((pnlMenu.Width - pnlMenuControls.Width) / 2, (pnlMenu.Height - pnlMenuControls.Height) / 2);
+            if(currentChildForm!=null) currentChildForm.Size = this.Size;
         }
 
         private void MenuGame_SizeChanged(object sender, EventArgs e)
@@ -141,6 +149,7 @@ namespace client
         private void guna2Button1_Click(object sender, EventArgs e)
         {
             OpenChildForm(new Playgame());
+           
         }
 
         private void grvListGame_CellClick(object sender, DataGridViewCellEventArgs e)

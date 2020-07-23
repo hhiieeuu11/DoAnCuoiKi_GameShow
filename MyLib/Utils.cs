@@ -10,6 +10,7 @@ namespace MyLib
 {
     public class Utils
     {
+        
         // Convert an object to a byte array
         public static byte[] ObjectToByteArray(Object obj)
         {

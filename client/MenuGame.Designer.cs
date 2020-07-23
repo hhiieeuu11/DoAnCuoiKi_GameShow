@@ -30,10 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuGame));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblTitle = new System.Windows.Forms.Label();
             this.pnlLeft = new System.Windows.Forms.Panel();
             this.pnlNearestGame = new System.Windows.Forms.Panel();
@@ -49,6 +49,7 @@
             this.grvListGame = new Guna.UI2.WinForms.Guna2DataGridView();
             this.pnlMenu = new System.Windows.Forms.Panel();
             this.pnlMenuControls = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.txtUsername = new Guna.UI2.WinForms.Guna2TextBox();
             this.lblTimeEnterGame = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -56,7 +57,6 @@
             this.btnHow = new Guna.UI2.WinForms.Guna2Button();
             this.btnAboutUs = new Guna.UI2.WinForms.Guna2Button();
             this.tmrCountDown = new System.Windows.Forms.Timer(this.components);
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.pnlLeft.SuspendLayout();
             this.pnlNearestGame.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grvListGame)).BeginInit();
@@ -151,7 +151,7 @@
             this.lblCountDown.Name = "lblCountDown";
             this.lblCountDown.Size = new System.Drawing.Size(280, 68);
             this.lblCountDown.TabIndex = 6;
-            this.lblCountDown.Text = "00:00";
+            this.lblCountDown.Text = "__:__";
             // 
             // label5
             // 
@@ -211,46 +211,46 @@
             this.grvListGame.AllowUserToAddRows = false;
             this.grvListGame.AllowUserToDeleteRows = false;
             this.grvListGame.AllowUserToResizeRows = false;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
-            this.grvListGame.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.grvListGame.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.grvListGame.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.grvListGame.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.grvListGame.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.grvListGame.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.grvListGame.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.grvListGame.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grvListGame.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grvListGame.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.grvListGame.ColumnHeadersHeight = 30;
             this.grvListGame.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.grvListGame.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.grvListGame.DefaultCellStyle = dataGridViewCellStyle3;
             this.grvListGame.Dock = System.Windows.Forms.DockStyle.Top;
             this.grvListGame.EnableHeadersVisualStyles = false;
             this.grvListGame.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.grvListGame.Location = new System.Drawing.Point(0, 60);
             this.grvListGame.Name = "grvListGame";
             this.grvListGame.ReadOnly = true;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grvListGame.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grvListGame.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.grvListGame.RowHeadersVisible = false;
             this.grvListGame.RowHeadersWidth = 10;
             this.grvListGame.RowTemplate.Height = 24;
@@ -295,10 +295,10 @@
             // pnlMenuControls
             // 
             this.pnlMenuControls.BackColor = System.Drawing.Color.Transparent;
+            this.pnlMenuControls.Controls.Add(this.label4);
+            this.pnlMenuControls.Controls.Add(this.lblTimeEnterGame);
             this.pnlMenuControls.Controls.Add(this.guna2Button1);
             this.pnlMenuControls.Controls.Add(this.txtUsername);
-            this.pnlMenuControls.Controls.Add(this.lblTimeEnterGame);
-            this.pnlMenuControls.Controls.Add(this.label4);
             this.pnlMenuControls.Controls.Add(this.panel3);
             this.pnlMenuControls.Controls.Add(this.btnHow);
             this.pnlMenuControls.Controls.Add(this.btnAboutUs);
@@ -307,6 +307,21 @@
             this.pnlMenuControls.ShadowDecoration.Parent = this.pnlMenuControls;
             this.pnlMenuControls.Size = new System.Drawing.Size(504, 676);
             this.pnlMenuControls.TabIndex = 0;
+            // 
+            // guna2Button1
+            // 
+            this.guna2Button1.CheckedState.Parent = this.guna2Button1;
+            this.guna2Button1.CustomImages.Parent = this.guna2Button1;
+            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2Button1.ForeColor = System.Drawing.Color.White;
+            this.guna2Button1.HoverState.Parent = this.guna2Button1;
+            this.guna2Button1.Location = new System.Drawing.Point(33, 380);
+            this.guna2Button1.Name = "guna2Button1";
+            this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
+            this.guna2Button1.Size = new System.Drawing.Size(82, 116);
+            this.guna2Button1.TabIndex = 28;
+            this.guna2Button1.Text = "guna2Button1";
+            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
             // txtUsername
             // 
@@ -343,11 +358,11 @@
             this.lblTimeEnterGame.BackColor = System.Drawing.Color.Transparent;
             this.lblTimeEnterGame.Font = new System.Drawing.Font("Segoe UI", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTimeEnterGame.ForeColor = System.Drawing.Color.Red;
-            this.lblTimeEnterGame.Location = new System.Drawing.Point(127, 353);
+            this.lblTimeEnterGame.Location = new System.Drawing.Point(127, 335);
             this.lblTimeEnterGame.Name = "lblTimeEnterGame";
-            this.lblTimeEnterGame.Size = new System.Drawing.Size(272, 43);
+            this.lblTimeEnterGame.Size = new System.Drawing.Size(272, 61);
             this.lblTimeEnterGame.TabIndex = 21;
-            this.lblTimeEnterGame.Text = "00:59";
+            this.lblTimeEnterGame.Text = "00:00";
             this.lblTimeEnterGame.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label4
@@ -357,7 +372,7 @@
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(118, 307);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(293, 46);
+            this.label4.Size = new System.Drawing.Size(300, 46);
             this.label4.TabIndex = 26;
             this.label4.Text = "Enter the game after";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -415,21 +430,6 @@
             this.tmrCountDown.Interval = 1000;
             this.tmrCountDown.Tick += new System.EventHandler(this.tmrCountDown_Tick);
             // 
-            // guna2Button1
-            // 
-            this.guna2Button1.CheckedState.Parent = this.guna2Button1;
-            this.guna2Button1.CustomImages.Parent = this.guna2Button1;
-            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.HoverState.Parent = this.guna2Button1;
-            this.guna2Button1.Location = new System.Drawing.Point(33, 380);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
-            this.guna2Button1.Size = new System.Drawing.Size(82, 116);
-            this.guna2Button1.TabIndex = 28;
-            this.guna2Button1.Text = "guna2Button1";
-            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
-            // 
             // MenuGame
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -437,6 +437,7 @@
             this.ClientSize = new System.Drawing.Size(1262, 703);
             this.Controls.Add(this.pnlMenu);
             this.Controls.Add(this.pnlLeft);
+            this.MinimumSize = new System.Drawing.Size(1230, 680);
             this.Name = "MenuGame";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "#Name game";

@@ -21,11 +21,17 @@ namespace client
         private void Playgame_ClientSizeChanged(object sender, EventArgs e)
         {
             pnlLeft.Width = this.Width - pnlRight.Width;
+            pnlInforQuestion.Location = new Point((pnlLeft.Width - pnlInforQuestion.Width) / 2, pnlLeft.Height - pnlInforQuestion.Height-30);
         }
 
         private void btnAnswerA_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnClosed_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

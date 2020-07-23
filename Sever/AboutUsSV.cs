@@ -18,7 +18,8 @@ namespace Sever
         }
         private void AboutUsSV_SizeChanged(object sender, EventArgs e)
         {
-            pnlGrCard.Location = new Point((pnlContent.Width - pnlGrCard.Width) / 2, pnlGrCard.Location.Y);
+            pnlGrCard.Location = new Point((pnlContent.Width - pnlGrCard.Width) / 2, (pnlContent.Height - pnlGrCard.Height) / 2);
+            pnlLogo.Location = new Point((pnlBottom.Width - pnlLogo.Width) / 2, (pnlBottom.Height - pnlLogo.Height) / 2);
         }
     }
 }
