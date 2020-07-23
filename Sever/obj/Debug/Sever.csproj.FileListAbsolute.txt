@@ -23,3 +23,4 @@ C:\Users\HOME\OneDrive\Máy tính\GameShow\Sever\obj\Debug\Sever.csproj.CopyComp
 C:\Users\HOME\OneDrive\Máy tính\GameShow\Sever\obj\Debug\Sever.exe
 C:\Users\HOME\OneDrive\Máy tính\GameShow\Sever\obj\Debug\Sever.pdb
 C:\Users\HOME\OneDrive\Máy tính\GameShow\Sever\obj\Debug\Sever.AboutUsSV.resources
+C:\Users\HOME\OneDrive\Máy tính\GameShow\Sever\bin\Debug\NetComm.dll

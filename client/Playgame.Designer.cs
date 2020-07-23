@@ -36,10 +36,6 @@
             this.grvLstScore = new Guna.UI2.WinForms.Guna2DataGridView();
             this.pnlLeft = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pnlBtnHelp = new System.Windows.Forms.Panel();
-            this.btnAudience = new Guna.UI2.WinForms.Guna2Button();
-            this.btn5050 = new Guna.UI2.WinForms.Guna2Button();
-            this.btnCallPhone = new Guna.UI2.WinForms.Guna2Button();
             this.pnlInforQuestion = new Guna.UI2.WinForms.Guna2Panel();
             this.pnlAnwserGroup = new Guna.UI2.WinForms.Guna2Panel();
             this.btnAnswerD = new Guna.UI2.WinForms.Guna2Button();
@@ -56,15 +52,19 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel11 = new System.Windows.Forms.Panel();
+            this.pnlBtnHelp = new System.Windows.Forms.Panel();
+            this.btnAudience = new Guna.UI2.WinForms.Guna2Button();
+            this.btnCallPhone = new Guna.UI2.WinForms.Guna2Button();
+            this.btn5050 = new Guna.UI2.WinForms.Guna2Button();
             this.pnlRight.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grvLstScore)).BeginInit();
             this.pnlLeft.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.pnlBtnHelp.SuspendLayout();
             this.pnlInforQuestion.SuspendLayout();
             this.pnlAnwserGroup.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
             this.panel5.SuspendLayout();
+            this.pnlBtnHelp.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlRight
@@ -155,69 +155,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(977, 703);
             this.panel1.TabIndex = 18;
-            // 
-            // pnlBtnHelp
-            // 
-            this.pnlBtnHelp.BackColor = System.Drawing.Color.Transparent;
-            this.pnlBtnHelp.Controls.Add(this.btnAudience);
-            this.pnlBtnHelp.Controls.Add(this.btnCallPhone);
-            this.pnlBtnHelp.Controls.Add(this.btn5050);
-            this.pnlBtnHelp.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlBtnHelp.Location = new System.Drawing.Point(0, 0);
-            this.pnlBtnHelp.Name = "pnlBtnHelp";
-            this.pnlBtnHelp.Size = new System.Drawing.Size(977, 86);
-            this.pnlBtnHelp.TabIndex = 21;
-            // 
-            // btnAudience
-            // 
-            this.btnAudience.BackColor = System.Drawing.Color.Transparent;
-            this.btnAudience.BorderRadius = 10;
-            this.btnAudience.CheckedState.Parent = this.btnAudience;
-            this.btnAudience.CustomImages.Parent = this.btnAudience;
-            this.btnAudience.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold);
-            this.btnAudience.ForeColor = System.Drawing.Color.White;
-            this.btnAudience.HoverState.Parent = this.btnAudience;
-            this.btnAudience.Location = new System.Drawing.Point(231, 22);
-            this.btnAudience.Name = "btnAudience";
-            this.btnAudience.ShadowDecoration.Parent = this.btnAudience;
-            this.btnAudience.Size = new System.Drawing.Size(103, 43);
-            this.btnAudience.TabIndex = 21;
-            this.btnAudience.Text = "Audience";
-            this.btnAudience.UseTransparentBackground = true;
-            // 
-            // btn5050
-            // 
-            this.btn5050.BackColor = System.Drawing.Color.Transparent;
-            this.btn5050.BorderRadius = 10;
-            this.btn5050.CheckedState.Parent = this.btn5050;
-            this.btn5050.CustomImages.Parent = this.btn5050;
-            this.btn5050.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold);
-            this.btn5050.ForeColor = System.Drawing.Color.White;
-            this.btn5050.HoverState.Parent = this.btn5050;
-            this.btn5050.Location = new System.Drawing.Point(47, 22);
-            this.btn5050.Name = "btn5050";
-            this.btn5050.ShadowDecoration.Parent = this.btn5050;
-            this.btn5050.Size = new System.Drawing.Size(86, 43);
-            this.btn5050.TabIndex = 19;
-            this.btn5050.Text = "50/50";
-            this.btn5050.UseTransparentBackground = true;
-            // 
-            // btnCallPhone
-            // 
-            this.btnCallPhone.BackColor = System.Drawing.Color.Transparent;
-            this.btnCallPhone.BorderRadius = 10;
-            this.btnCallPhone.CheckedState.Parent = this.btnCallPhone;
-            this.btnCallPhone.CustomImages.Parent = this.btnCallPhone;
-            this.btnCallPhone.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold);
-            this.btnCallPhone.ForeColor = System.Drawing.Color.White;
-            this.btnCallPhone.HoverState.Parent = this.btnCallPhone;
-            this.btnCallPhone.Location = new System.Drawing.Point(139, 22);
-            this.btnCallPhone.Name = "btnCallPhone";
-            this.btnCallPhone.ShadowDecoration.Parent = this.btnCallPhone;
-            this.btnCallPhone.Size = new System.Drawing.Size(86, 43);
-            this.btnCallPhone.TabIndex = 20;
-            this.btnCallPhone.Text = "Phone";
-            this.btnCallPhone.UseTransparentBackground = true;
             // 
             // pnlInforQuestion
             // 
@@ -372,8 +309,7 @@
             this.lblQuestion.Name = "lblQuestion";
             this.lblQuestion.Size = new System.Drawing.Size(914, 130);
             this.lblQuestion.TabIndex = 0;
-            this.lblQuestion.Text = "Mobile Money Identifier (MMID) is a 7 digit unique number issued by the bank. Wha" +
-    "t are the last three digits represent?";
+            this.lblQuestion.Text = "Question";
             this.lblQuestion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel5
@@ -401,6 +337,69 @@
             this.panel11.Size = new System.Drawing.Size(5, 125);
             this.panel11.TabIndex = 5;
             // 
+            // pnlBtnHelp
+            // 
+            this.pnlBtnHelp.BackColor = System.Drawing.Color.Transparent;
+            this.pnlBtnHelp.Controls.Add(this.btnAudience);
+            this.pnlBtnHelp.Controls.Add(this.btnCallPhone);
+            this.pnlBtnHelp.Controls.Add(this.btn5050);
+            this.pnlBtnHelp.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlBtnHelp.Location = new System.Drawing.Point(0, 0);
+            this.pnlBtnHelp.Name = "pnlBtnHelp";
+            this.pnlBtnHelp.Size = new System.Drawing.Size(977, 86);
+            this.pnlBtnHelp.TabIndex = 21;
+            // 
+            // btnAudience
+            // 
+            this.btnAudience.BackColor = System.Drawing.Color.Transparent;
+            this.btnAudience.BorderRadius = 10;
+            this.btnAudience.CheckedState.Parent = this.btnAudience;
+            this.btnAudience.CustomImages.Parent = this.btnAudience;
+            this.btnAudience.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold);
+            this.btnAudience.ForeColor = System.Drawing.Color.White;
+            this.btnAudience.HoverState.Parent = this.btnAudience;
+            this.btnAudience.Location = new System.Drawing.Point(231, 22);
+            this.btnAudience.Name = "btnAudience";
+            this.btnAudience.ShadowDecoration.Parent = this.btnAudience;
+            this.btnAudience.Size = new System.Drawing.Size(103, 43);
+            this.btnAudience.TabIndex = 21;
+            this.btnAudience.Text = "Audience";
+            this.btnAudience.UseTransparentBackground = true;
+            // 
+            // btnCallPhone
+            // 
+            this.btnCallPhone.BackColor = System.Drawing.Color.Transparent;
+            this.btnCallPhone.BorderRadius = 10;
+            this.btnCallPhone.CheckedState.Parent = this.btnCallPhone;
+            this.btnCallPhone.CustomImages.Parent = this.btnCallPhone;
+            this.btnCallPhone.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold);
+            this.btnCallPhone.ForeColor = System.Drawing.Color.White;
+            this.btnCallPhone.HoverState.Parent = this.btnCallPhone;
+            this.btnCallPhone.Location = new System.Drawing.Point(139, 22);
+            this.btnCallPhone.Name = "btnCallPhone";
+            this.btnCallPhone.ShadowDecoration.Parent = this.btnCallPhone;
+            this.btnCallPhone.Size = new System.Drawing.Size(86, 43);
+            this.btnCallPhone.TabIndex = 20;
+            this.btnCallPhone.Text = "Phone";
+            this.btnCallPhone.UseTransparentBackground = true;
+            // 
+            // btn5050
+            // 
+            this.btn5050.BackColor = System.Drawing.Color.Transparent;
+            this.btn5050.BorderRadius = 10;
+            this.btn5050.CheckedState.Parent = this.btn5050;
+            this.btn5050.CustomImages.Parent = this.btn5050;
+            this.btn5050.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold);
+            this.btn5050.ForeColor = System.Drawing.Color.White;
+            this.btn5050.HoverState.Parent = this.btn5050;
+            this.btn5050.Location = new System.Drawing.Point(47, 22);
+            this.btn5050.Name = "btn5050";
+            this.btn5050.ShadowDecoration.Parent = this.btn5050;
+            this.btn5050.Size = new System.Drawing.Size(86, 43);
+            this.btn5050.TabIndex = 19;
+            this.btn5050.Text = "50/50";
+            this.btn5050.UseTransparentBackground = true;
+            // 
             // Playgame
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -412,16 +411,19 @@
             this.Name = "Playgame";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Playgame";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Playgame_FormClosing);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Playgame_FormClosed);
+            this.Load += new System.EventHandler(this.Playgame_Load);
             this.ClientSizeChanged += new System.EventHandler(this.Playgame_ClientSizeChanged);
             this.pnlRight.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grvLstScore)).EndInit();
             this.pnlLeft.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            this.pnlBtnHelp.ResumeLayout(false);
             this.pnlInforQuestion.ResumeLayout(false);
             this.pnlAnwserGroup.ResumeLayout(false);
             this.guna2Panel1.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
+            this.pnlBtnHelp.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

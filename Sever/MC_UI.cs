@@ -16,7 +16,11 @@ namespace Sever
     public partial class MC_UI : Form
     {
         int OrigTime = 15;
+
+        NetComm.Host server; //Creates the host variable object
         
+
+
         Color colorAnswerCorrect = Color.FromArgb(0, 192, 0);
         List <Question> listQuestion = new List<Question>();
         string filePath = "../../question.txt";
@@ -27,6 +31,12 @@ namespace Sever
             reponsive();
             listQuestion = getListQuestionFromFile();
             setupQuestion(listQuestion[Host.indexCurrentQuestion]);
+        }
+
+
+        public static void resetdata()
+        {
+            return;
         }
 
         /// <summary>
@@ -144,27 +154,6 @@ namespace Sever
             reponsive();
         }
 
-        private void lblAnswerB_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblAnswerA_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblAnswerC_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblAnswerD_Click(object sender, EventArgs e)
-        {
-
-        }
-
-
         private void btnNext_Click(object sender, EventArgs e)
         {
             resetClock();
@@ -197,6 +186,27 @@ namespace Sever
             tmrCountDown.Enabled = true;
             btnNext.Enabled = false;
            
+        }
+
+        private void MC_UI_Load(object sender, EventArgs e)
+        {
+            server = new NetComm.Host(5000);    //Initialize the Server object, 
+                                                //connection will use the 2020 port number
+            server.StartConnection(); 		//Starts listening for incoming clients
+
+            server.onConnection += new NetComm.Host.onConnectionEventHandler(server_onConnection);
+            server.lostConnection += new NetComm.Host.lostConnectionEventHandler(Server_lostConnection);
+            server.DataReceived += new NetComm.Host.DataReceivedEventHandler(Server_DataReceived);
+        }
+
+        public void server_onConnection(string id)
+        {
+            //listIdPlayer.Add(id);
+            // MessageBox.Show(id + " connected!");
+           // listIdPlayer = server.Users;
+            lvListPlayer.Items.Add(id);
+
+
         }
     }
 }

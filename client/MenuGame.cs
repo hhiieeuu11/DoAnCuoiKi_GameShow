@@ -148,7 +148,7 @@ namespace client
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Playgame());
+            OpenChildForm(new Playgame(txtUsername.Text));
            
         }
 

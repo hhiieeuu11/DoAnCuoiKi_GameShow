@@ -10,12 +10,15 @@ namespace MyLib
 {
     public class Utils
     {
-        
+
         // Convert an object to a byte array
-        public static byte[] ObjectToByteArray(Object obj)
+
+        public static byte[] ObjectToByteArray(object obj)
         {
+            if (obj == null)
+                return null;
             BinaryFormatter bf = new BinaryFormatter();
-            using (var ms = new MemoryStream())
+            using (MemoryStream ms = new MemoryStream())
             {
                 bf.Serialize(ms, obj);
                 return ms.ToArray();

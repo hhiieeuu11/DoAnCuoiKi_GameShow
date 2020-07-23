@@ -38,13 +38,15 @@
             this.iconCurrentChildForm = new FontAwesome.Sharp.IconPictureBox();
             this.pnlMenu = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.pnlBtnGroup = new System.Windows.Forms.Panel();
+            this.btnAboutUs = new FontAwesome.Sharp.IconButton();
+            this.btnQuestionMGMT = new FontAwesome.Sharp.IconButton();
+            this.btnScheduleMGMT = new FontAwesome.Sharp.IconButton();
             this.btnMC = new FontAwesome.Sharp.IconButton();
             this.btnHome = new FontAwesome.Sharp.IconButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnLogo = new Guna.UI2.WinForms.Guna2ImageButton();
-            this.btnScheduleMGMT = new FontAwesome.Sharp.IconButton();
-            this.btnQuestionMGMT = new FontAwesome.Sharp.IconButton();
-            this.btnAboutUs = new FontAwesome.Sharp.IconButton();
+            this.lvListPlayer = new System.Windows.Forms.ListView();
+            this.pnlDesktop.SuspendLayout();
             this.pnlScheduleMGMT.SuspendLayout();
             this.guna2GradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconCurrentChildForm)).BeginInit();
@@ -56,6 +58,7 @@
             // pnlDesktop
             // 
             this.pnlDesktop.BackColor = System.Drawing.Color.Transparent;
+            this.pnlDesktop.Controls.Add(this.lvListPlayer);
             this.pnlDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlDesktop.Location = new System.Drawing.Point(0, 53);
             this.pnlDesktop.Name = "pnlDesktop";
@@ -157,6 +160,76 @@
             this.pnlBtnGroup.Size = new System.Drawing.Size(270, 453);
             this.pnlBtnGroup.TabIndex = 4;
             // 
+            // btnAboutUs
+            // 
+            this.btnAboutUs.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnAboutUs.FlatAppearance.BorderSize = 0;
+            this.btnAboutUs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAboutUs.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnAboutUs.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAboutUs.ForeColor = System.Drawing.Color.White;
+            this.btnAboutUs.IconChar = FontAwesome.Sharp.IconChar.InfoCircle;
+            this.btnAboutUs.IconColor = System.Drawing.Color.White;
+            this.btnAboutUs.IconSize = 50;
+            this.btnAboutUs.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAboutUs.Location = new System.Drawing.Point(0, 304);
+            this.btnAboutUs.Name = "btnAboutUs";
+            this.btnAboutUs.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnAboutUs.Rotation = 0D;
+            this.btnAboutUs.Size = new System.Drawing.Size(270, 76);
+            this.btnAboutUs.TabIndex = 24;
+            this.btnAboutUs.Text = "About us";
+            this.btnAboutUs.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAboutUs.UseVisualStyleBackColor = true;
+            this.btnAboutUs.Click += new System.EventHandler(this.btnAboutUs_Click);
+            // 
+            // btnQuestionMGMT
+            // 
+            this.btnQuestionMGMT.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnQuestionMGMT.FlatAppearance.BorderSize = 0;
+            this.btnQuestionMGMT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnQuestionMGMT.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnQuestionMGMT.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnQuestionMGMT.ForeColor = System.Drawing.Color.White;
+            this.btnQuestionMGMT.IconChar = FontAwesome.Sharp.IconChar.Question;
+            this.btnQuestionMGMT.IconColor = System.Drawing.Color.White;
+            this.btnQuestionMGMT.IconSize = 50;
+            this.btnQuestionMGMT.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnQuestionMGMT.Location = new System.Drawing.Point(0, 228);
+            this.btnQuestionMGMT.Name = "btnQuestionMGMT";
+            this.btnQuestionMGMT.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnQuestionMGMT.Rotation = 0D;
+            this.btnQuestionMGMT.Size = new System.Drawing.Size(270, 76);
+            this.btnQuestionMGMT.TabIndex = 23;
+            this.btnQuestionMGMT.Text = "Question Management";
+            this.btnQuestionMGMT.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnQuestionMGMT.UseVisualStyleBackColor = true;
+            this.btnQuestionMGMT.Click += new System.EventHandler(this.btnQuestionMGMT_Click);
+            // 
+            // btnScheduleMGMT
+            // 
+            this.btnScheduleMGMT.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnScheduleMGMT.FlatAppearance.BorderSize = 0;
+            this.btnScheduleMGMT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnScheduleMGMT.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnScheduleMGMT.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnScheduleMGMT.ForeColor = System.Drawing.Color.White;
+            this.btnScheduleMGMT.IconChar = FontAwesome.Sharp.IconChar.CalendarAlt;
+            this.btnScheduleMGMT.IconColor = System.Drawing.Color.White;
+            this.btnScheduleMGMT.IconSize = 50;
+            this.btnScheduleMGMT.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnScheduleMGMT.Location = new System.Drawing.Point(0, 152);
+            this.btnScheduleMGMT.Margin = new System.Windows.Forms.Padding(0);
+            this.btnScheduleMGMT.Name = "btnScheduleMGMT";
+            this.btnScheduleMGMT.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnScheduleMGMT.Rotation = 0D;
+            this.btnScheduleMGMT.Size = new System.Drawing.Size(270, 76);
+            this.btnScheduleMGMT.TabIndex = 22;
+            this.btnScheduleMGMT.Text = "Schedule Management";
+            this.btnScheduleMGMT.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnScheduleMGMT.UseVisualStyleBackColor = true;
+            this.btnScheduleMGMT.Click += new System.EventHandler(this.btnScheduleMGMT_Click);
+            // 
             // btnMC
             // 
             this.btnMC.Dock = System.Windows.Forms.DockStyle.Top;
@@ -233,75 +306,14 @@
             this.btnLogo.TabIndex = 1;
             this.btnLogo.Click += new System.EventHandler(this.btnLogo_Click);
             // 
-            // btnScheduleMGMT
+            // lvListPlayer
             // 
-            this.btnScheduleMGMT.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnScheduleMGMT.FlatAppearance.BorderSize = 0;
-            this.btnScheduleMGMT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnScheduleMGMT.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.btnScheduleMGMT.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnScheduleMGMT.ForeColor = System.Drawing.Color.White;
-            this.btnScheduleMGMT.IconChar = FontAwesome.Sharp.IconChar.CalendarAlt;
-            this.btnScheduleMGMT.IconColor = System.Drawing.Color.White;
-            this.btnScheduleMGMT.IconSize = 50;
-            this.btnScheduleMGMT.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnScheduleMGMT.Location = new System.Drawing.Point(0, 152);
-            this.btnScheduleMGMT.Margin = new System.Windows.Forms.Padding(0);
-            this.btnScheduleMGMT.Name = "btnScheduleMGMT";
-            this.btnScheduleMGMT.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnScheduleMGMT.Rotation = 0D;
-            this.btnScheduleMGMT.Size = new System.Drawing.Size(270, 76);
-            this.btnScheduleMGMT.TabIndex = 22;
-            this.btnScheduleMGMT.Text = "Schedule Management";
-            this.btnScheduleMGMT.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnScheduleMGMT.UseVisualStyleBackColor = true;
-            this.btnScheduleMGMT.Click += new System.EventHandler(this.btnScheduleMGMT_Click);
-            // 
-            // btnQuestionMGMT
-            // 
-            this.btnQuestionMGMT.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnQuestionMGMT.FlatAppearance.BorderSize = 0;
-            this.btnQuestionMGMT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnQuestionMGMT.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.btnQuestionMGMT.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnQuestionMGMT.ForeColor = System.Drawing.Color.White;
-            this.btnQuestionMGMT.IconChar = FontAwesome.Sharp.IconChar.Question;
-            this.btnQuestionMGMT.IconColor = System.Drawing.Color.White;
-            this.btnQuestionMGMT.IconSize = 50;
-            this.btnQuestionMGMT.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnQuestionMGMT.Location = new System.Drawing.Point(0, 228);
-            this.btnQuestionMGMT.Name = "btnQuestionMGMT";
-            this.btnQuestionMGMT.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnQuestionMGMT.Rotation = 0D;
-            this.btnQuestionMGMT.Size = new System.Drawing.Size(270, 76);
-            this.btnQuestionMGMT.TabIndex = 23;
-            this.btnQuestionMGMT.Text = "Question Management";
-            this.btnQuestionMGMT.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnQuestionMGMT.UseVisualStyleBackColor = true;
-            this.btnQuestionMGMT.Click += new System.EventHandler(this.btnQuestionMGMT_Click);
-            // 
-            // btnAboutUs
-            // 
-            this.btnAboutUs.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnAboutUs.FlatAppearance.BorderSize = 0;
-            this.btnAboutUs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAboutUs.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.btnAboutUs.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAboutUs.ForeColor = System.Drawing.Color.White;
-            this.btnAboutUs.IconChar = FontAwesome.Sharp.IconChar.InfoCircle;
-            this.btnAboutUs.IconColor = System.Drawing.Color.White;
-            this.btnAboutUs.IconSize = 50;
-            this.btnAboutUs.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAboutUs.Location = new System.Drawing.Point(0, 304);
-            this.btnAboutUs.Name = "btnAboutUs";
-            this.btnAboutUs.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnAboutUs.Rotation = 0D;
-            this.btnAboutUs.Size = new System.Drawing.Size(270, 76);
-            this.btnAboutUs.TabIndex = 24;
-            this.btnAboutUs.Text = "About us";
-            this.btnAboutUs.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnAboutUs.UseVisualStyleBackColor = true;
-            this.btnAboutUs.Click += new System.EventHandler(this.btnAboutUs_Click);
+            this.lvListPlayer.HideSelection = false;
+            this.lvListPlayer.Location = new System.Drawing.Point(668, 0);
+            this.lvListPlayer.Name = "lvListPlayer";
+            this.lvListPlayer.Size = new System.Drawing.Size(326, 650);
+            this.lvListPlayer.TabIndex = 0;
+            this.lvListPlayer.UseCompatibleStateImageBehavior = false;
             // 
             // Host
             // 
@@ -313,6 +325,9 @@
             this.Name = "Host";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Host";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Host_FormClosing);
+            this.Load += new System.EventHandler(this.Host_Load);
+            this.pnlDesktop.ResumeLayout(false);
             this.pnlScheduleMGMT.ResumeLayout(false);
             this.guna2GradientPanel1.ResumeLayout(false);
             this.guna2GradientPanel1.PerformLayout();
@@ -342,5 +357,6 @@
         private FontAwesome.Sharp.IconButton btnAboutUs;
         private FontAwesome.Sharp.IconButton btnQuestionMGMT;
         private FontAwesome.Sharp.IconButton btnScheduleMGMT;
+        private System.Windows.Forms.ListView lvListPlayer;
     }
 }
