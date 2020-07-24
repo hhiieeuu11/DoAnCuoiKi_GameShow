@@ -49,10 +49,10 @@
             this.grvListGame = new Guna.UI2.WinForms.Guna2DataGridView();
             this.pnlMenu = new System.Windows.Forms.Panel();
             this.pnlMenuControls = new Guna.UI2.WinForms.Guna2Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.lblTimeEnterGame = new System.Windows.Forms.Label();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.txtUsername = new Guna.UI2.WinForms.Guna2TextBox();
-            this.lblTimeEnterGame = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnHow = new Guna.UI2.WinForms.Guna2Button();
             this.btnAboutUs = new Guna.UI2.WinForms.Guna2Button();
@@ -308,6 +308,30 @@
             this.pnlMenuControls.Size = new System.Drawing.Size(504, 676);
             this.pnlMenuControls.TabIndex = 0;
             // 
+            // label4
+            // 
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(118, 307);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(300, 46);
+            this.label4.TabIndex = 26;
+            this.label4.Text = "Enter the game after";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblTimeEnterGame
+            // 
+            this.lblTimeEnterGame.BackColor = System.Drawing.Color.Transparent;
+            this.lblTimeEnterGame.Font = new System.Drawing.Font("Segoe UI", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTimeEnterGame.ForeColor = System.Drawing.Color.Red;
+            this.lblTimeEnterGame.Location = new System.Drawing.Point(127, 335);
+            this.lblTimeEnterGame.Name = "lblTimeEnterGame";
+            this.lblTimeEnterGame.Size = new System.Drawing.Size(272, 61);
+            this.lblTimeEnterGame.TabIndex = 21;
+            this.lblTimeEnterGame.Text = "00:00";
+            this.lblTimeEnterGame.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // guna2Button1
             // 
             this.guna2Button1.CheckedState.Parent = this.guna2Button1;
@@ -352,30 +376,6 @@
             this.txtUsername.ShadowDecoration.Parent = this.txtUsername;
             this.txtUsername.Size = new System.Drawing.Size(286, 60);
             this.txtUsername.TabIndex = 27;
-            // 
-            // lblTimeEnterGame
-            // 
-            this.lblTimeEnterGame.BackColor = System.Drawing.Color.Transparent;
-            this.lblTimeEnterGame.Font = new System.Drawing.Font("Segoe UI", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTimeEnterGame.ForeColor = System.Drawing.Color.Red;
-            this.lblTimeEnterGame.Location = new System.Drawing.Point(127, 335);
-            this.lblTimeEnterGame.Name = "lblTimeEnterGame";
-            this.lblTimeEnterGame.Size = new System.Drawing.Size(272, 61);
-            this.lblTimeEnterGame.TabIndex = 21;
-            this.lblTimeEnterGame.Text = "00:00";
-            this.lblTimeEnterGame.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label4
-            // 
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(118, 307);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(300, 46);
-            this.label4.TabIndex = 26;
-            this.label4.Text = "Enter the game after";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel3
             // 
@@ -441,6 +441,7 @@
             this.Name = "MenuGame";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "#Name game";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MenuGame_FormClosing);
             this.SizeChanged += new System.EventHandler(this.MenuGame_SizeChanged);
             this.pnlLeft.ResumeLayout(false);
             this.pnlNearestGame.ResumeLayout(false);

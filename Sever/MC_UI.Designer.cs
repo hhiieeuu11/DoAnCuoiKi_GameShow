@@ -33,6 +33,11 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new string[] {
+            "123"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.White, null);
+            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem(new string[] {
+            "456"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.White, null);
+            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem("");
             this.elipseNumberWatching = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.npwBox = new DTOProject.numberPeopleWacthing();
             this.pnlLeftTop = new System.Windows.Forms.Panel();
@@ -696,12 +701,19 @@
             // lvListPlayer
             // 
             this.lvListPlayer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lvListPlayer.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lvListPlayer.HideSelection = false;
+            this.lvListPlayer.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
+            listViewItem1,
+            listViewItem2,
+            listViewItem3});
             this.lvListPlayer.Location = new System.Drawing.Point(0, 34);
             this.lvListPlayer.Name = "lvListPlayer";
+            this.lvListPlayer.ShowItemToolTips = true;
             this.lvListPlayer.Size = new System.Drawing.Size(349, 342);
             this.lvListPlayer.TabIndex = 37;
             this.lvListPlayer.UseCompatibleStateImageBehavior = false;
+            this.lvListPlayer.View = System.Windows.Forms.View.Tile;
             // 
             // MC_UI
             // 
@@ -714,6 +726,7 @@
             this.Name = "MC_UI";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MC_UI";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MC_UI_FormClosing);
             this.Load += new System.EventHandler(this.MC_UI_Load);
             this.SizeChanged += new System.EventHandler(this.MC_UI_SizeChanged);
             this.pnlLeftTop.ResumeLayout(false);

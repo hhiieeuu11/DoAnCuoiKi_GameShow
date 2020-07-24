@@ -325,8 +325,6 @@
             this.Name = "Host";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Host";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Host_FormClosing);
-            this.Load += new System.EventHandler(this.Host_Load);
             this.pnlDesktop.ResumeLayout(false);
             this.pnlScheduleMGMT.ResumeLayout(false);
             this.guna2GradientPanel1.ResumeLayout(false);

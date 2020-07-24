@@ -11,8 +11,11 @@ namespace MyLib
     public class Utils
     {
 
-        // Convert an object to a byte array
-
+        /// <summary>
+        /// Convert an object to a byte array
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <returns></returns>
         public static byte[] ObjectToByteArray(object obj)
         {
             if (obj == null)
@@ -25,7 +28,11 @@ namespace MyLib
             }
         }
 
-        // Convert a byte array to an Object
+        /// <summary>
+        /// Convert a byte array to an Object
+        /// </summary>
+        /// <param name="arrBytes"></param>
+        /// <returns></returns>
         public static Object ByteArrayToObject(byte[] arrBytes)
         {
             using (var memStream = new MemoryStream())

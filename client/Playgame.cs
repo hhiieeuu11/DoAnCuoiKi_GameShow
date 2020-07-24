@@ -15,8 +15,13 @@ namespace client
 {
     public partial class Playgame : Form
     {
+
+        const int COUNTDOWN_TIME = 15;
+
+        int OrigTime = COUNTDOWN_TIME; // count down time
         string nameClient;
         NetComm.Client client; //The client object used for the communication
+
 
         public Playgame(string name)
         {
@@ -40,11 +45,6 @@ namespace client
         {
             pnlLeft.Width = this.Width - pnlRight.Width;
             pnlInforQuestion.Location = new Point((pnlLeft.Width - pnlInforQuestion.Width) / 2, pnlLeft.Height - pnlInforQuestion.Height-30);
-        }
-
-        private void btnAnswerA_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void btnClosed_Click(object sender, EventArgs e)
@@ -73,7 +73,8 @@ namespace client
 
         void client_Connected()
         {
-            MessageBox.Show("Connected successfully!");
+            //MessageBox.Show("Connected successfully!");
+            
         }
         void client_Disconnected()
         {
@@ -88,6 +89,9 @@ namespace client
             pnlInforQuestion.Show();
             Question question =  (Question)Utils.ByteArrayToObject(Data);
             setQuestion(question);
+            enableButtonAnswer();
+            resetClock();
+            tmrCountDown.Enabled = true;
         }
 
 
@@ -107,11 +111,36 @@ namespace client
                 btn.Text = question.listAnswer[i++];
             }
         }
+        public void resetClock()
+        {
+            OrigTime = COUNTDOWN_TIME;
+            proCountDown.Value = 0;
+            lblCountDown.Text = OrigTime / 60 + ":" + ((OrigTime % 60) >= 10 ? (OrigTime % 60).ToString() : "0" + OrigTime % 60);
+        }
+
+        public void unableButtonAnswer()
+        {
+            foreach (var ctl in pnlAnwserGroup.Controls)
+            {
+                Guna2Button btn = (Guna2Button)ctl;
+                btn.Enabled = false;
+            }
+        }
+        public void enableButtonAnswer()
+        {
+            foreach (var ctl in pnlAnwserGroup.Controls)
+            {
+                Guna2Button btn = (Guna2Button)ctl;
+                btn.Enabled = true;
+            }
+        }
+
 
         private void btn_Click(object sender, EventArgs e)
         {
-            Button btn = (Button)sender;
-            client.SendData(Utils.ObjectToByteArray(btn.Text));
+           // Guna2Button btn = (Guna2Button)sender;
+            unableButtonAnswer();
+            client.SendData(Utils.ObjectToByteArray(((Guna2Button)sender).Text));
         }
 
 
@@ -120,8 +149,25 @@ namespace client
 
         private void Playgame_FormClosed(object sender, FormClosedEventArgs e)
         {
-            if (client.isConnected) client.Disconnect(); //Disconnects if the 
+            if (client.isConnected)
+                client.Disconnect(); //Disconnects if the 
                                                          //client is connected, closing the communication thread
         }
+
+
+
+        private void tmrCountDown_Tick(object sender, EventArgs e)
+        {
+            OrigTime--;
+            lblCountDown.Text = OrigTime / 60 + ":" + ((OrigTime % 60) >= 10 ? (OrigTime % 60).ToString() : "0" + OrigTime % 60);
+            proCountDown.Value++;
+            if (OrigTime <= 0)
+            {
+                tmrCountDown.Enabled = false;
+                unableButtonAnswer();
+            }
+        }
+
+
     }
 }

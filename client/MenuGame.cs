@@ -149,7 +149,14 @@ namespace client
         private void guna2Button1_Click(object sender, EventArgs e)
         {
             OpenChildForm(new Playgame(txtUsername.Text));
+
+
            
+        }
+
+        private void MenuGame_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            currentChildForm.Close();
         }
 
         private void grvListGame_CellClick(object sender, DataGridViewCellEventArgs e)

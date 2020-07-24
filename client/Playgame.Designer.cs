@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -53,9 +54,13 @@
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel11 = new System.Windows.Forms.Panel();
             this.pnlBtnHelp = new System.Windows.Forms.Panel();
+            this.proCountDown = new Guna.UI2.WinForms.Guna2CircleProgressBar();
+            this.lblCountDown = new System.Windows.Forms.Label();
+            this.npwBox = new DTOProject.numberPeopleWacthing();
             this.btnAudience = new Guna.UI2.WinForms.Guna2Button();
             this.btnCallPhone = new Guna.UI2.WinForms.Guna2Button();
             this.btn5050 = new Guna.UI2.WinForms.Guna2Button();
+            this.tmrCountDown = new System.Windows.Forms.Timer(this.components);
             this.pnlRight.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grvLstScore)).BeginInit();
             this.pnlLeft.SuspendLayout();
@@ -65,6 +70,7 @@
             this.guna2Panel1.SuspendLayout();
             this.panel5.SuspendLayout();
             this.pnlBtnHelp.SuspendLayout();
+            this.proCountDown.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlRight
@@ -195,6 +201,7 @@
             this.btnAnswerD.Size = new System.Drawing.Size(450, 70);
             this.btnAnswerD.TabIndex = 27;
             this.btnAnswerD.Text = "D. ";
+            this.btnAnswerD.Click += new System.EventHandler(this.btn_Click);
             // 
             // btnAnswerC
             // 
@@ -211,6 +218,7 @@
             this.btnAnswerC.Size = new System.Drawing.Size(450, 70);
             this.btnAnswerC.TabIndex = 26;
             this.btnAnswerC.Text = "C. ";
+            this.btnAnswerC.Click += new System.EventHandler(this.btn_Click);
             // 
             // btnAnswerB
             // 
@@ -227,6 +235,7 @@
             this.btnAnswerB.Size = new System.Drawing.Size(450, 70);
             this.btnAnswerB.TabIndex = 25;
             this.btnAnswerB.Text = "B. ";
+            this.btnAnswerB.Click += new System.EventHandler(this.btn_Click);
             // 
             // btnAnswerA
             // 
@@ -243,6 +252,7 @@
             this.btnAnswerA.Size = new System.Drawing.Size(450, 70);
             this.btnAnswerA.TabIndex = 24;
             this.btnAnswerA.Text = "A. ";
+            this.btnAnswerA.Click += new System.EventHandler(this.btn_Click);
             // 
             // guna2Panel1
             // 
@@ -340,6 +350,8 @@
             // pnlBtnHelp
             // 
             this.pnlBtnHelp.BackColor = System.Drawing.Color.Transparent;
+            this.pnlBtnHelp.Controls.Add(this.proCountDown);
+            this.pnlBtnHelp.Controls.Add(this.npwBox);
             this.pnlBtnHelp.Controls.Add(this.btnAudience);
             this.pnlBtnHelp.Controls.Add(this.btnCallPhone);
             this.pnlBtnHelp.Controls.Add(this.btn5050);
@@ -348,6 +360,45 @@
             this.pnlBtnHelp.Name = "pnlBtnHelp";
             this.pnlBtnHelp.Size = new System.Drawing.Size(977, 86);
             this.pnlBtnHelp.TabIndex = 21;
+            // 
+            // proCountDown
+            // 
+            this.proCountDown.Animated = true;
+            this.proCountDown.AnimationSpeed = 2F;
+            this.proCountDown.BackColor = System.Drawing.Color.Transparent;
+            this.proCountDown.Controls.Add(this.lblCountDown);
+            this.proCountDown.FillColor = System.Drawing.Color.Transparent;
+            this.proCountDown.FillThickness = 10;
+            this.proCountDown.Location = new System.Drawing.Point(879, 3);
+            this.proCountDown.Maximum = 15;
+            this.proCountDown.Name = "proCountDown";
+            this.proCountDown.ProgressColor = System.Drawing.Color.Red;
+            this.proCountDown.ProgressColor2 = System.Drawing.Color.Red;
+            this.proCountDown.ProgressThickness = 10;
+            this.proCountDown.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.proCountDown.ShadowDecoration.Parent = this.proCountDown;
+            this.proCountDown.Size = new System.Drawing.Size(80, 80);
+            this.proCountDown.TabIndex = 23;
+            // 
+            // lblCountDown
+            // 
+            this.lblCountDown.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCountDown.ForeColor = System.Drawing.Color.White;
+            this.lblCountDown.Location = new System.Drawing.Point(0, 20);
+            this.lblCountDown.Name = "lblCountDown";
+            this.lblCountDown.Size = new System.Drawing.Size(80, 38);
+            this.lblCountDown.TabIndex = 1;
+            this.lblCountDown.Text = "0:15";
+            this.lblCountDown.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // npwBox
+            // 
+            this.npwBox.BackColor = System.Drawing.Color.Transparent;
+            this.npwBox.Location = new System.Drawing.Point(755, 26);
+            this.npwBox.Name = "npwBox";
+            this.npwBox.Number = 0;
+            this.npwBox.Size = new System.Drawing.Size(81, 30);
+            this.npwBox.TabIndex = 22;
             // 
             // btnAudience
             // 
@@ -400,6 +451,11 @@
             this.btn5050.Text = "50/50";
             this.btn5050.UseTransparentBackground = true;
             // 
+            // tmrCountDown
+            // 
+            this.tmrCountDown.Interval = 1000;
+            this.tmrCountDown.Tick += new System.EventHandler(this.tmrCountDown_Tick);
+            // 
             // Playgame
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -424,6 +480,7 @@
             this.guna2Panel1.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.pnlBtnHelp.ResumeLayout(false);
+            this.proCountDown.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -453,6 +510,10 @@
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Panel panel11;
+        private Guna.UI2.WinForms.Guna2CircleProgressBar proCountDown;
+        private System.Windows.Forms.Label lblCountDown;
+        private DTOProject.numberPeopleWacthing npwBox;
+        private System.Windows.Forms.Timer tmrCountDown;
     }
 }
 

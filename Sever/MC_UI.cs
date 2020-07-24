@@ -33,11 +33,7 @@ namespace Sever
             setupQuestion(listQuestion[Host.indexCurrentQuestion]);
         }
 
-
-        public static void resetdata()
-        {
-            return;
-        }
+        #region Code Old
 
         /// <summary>
         /// Get Data question from file question.txt
@@ -166,6 +162,7 @@ namespace Sever
             else
                 MessageBox.Show("You have run out of questions!", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             btnNext.Enabled = false;
+            btnSend.Enabled = true;
         }
 
         private void CountDown_Tick(object sender, EventArgs e)
@@ -184,10 +181,13 @@ namespace Sever
         private void btnSend_Click(object sender, EventArgs e)
         {
             tmrCountDown.Enabled = true;
+            btnSend.Enabled = false;
             btnNext.Enabled = false;
-           
+            server.Brodcast(Utils.ObjectToByteArray(listQuestion[Host.indexCurrentQuestion]));
         }
 
+
+        #endregion
         private void MC_UI_Load(object sender, EventArgs e)
         {
             server = new NetComm.Host(5000);    //Initialize the Server object, 
@@ -197,6 +197,12 @@ namespace Sever
             server.onConnection += new NetComm.Host.onConnectionEventHandler(server_onConnection);
             server.lostConnection += new NetComm.Host.lostConnectionEventHandler(Server_lostConnection);
             server.DataReceived += new NetComm.Host.DataReceivedEventHandler(Server_DataReceived);
+
+
+            //Speeding up the connection
+            server.SendBufferSize = 400;
+            server.ReceiveBufferSize = 50;
+            server.NoDelay = true;
         }
 
         public void server_onConnection(string id)
@@ -205,8 +211,29 @@ namespace Sever
             // MessageBox.Show(id + " connected!");
            // listIdPlayer = server.Users;
             lvListPlayer.Items.Add(id);
+        }
 
+        public static int findPlayer(string id)
+        {
+            for (int i = 0; i < Host.listIdPlayer.Count; i++)
+            {
+                if (Host.listIdPlayer[i] == id) return i;
+            }
+            return -1;
+        }
+        void Server_lostConnection(string id)
+        {
+            //lvListPlayer.Items.Remove(lvListPlayer.Items[findPlayer(id)]);
+        }
 
+        void Server_DataReceived(string ID, byte[] Data)
+        {
+            lvListPlayer.Items.Add(ID + (string)Utils.ByteArrayToObject(Data));
+        }
+
+        private void MC_UI_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            server.CloseConnection(); //Closes all of the opened connections and stops listening
         }
     }
 }
