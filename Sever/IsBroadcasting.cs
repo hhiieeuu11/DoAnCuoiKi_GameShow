@@ -19,7 +19,6 @@ namespace Sever
         {
             InitializeComponent();
             GameShow gameIsBroadcasting = Utils.findGameIsBroadcasting(Host.listGameShow);
-            gameIsBroadcasting = Utils.findNearestGame(Host.listGameShow);
             setInforNearestGame(gameIsBroadcasting);
         }
 

@@ -31,6 +31,7 @@ namespace Sever
             reponsive();
             listQuestion = getListQuestionFromFile();
             setupQuestion(listQuestion[Host.indexCurrentQuestion]);
+            Nearest_Game.mcHasStarted = true;
         }
 
         #region Code Old
@@ -233,7 +234,9 @@ namespace Sever
 
         private void MC_UI_FormClosing(object sender, FormClosingEventArgs e)
         {
+            Nearest_Game.mcHasStarted = false;
             server.CloseConnection(); //Closes all of the opened connections and stops listening
+
         }
     }
 }

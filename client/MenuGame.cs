@@ -24,6 +24,7 @@ namespace client
             Utils.getScheduleFromFile(filePath, ref listGameShow);
             grvListGame.DataSource = listGameShow;
             setInforNearestGame();
+            OpenChildForm(new HowToPlay());
             reponsive();
         }
         public List<GameShow> getScheduleFromFile(string pathFile, int numColumSort)
@@ -115,6 +116,7 @@ namespace client
             if(currentChildForm!=null) currentChildForm.Size = this.Size;
         }
 
+
         private void MenuGame_SizeChanged(object sender, EventArgs e)
         {
             reponsive();
@@ -133,10 +135,18 @@ namespace client
             
             if (countDownTime <= 10)
             {
+                if (countDownTime % 2 == 0) txtUsername.BorderColor = Color.Red;
+                else txtUsername.BorderColor = Color.Cyan;
                 lblTimeEnterGame.ForeColor = lblCountDown.ForeColor = Color.Red;
                 if (countDownTime <= 0)
                 {
                     tmrCountDown.Enabled = false;
+                    if (!String.IsNullOrEmpty(txtUsername.Text))
+                    {
+                        OpenChildForm(new Playgame(txtUsername.Text));
+                    }
+                    else MessageBox.Show("Bạn đã bỏ lở một gameshow vì không nhập tên !!");
+                    setInforNearestGame();
                 }
             }
         }
@@ -148,15 +158,16 @@ namespace client
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Playgame(txtUsername.Text));
-
-
-           
+            if (!String.IsNullOrEmpty(txtUsername.Text))
+            {
+                OpenChildForm(new Playgame(txtUsername.Text));
+            }
+            else MessageBox.Show("Bạn đã bỏ lở một gameshow vì không nhập tên !!");
         }
 
         private void MenuGame_FormClosing(object sender, FormClosingEventArgs e)
         {
-            currentChildForm.Close();
+            if (currentChildForm != null) currentChildForm.Close();
         }
 
         private void grvListGame_CellClick(object sender, DataGridViewCellEventArgs e)

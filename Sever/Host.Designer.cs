@@ -45,8 +45,6 @@
             this.btnHome = new FontAwesome.Sharp.IconButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnLogo = new Guna.UI2.WinForms.Guna2ImageButton();
-            this.lvListPlayer = new System.Windows.Forms.ListView();
-            this.pnlDesktop.SuspendLayout();
             this.pnlScheduleMGMT.SuspendLayout();
             this.guna2GradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconCurrentChildForm)).BeginInit();
@@ -58,7 +56,6 @@
             // pnlDesktop
             // 
             this.pnlDesktop.BackColor = System.Drawing.Color.Transparent;
-            this.pnlDesktop.Controls.Add(this.lvListPlayer);
             this.pnlDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlDesktop.Location = new System.Drawing.Point(0, 53);
             this.pnlDesktop.Name = "pnlDesktop";
@@ -306,15 +303,6 @@
             this.btnLogo.TabIndex = 1;
             this.btnLogo.Click += new System.EventHandler(this.btnLogo_Click);
             // 
-            // lvListPlayer
-            // 
-            this.lvListPlayer.HideSelection = false;
-            this.lvListPlayer.Location = new System.Drawing.Point(668, 0);
-            this.lvListPlayer.Name = "lvListPlayer";
-            this.lvListPlayer.Size = new System.Drawing.Size(326, 650);
-            this.lvListPlayer.TabIndex = 0;
-            this.lvListPlayer.UseCompatibleStateImageBehavior = false;
-            // 
             // Host
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -325,7 +313,6 @@
             this.Name = "Host";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Host";
-            this.pnlDesktop.ResumeLayout(false);
             this.pnlScheduleMGMT.ResumeLayout(false);
             this.guna2GradientPanel1.ResumeLayout(false);
             this.guna2GradientPanel1.PerformLayout();
@@ -355,6 +342,5 @@
         private FontAwesome.Sharp.IconButton btnAboutUs;
         private FontAwesome.Sharp.IconButton btnQuestionMGMT;
         private FontAwesome.Sharp.IconButton btnScheduleMGMT;
-        private System.Windows.Forms.ListView lvListPlayer;
     }
 }

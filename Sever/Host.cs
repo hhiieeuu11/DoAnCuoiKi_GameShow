@@ -27,6 +27,8 @@ namespace Sever
         public Panel leftBorderBtn;
         private Form currentChildForm;
 
+
+        
         public Color activeColor = Color.Cyan;
         //public Color activeColor = Color.FromArgb(199, 0, 57);
         #endregion
@@ -40,7 +42,7 @@ namespace Sever
             leftBorderBtn.Size = new Size(7, 76);
             pnlBtnGroup.Controls.Add(leftBorderBtn);
             activateButton(btnHome, activeColor);
-            //OpenChildForm(new Home());
+            OpenChildForm(new Home());
         }
 
         #region Function
@@ -117,7 +119,7 @@ namespace Sever
         private void btnHome_Click(object sender, EventArgs e)
         {
             activateButton(sender, activeColor);
-            //OpenChildForm(new Home());
+            OpenChildForm(new Home());
         }
 
         private void btnScheduleMGMT_Click(object sender, EventArgs e)
@@ -149,6 +151,12 @@ namespace Sever
         #endregion
 
 
+        public static void startMC()
+        {
+            Form frmMC = new MC_UI();
+            frmMC.Show();
+        }
+
         public static int findPlayer(string id)
         {
             for(int i = 0; i < Host.listIdPlayer.Count; i++)
@@ -174,7 +182,7 @@ namespace Sever
             int indexPlayer = Host.findPlayer(id);
             if (indexPlayer > -1)
             {
-                lvListPlayer.Items[indexPlayer].Remove();
+                //lvListPlayer.Items[indexPlayer].Remove();
                 return true;
             }
             return false;

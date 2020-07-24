@@ -16,6 +16,8 @@ namespace Sever
     {
         string filePath = Host.fileSchedulePath;
         int OrigTime;
+        public static bool mcHasStarted = false;
+
 
         public Nearest_Game()
         {
@@ -61,6 +63,14 @@ namespace Sever
 
         }
 
+        /// <summary>
+        /// Reset information for the nearest game when the previous game has started
+        /// </summary>
+        public void resetInforNearestGame()
+        {
+            GameShow nearestGame = Utils.findNearestGame(Host.listGameShow);
+            setInforNearestGame(nearestGame);
+        }
         private void tmrCountDown_Tick(object sender, EventArgs e)
         {
             OrigTime--;
@@ -71,6 +81,12 @@ namespace Sever
                 if (OrigTime <= 0)
                 {
                     tmrCountDown.Enabled = false;
+                    
+                    if (!mcHasStarted)  //If Form MC_UI has started, program won't start one more MC_UI
+                    {
+                        Host.startMC();
+                    }
+                    resetInforNearestGame();
                 }
             }
         }
