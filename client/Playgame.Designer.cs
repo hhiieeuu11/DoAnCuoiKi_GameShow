@@ -31,18 +31,10 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint1 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 2D);
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint2 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(1D, 2D);
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint3 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(2D, 1D);
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint4 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(3D, 4D);
             System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Playgame));
             this.pnlRight = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.lblA = new System.Windows.Forms.Label();
-            this.chartAnalysis = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.chartCountPlayerAnswer = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.pnlLeft = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pnlInforQuestion = new Guna.UI2.WinForms.Guna2Panel();
@@ -64,13 +56,14 @@
             this.pnlBtnHelp = new System.Windows.Forms.Panel();
             this.proCountDown = new Guna.UI2.WinForms.Guna2CircleProgressBar();
             this.lblCountDown = new System.Windows.Forms.Label();
-            this.npwBox = new DTOProject.numberPeopleWacthing();
             this.btnAudience = new Guna.UI2.WinForms.Guna2Button();
             this.btnCallPhone = new Guna.UI2.WinForms.Guna2Button();
             this.btn5050 = new Guna.UI2.WinForms.Guna2Button();
             this.tmrCountDown = new System.Windows.Forms.Timer(this.components);
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.npwBox = new DTOProject.numberPeopleWacthing();
             this.pnlRight.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chartAnalysis)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartCountPlayerAnswer)).BeginInit();
             this.pnlLeft.SuspendLayout();
             this.panel1.SuspendLayout();
             this.pnlInforQuestion.SuspendLayout();
@@ -79,94 +72,36 @@
             this.panel5.SuspendLayout();
             this.pnlBtnHelp.SuspendLayout();
             this.proCountDown.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlRight
             // 
-            this.pnlRight.Controls.Add(this.label3);
-            this.pnlRight.Controls.Add(this.label2);
-            this.pnlRight.Controls.Add(this.label1);
-            this.pnlRight.Controls.Add(this.lblA);
-            this.pnlRight.Controls.Add(this.chartAnalysis);
+            this.pnlRight.Controls.Add(this.panel2);
             this.pnlRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.pnlRight.Location = new System.Drawing.Point(974, 0);
             this.pnlRight.Name = "pnlRight";
             this.pnlRight.Size = new System.Drawing.Size(286, 703);
             this.pnlRight.TabIndex = 7;
             // 
-            // label3
-            // 
-            this.label3.BackColor = System.Drawing.Color.White;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(210, 347);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(42, 23);
-            this.label3.TabIndex = 32;
-            this.label3.Text = "D";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label2
-            // 
-            this.label2.BackColor = System.Drawing.Color.White;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(162, 347);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(42, 23);
-            this.label2.TabIndex = 31;
-            this.label2.Text = "C";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label1
-            // 
-            this.label1.BackColor = System.Drawing.Color.White;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(114, 347);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(42, 23);
-            this.label1.TabIndex = 30;
-            this.label1.Text = "B";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblA
-            // 
-            this.lblA.BackColor = System.Drawing.Color.White;
-            this.lblA.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblA.Location = new System.Drawing.Point(66, 347);
-            this.lblA.Name = "lblA";
-            this.lblA.Size = new System.Drawing.Size(42, 23);
-            this.lblA.TabIndex = 29;
-            this.lblA.Text = "A";
-            this.lblA.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // chartAnalysis
+            // chartCountPlayerAnswer
             // 
             chartArea1.Name = "ChartArea1";
-            this.chartAnalysis.ChartAreas.Add(chartArea1);
-            this.chartAnalysis.Location = new System.Drawing.Point(9, 140);
-            this.chartAnalysis.Name = "chartAnalysis";
+            this.chartCountPlayerAnswer.ChartAreas.Add(chartArea1);
+            this.chartCountPlayerAnswer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.chartCountPlayerAnswer.Location = new System.Drawing.Point(0, 0);
+            this.chartCountPlayerAnswer.Name = "chartCountPlayerAnswer";
             series1.ChartArea = "ChartArea1";
             series1.IsXValueIndexed = true;
-            series1.Label = "A";
             series1.MarkerSize = 10;
-            series1.Name = "number";
-            dataPoint1.AxisLabel = "";
-            dataPoint1.BorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.NotSet;
-            dataPoint1.Label = "";
-            dataPoint1.MarkerSize = 10;
-            dataPoint2.Label = "";
-            dataPoint3.Label = "";
-            dataPoint4.Label = "";
-            series1.Points.Add(dataPoint1);
-            series1.Points.Add(dataPoint2);
-            series1.Points.Add(dataPoint3);
-            series1.Points.Add(dataPoint4);
-            this.chartAnalysis.Series.Add(series1);
-            this.chartAnalysis.Size = new System.Drawing.Size(277, 240);
-            this.chartAnalysis.TabIndex = 28;
+            series1.Name = "numberOfPlayerChoose";
+            this.chartCountPlayerAnswer.Series.Add(series1);
+            this.chartCountPlayerAnswer.Size = new System.Drawing.Size(286, 305);
+            this.chartCountPlayerAnswer.TabIndex = 28;
             title1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             title1.Name = "Title1";
             title1.Text = "ANALYSIS TABLE";
-            this.chartAnalysis.Titles.Add(title1);
+            this.chartCountPlayerAnswer.Titles.Add(title1);
             // 
             // pnlLeft
             // 
@@ -414,15 +349,6 @@
             this.lblCountDown.Text = "0:15";
             this.lblCountDown.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // npwBox
-            // 
-            this.npwBox.BackColor = System.Drawing.Color.Transparent;
-            this.npwBox.Location = new System.Drawing.Point(755, 26);
-            this.npwBox.Name = "npwBox";
-            this.npwBox.Number = 0;
-            this.npwBox.Size = new System.Drawing.Size(81, 30);
-            this.npwBox.TabIndex = 22;
-            // 
             // btnAudience
             // 
             this.btnAudience.BackColor = System.Drawing.Color.Transparent;
@@ -479,6 +405,24 @@
             this.tmrCountDown.Interval = 1000;
             this.tmrCountDown.Tick += new System.EventHandler(this.tmrCountDown_Tick);
             // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.chartCountPlayerAnswer);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(286, 305);
+            this.panel2.TabIndex = 0;
+            // 
+            // npwBox
+            // 
+            this.npwBox.BackColor = System.Drawing.Color.Transparent;
+            this.npwBox.Location = new System.Drawing.Point(755, 26);
+            this.npwBox.Name = "npwBox";
+            this.npwBox.Number = 0;
+            this.npwBox.Size = new System.Drawing.Size(81, 30);
+            this.npwBox.TabIndex = 22;
+            // 
             // Playgame
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -495,7 +439,7 @@
             this.Load += new System.EventHandler(this.Playgame_Load);
             this.ClientSizeChanged += new System.EventHandler(this.Playgame_ClientSizeChanged);
             this.pnlRight.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.chartAnalysis)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartCountPlayerAnswer)).EndInit();
             this.pnlLeft.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.pnlInforQuestion.ResumeLayout(false);
@@ -504,6 +448,7 @@
             this.panel5.ResumeLayout(false);
             this.pnlBtnHelp.ResumeLayout(false);
             this.proCountDown.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -536,11 +481,8 @@
         private System.Windows.Forms.Label lblCountDown;
         private DTOProject.numberPeopleWacthing npwBox;
         private System.Windows.Forms.Timer tmrCountDown;
-        private System.Windows.Forms.Label lblA;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chartAnalysis;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartCountPlayerAnswer;
+        private System.Windows.Forms.Panel panel2;
     }
 }
 

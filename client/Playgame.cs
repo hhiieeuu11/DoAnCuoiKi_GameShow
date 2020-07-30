@@ -88,7 +88,12 @@ namespace client
         {
             pnlInforQuestion.Show();
             var data =  Utils.ByteArrayToObject(Data);
-            if(data is Question)
+            if (data is DataChart)
+            {
+                DataChart dataChart = (DataChart)data;
+                updateChart(dataChart);
+            }
+            else if (data is Question)
             {
                 choosed = false;
                 setQuestion((Question)data);
@@ -100,6 +105,16 @@ namespace client
             {
                 showAnswerCorrect((AnswerCorrect)data);
             }
+           
+        }
+
+        public void updateChart(DataChart dataChart)
+        {
+            chartCountPlayerAnswer.Series["numberOfPlayerChoose"].Points.Clear();
+            chartCountPlayerAnswer.Series["numberOfPlayerChoose"].Points.AddXY("A", dataChart.CountA);
+            chartCountPlayerAnswer.Series["numberOfPlayerChoose"].Points.AddXY("B", dataChart.CountB);
+            chartCountPlayerAnswer.Series["numberOfPlayerChoose"].Points.AddXY("C", dataChart.CountC);
+            chartCountPlayerAnswer.Series["numberOfPlayerChoose"].Points.AddXY("D", dataChart.CountD);
         }
 
         public void showAnswerCorrect(AnswerCorrect answerCorrect)

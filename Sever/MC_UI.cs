@@ -8,6 +8,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -18,12 +19,10 @@ namespace Sever
         int OrigTime = 15;
 
         NetComm.Host server; //Creates the host variable object
-
-
         Color colorAnswerCorrect = Color.FromArgb(0, 192, 0);
         List <Question> listQuestion = new List<Question>();
         string filePath = "../../question.txt";
-        Dictionary<string, int> StatisticalDataOfQuestion = new Dictionary<string, int>();
+        DataChart statisticalData;  //Statistical data of the player's answer to each question
 
 
 
@@ -34,8 +33,8 @@ namespace Sever
             listQuestion = getListQuestionFromFile();
             setupQuestion(listQuestion[Host.indexCurrentQuestion]);
             Nearest_Game.mcHasStarted = true;
-            initStatisticalData(StatisticalDataOfQuestion);
-            updateChart(StatisticalDataOfQuestion["A"], StatisticalDataOfQuestion["B"], StatisticalDataOfQuestion["C"], StatisticalDataOfQuestion["D"]);
+            statisticalData = new DataChart();
+            updateChart(statisticalData);
         }
 
         #region Code Old
@@ -178,6 +177,7 @@ namespace Sever
             if (OrigTime <= 0)
             {
                 tmrCountDown.Enabled = false;
+                sendCorrectAnswer(Host.indexCurrentQuestion);
                 showAnswerCorrect(listQuestion[Host.indexCurrentQuestion]);
                 btnNext.Enabled = true;
             }
@@ -188,6 +188,10 @@ namespace Sever
             tmrCountDown.Enabled = true;
             btnSendQuestion.Enabled = false;
             btnNext.Enabled = false;
+
+            statisticalData.refesh();
+            updateChart(statisticalData);
+
             Question question = new Question
             {
                 Id = listQuestion[Host.indexCurrentQuestion].Id,
@@ -195,6 +199,7 @@ namespace Sever
                 Content = listQuestion[Host.indexCurrentQuestion].Content
             }; //Create new question with Correct answer is null;
             server.Brodcast(Utils.ObjectToByteArray(question));
+            server.Brodcast(Utils.ObjectToByteArray(statisticalData));
         }
 
 
@@ -234,16 +239,17 @@ namespace Sever
         }
         void Server_lostConnection(string id)
         {
-            //lvListPlayer.Items.Remove(lvListPlayer.Items[findPlayer(id)]);
+            lvListPlayer.Items.Remove(lvListPlayer.FindItemWithText(id));            
         }
 
         void Server_DataReceived(string ID, byte[] Data)
         {
             var data = (string)Utils.ByteArrayToObject(Data);
             lvListPlayer.Items.Add(ID + (string)Utils.ByteArrayToObject(Data));
-            updateStatisticalData(data, StatisticalDataOfQuestion);
-            updateChart(StatisticalDataOfQuestion["A"], StatisticalDataOfQuestion["B"], StatisticalDataOfQuestion["C"], StatisticalDataOfQuestion["D"]);
-
+            updateDataChart(data, statisticalData);
+            updateChart(statisticalData);
+            server.Brodcast(Utils.ObjectToByteArray(statisticalData)); //Send Statistical data of the player's 
+                                                                        //answer to each question 
         }
 
         private void MC_UI_FormClosing(object sender, FormClosingEventArgs e)
@@ -255,25 +261,26 @@ namespace Sever
 
         private void btnSendAnswer_Click(object sender, EventArgs e)
         {
-            AnswerCorrect answerCorrect = new AnswerCorrect();
-            answerCorrect.Content = listQuestion[Host.indexCurrentQuestion].AnswerCorrect;
-            server.Brodcast(Utils.ObjectToByteArray(answerCorrect));
-        }
-        /// <summary>
-        /// Initialize statistical data
-        /// </summary>
-        /// <param name="StatisticalDataOfQuestion"></param>
-        public void initStatisticalData(Dictionary<string,int> StatisticalDataOfQuestion)
-        {
-            StatisticalDataOfQuestion.Add("A", 0);
-            StatisticalDataOfQuestion.Add("B", 0);
-            StatisticalDataOfQuestion.Add("C", 0);
-            StatisticalDataOfQuestion.Add("D", 0);
+            sendCorrectAnswer(Host.indexCurrentQuestion);
         }
 
-        public void updateStatisticalData(string vote,Dictionary<string, int> StatisticalDataOfQuestion)
+        public void updateDataChart(string vote, DataChart dataChart)
         {
-            StatisticalDataOfQuestion[vote]++;
+            switch (vote)
+            {
+                case "A":
+                    dataChart.CountA++;
+                    break;
+                case "B":
+                    dataChart.CountB++;
+                    break;
+                case "C":
+                    dataChart.CountC++;
+                    break;
+                default:
+                    dataChart.CountD++;
+                    break;
+            }
         }
 
         /// <summary>
@@ -283,13 +290,23 @@ namespace Sever
         /// <param name="countB">Number of people choosing answers B</param>
         /// <param name="countC">Number of people choosing answers C</param>
         /// <param name="countD">Number of people choosing answers D</param>
-        public void updateChart(int countA, int countB, int countC, int countD)
+        public void updateChart(DataChart dataChart)
         {
-            chartCountPlayerAnswer.Series["numberOfPlayerChoose"].Points.Clear();
-            chartCountPlayerAnswer.Series["numberOfPlayerChoose"].Points.AddXY("A", countA);
-            chartCountPlayerAnswer.Series["numberOfPlayerChoose"].Points.AddXY("B", countB);
-            chartCountPlayerAnswer.Series["numberOfPlayerChoose"].Points.AddXY("C", countC);
-            chartCountPlayerAnswer.Series["numberOfPlayerChoose"].Points.AddXY("D", countD);
+            if (chartCountPlayerAnswer.Series["numberOfPlayerChoose"].Points.Count != 0)
+            {
+                chartCountPlayerAnswer.Series["numberOfPlayerChoose"].Points.Clear();
+            }
+            chartCountPlayerAnswer.Series["numberOfPlayerChoose"].Points.AddXY("A", dataChart.CountA);
+            chartCountPlayerAnswer.Series["numberOfPlayerChoose"].Points.AddXY("B", dataChart.CountB);
+            chartCountPlayerAnswer.Series["numberOfPlayerChoose"].Points.AddXY("C", dataChart.CountC);
+            chartCountPlayerAnswer.Series["numberOfPlayerChoose"].Points.AddXY("D", dataChart.CountD);
+        }
+
+        public void sendCorrectAnswer(int indexQuestion)
+        {
+            AnswerCorrect answerCorrect = new AnswerCorrect();
+            answerCorrect.Content = listQuestion[indexQuestion].AnswerCorrect;
+            server.Brodcast(Utils.ObjectToByteArray(answerCorrect));
         }
     }
 }
