@@ -29,12 +29,20 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint1 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 2D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint2 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(1D, 2D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint3 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(2D, 1D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint4 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(3D, 4D);
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Playgame));
             this.pnlRight = new System.Windows.Forms.Panel();
-            this.grvLstScore = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblA = new System.Windows.Forms.Label();
+            this.chartAnalysis = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.pnlLeft = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pnlInforQuestion = new Guna.UI2.WinForms.Guna2Panel();
@@ -62,7 +70,7 @@
             this.btn5050 = new Guna.UI2.WinForms.Guna2Button();
             this.tmrCountDown = new System.Windows.Forms.Timer(this.components);
             this.pnlRight.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.grvLstScore)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartAnalysis)).BeginInit();
             this.pnlLeft.SuspendLayout();
             this.panel1.SuspendLayout();
             this.pnlInforQuestion.SuspendLayout();
@@ -75,71 +83,90 @@
             // 
             // pnlRight
             // 
-            this.pnlRight.Controls.Add(this.grvLstScore);
+            this.pnlRight.Controls.Add(this.label3);
+            this.pnlRight.Controls.Add(this.label2);
+            this.pnlRight.Controls.Add(this.label1);
+            this.pnlRight.Controls.Add(this.lblA);
+            this.pnlRight.Controls.Add(this.chartAnalysis);
             this.pnlRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.pnlRight.Location = new System.Drawing.Point(974, 0);
             this.pnlRight.Name = "pnlRight";
             this.pnlRight.Size = new System.Drawing.Size(286, 703);
             this.pnlRight.TabIndex = 7;
             // 
-            // grvLstScore
+            // label3
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.grvLstScore.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.grvLstScore.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.grvLstScore.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.grvLstScore.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.grvLstScore.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.grvLstScore.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grvLstScore.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.grvLstScore.ColumnHeadersHeight = 4;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.grvLstScore.DefaultCellStyle = dataGridViewCellStyle3;
-            this.grvLstScore.EnableHeadersVisualStyles = false;
-            this.grvLstScore.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.grvLstScore.Location = new System.Drawing.Point(3, 50);
-            this.grvLstScore.Name = "grvLstScore";
-            this.grvLstScore.RowHeadersVisible = false;
-            this.grvLstScore.RowHeadersWidth = 51;
-            this.grvLstScore.RowTemplate.Height = 24;
-            this.grvLstScore.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grvLstScore.Size = new System.Drawing.Size(280, 320);
-            this.grvLstScore.TabIndex = 7;
-            this.grvLstScore.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
-            this.grvLstScore.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
-            this.grvLstScore.ThemeStyle.AlternatingRowsStyle.Font = null;
-            this.grvLstScore.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
-            this.grvLstScore.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
-            this.grvLstScore.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-            this.grvLstScore.ThemeStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.grvLstScore.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.grvLstScore.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.grvLstScore.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.grvLstScore.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            this.grvLstScore.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.grvLstScore.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.grvLstScore.ThemeStyle.HeaderStyle.Height = 4;
-            this.grvLstScore.ThemeStyle.ReadOnly = false;
-            this.grvLstScore.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
-            this.grvLstScore.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.grvLstScore.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            this.grvLstScore.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.grvLstScore.ThemeStyle.RowsStyle.Height = 24;
-            this.grvLstScore.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.grvLstScore.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.label3.BackColor = System.Drawing.Color.White;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(210, 347);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(42, 23);
+            this.label3.TabIndex = 32;
+            this.label3.Text = "D";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label2
+            // 
+            this.label2.BackColor = System.Drawing.Color.White;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(162, 347);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(42, 23);
+            this.label2.TabIndex = 31;
+            this.label2.Text = "C";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label1
+            // 
+            this.label1.BackColor = System.Drawing.Color.White;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(114, 347);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(42, 23);
+            this.label1.TabIndex = 30;
+            this.label1.Text = "B";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblA
+            // 
+            this.lblA.BackColor = System.Drawing.Color.White;
+            this.lblA.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblA.Location = new System.Drawing.Point(66, 347);
+            this.lblA.Name = "lblA";
+            this.lblA.Size = new System.Drawing.Size(42, 23);
+            this.lblA.TabIndex = 29;
+            this.lblA.Text = "A";
+            this.lblA.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // chartAnalysis
+            // 
+            chartArea1.Name = "ChartArea1";
+            this.chartAnalysis.ChartAreas.Add(chartArea1);
+            this.chartAnalysis.Location = new System.Drawing.Point(9, 140);
+            this.chartAnalysis.Name = "chartAnalysis";
+            series1.ChartArea = "ChartArea1";
+            series1.IsXValueIndexed = true;
+            series1.Label = "A";
+            series1.MarkerSize = 10;
+            series1.Name = "number";
+            dataPoint1.AxisLabel = "";
+            dataPoint1.BorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.NotSet;
+            dataPoint1.Label = "";
+            dataPoint1.MarkerSize = 10;
+            dataPoint2.Label = "";
+            dataPoint3.Label = "";
+            dataPoint4.Label = "";
+            series1.Points.Add(dataPoint1);
+            series1.Points.Add(dataPoint2);
+            series1.Points.Add(dataPoint3);
+            series1.Points.Add(dataPoint4);
+            this.chartAnalysis.Series.Add(series1);
+            this.chartAnalysis.Size = new System.Drawing.Size(277, 240);
+            this.chartAnalysis.TabIndex = 28;
+            title1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            title1.Name = "Title1";
+            title1.Text = "ANALYSIS TABLE";
+            this.chartAnalysis.Titles.Add(title1);
             // 
             // pnlLeft
             // 
@@ -201,7 +228,6 @@
             this.btnAnswerD.Size = new System.Drawing.Size(450, 70);
             this.btnAnswerD.TabIndex = 27;
             this.btnAnswerD.Text = "D. ";
-            this.btnAnswerD.Click += new System.EventHandler(this.btn_Click);
             // 
             // btnAnswerC
             // 
@@ -218,7 +244,6 @@
             this.btnAnswerC.Size = new System.Drawing.Size(450, 70);
             this.btnAnswerC.TabIndex = 26;
             this.btnAnswerC.Text = "C. ";
-            this.btnAnswerC.Click += new System.EventHandler(this.btn_Click);
             // 
             // btnAnswerB
             // 
@@ -235,7 +260,6 @@
             this.btnAnswerB.Size = new System.Drawing.Size(450, 70);
             this.btnAnswerB.TabIndex = 25;
             this.btnAnswerB.Text = "B. ";
-            this.btnAnswerB.Click += new System.EventHandler(this.btn_Click);
             // 
             // btnAnswerA
             // 
@@ -251,8 +275,7 @@
             this.btnAnswerA.ShadowDecoration.Parent = this.btnAnswerA;
             this.btnAnswerA.Size = new System.Drawing.Size(450, 70);
             this.btnAnswerA.TabIndex = 24;
-            this.btnAnswerA.Text = "A. ";
-            this.btnAnswerA.Click += new System.EventHandler(this.btn_Click);
+            this.btnAnswerA.Text = "A.";
             // 
             // guna2Panel1
             // 
@@ -472,7 +495,7 @@
             this.Load += new System.EventHandler(this.Playgame_Load);
             this.ClientSizeChanged += new System.EventHandler(this.Playgame_ClientSizeChanged);
             this.pnlRight.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.grvLstScore)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartAnalysis)).EndInit();
             this.pnlLeft.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.pnlInforQuestion.ResumeLayout(false);
@@ -487,7 +510,6 @@
 
         #endregion
         private System.Windows.Forms.Panel pnlRight;
-        private Guna.UI2.WinForms.Guna2DataGridView grvLstScore;
         private System.Windows.Forms.Panel pnlLeft;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel pnlBtnHelp;
@@ -514,6 +536,11 @@
         private System.Windows.Forms.Label lblCountDown;
         private DTOProject.numberPeopleWacthing npwBox;
         private System.Windows.Forms.Timer tmrCountDown;
+        private System.Windows.Forms.Label lblA;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartAnalysis;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
     }
 }
 

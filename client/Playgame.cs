@@ -17,7 +17,7 @@ namespace client
     {
 
         const int COUNTDOWN_TIME = 15;
-
+        bool choosed = false;   //The player has chosen the answer = True else False; 
         int OrigTime = COUNTDOWN_TIME; // count down time
         string nameClient;
         NetComm.Client client; //The client object used for the communication
@@ -87,13 +87,29 @@ namespace client
         void client_DataReceived(byte[] Data, string ID)
         {
             pnlInforQuestion.Show();
-            Question question =  (Question)Utils.ByteArrayToObject(Data);
-            setQuestion(question);
-            enableButtonAnswer();
-            resetClock();
-            tmrCountDown.Enabled = true;
+            var data =  Utils.ByteArrayToObject(Data);
+            if(data is Question)
+            {
+                choosed = false;
+                setQuestion((Question)data);
+                enableButtonAnswer();
+                tmrCountDown.Enabled = true;
+                resetClock();
+            }
+            else if(data is AnswerCorrect)
+            {
+                showAnswerCorrect((AnswerCorrect)data);
+            }
         }
 
+        public void showAnswerCorrect(AnswerCorrect answerCorrect)
+        {
+            foreach (var ctl in pnlAnwserGroup.Controls)
+            {
+                Guna2Button btn = (Guna2Button)ctl;
+                if (btn.Text == answerCorrect.Content) btn.FillColor = Color.Lime; 
+            }
+        }
 
         /// <summary>
         /// Set infor of question into controls
@@ -107,7 +123,6 @@ namespace client
             {
                 
                 Guna2Button btn = (Guna2Button)ctl;
-                btn.Click += new System.EventHandler(this.btn_Click);
                 btn.Text = question.listAnswer[i++];
             }
         }
@@ -123,7 +138,8 @@ namespace client
             foreach (var ctl in pnlAnwserGroup.Controls)
             {
                 Guna2Button btn = (Guna2Button)ctl;
-                btn.Enabled = false;
+                btn.Click -= new System.EventHandler(this.btn_Click);
+                btn.FillColor = Color.Gray;
             }
         }
         public void enableButtonAnswer()
@@ -131,30 +147,32 @@ namespace client
             foreach (var ctl in pnlAnwserGroup.Controls)
             {
                 Guna2Button btn = (Guna2Button)ctl;
-                btn.Enabled = true;
+                btn.Click += new System.EventHandler(this.btn_Click);
+                btn.FillColor = Color.FromArgb(0, 122, 204);
             }
         }
 
-
-        private void btn_Click(object sender, EventArgs e)
-        {
-           // Guna2Button btn = (Guna2Button)sender;
-            unableButtonAnswer();
-            client.SendData(Utils.ObjectToByteArray(((Guna2Button)sender).Text));
-        }
 
 
 
         #endregion
 
+
+        private void btn_Click(object sender, EventArgs e)
+        {
+            choosed = true; //Check The player has chosen the answer 
+            unableButtonAnswer();
+            Guna2Button btn = (Guna2Button)sender;
+            btn.FillColor = Color.Red;
+            string nameBtn = (btn).Name;
+            client.SendData(Utils.ObjectToByteArray(nameBtn[nameBtn.Length - 1].ToString()));
+        }
         private void Playgame_FormClosed(object sender, FormClosedEventArgs e)
         {
             if (client.isConnected)
                 client.Disconnect(); //Disconnects if the 
-                                                         //client is connected, closing the communication thread
+                                     //client is connected, closing the communication thread
         }
-
-
 
         private void tmrCountDown_Tick(object sender, EventArgs e)
         {
@@ -164,7 +182,7 @@ namespace client
             if (OrigTime <= 0)
             {
                 tmrCountDown.Enabled = false;
-                unableButtonAnswer();
+                if (!choosed) unableButtonAnswer();
             }
         }
 

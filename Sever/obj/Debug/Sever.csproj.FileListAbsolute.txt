@@ -24,3 +24,12 @@ C:\Users\HOME\OneDrive\Máy tính\GameShow\Sever\obj\Debug\Sever.exe
 C:\Users\HOME\OneDrive\Máy tính\GameShow\Sever\obj\Debug\Sever.pdb
 C:\Users\HOME\OneDrive\Máy tính\GameShow\Sever\obj\Debug\Sever.AboutUsSV.resources
 C:\Users\HOME\OneDrive\Máy tính\GameShow\Sever\bin\Debug\NetComm.dll
+C:\Users\HOME\OneDrive\Máy tính\GameShow\Sever\bin\Debug\LiveCharts.dll
+C:\Users\HOME\OneDrive\Máy tính\GameShow\Sever\bin\Debug\LiveCharts.WinForms.dll
+C:\Users\HOME\OneDrive\Máy tính\GameShow\Sever\bin\Debug\LiveCharts.Wpf.dll
+C:\Users\HOME\OneDrive\Máy tính\GameShow\Sever\bin\Debug\LiveCharts.pdb
+C:\Users\HOME\OneDrive\Máy tính\GameShow\Sever\bin\Debug\LiveCharts.xml
+C:\Users\HOME\OneDrive\Máy tính\GameShow\Sever\bin\Debug\LiveCharts.WinForms.pdb
+C:\Users\HOME\OneDrive\Máy tính\GameShow\Sever\bin\Debug\LiveCharts.WinForms.xml
+C:\Users\HOME\OneDrive\Máy tính\GameShow\Sever\bin\Debug\LiveCharts.Wpf.pdb
+C:\Users\HOME\OneDrive\Máy tính\GameShow\Sever\bin\Debug\LiveCharts.Wpf.xml

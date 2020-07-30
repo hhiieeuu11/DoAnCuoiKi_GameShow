@@ -23,13 +23,13 @@ $Kiến thức lớp 1
 #txtQuestion.Text
 $Trong textbox có thuộc tính Data và Content. Tag là thuộc tính bạn có thể lưu bất cứ thí gì mà bạn thích, nhưng dữ liệu vừa nhập vào sẽ được lưu vào thuộc tính Text
 !04
-@3 * 2 = ?
+@3 * 3 = ?
 &6
-&7
+&9
 &3
-&5
-#6
-$Kiến thức lớp 1
+&33
+#9
+$Kiến thức lớp 2
 !05
 @100+ 1 = ?
 &99

@@ -18,12 +18,14 @@ namespace Sever
         int OrigTime = 15;
 
         NetComm.Host server; //Creates the host variable object
-        
 
 
         Color colorAnswerCorrect = Color.FromArgb(0, 192, 0);
         List <Question> listQuestion = new List<Question>();
         string filePath = "../../question.txt";
+        Dictionary<string, int> StatisticalDataOfQuestion = new Dictionary<string, int>();
+
+
 
         public MC_UI()
         {
@@ -32,6 +34,8 @@ namespace Sever
             listQuestion = getListQuestionFromFile();
             setupQuestion(listQuestion[Host.indexCurrentQuestion]);
             Nearest_Game.mcHasStarted = true;
+            initStatisticalData(StatisticalDataOfQuestion);
+            updateChart(StatisticalDataOfQuestion["A"], StatisticalDataOfQuestion["B"], StatisticalDataOfQuestion["C"], StatisticalDataOfQuestion["D"]);
         }
 
         #region Code Old
@@ -163,7 +167,7 @@ namespace Sever
             else
                 MessageBox.Show("You have run out of questions!", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             btnNext.Enabled = false;
-            btnSend.Enabled = true;
+            btnSendQuestion.Enabled = true;
         }
 
         private void CountDown_Tick(object sender, EventArgs e)
@@ -179,12 +183,18 @@ namespace Sever
             }
         }
 
-        private void btnSend_Click(object sender, EventArgs e)
+        private void btnSendQuestion_Click(object sender, EventArgs e)
         {
             tmrCountDown.Enabled = true;
-            btnSend.Enabled = false;
+            btnSendQuestion.Enabled = false;
             btnNext.Enabled = false;
-            server.Brodcast(Utils.ObjectToByteArray(listQuestion[Host.indexCurrentQuestion]));
+            Question question = new Question
+            {
+                Id = listQuestion[Host.indexCurrentQuestion].Id,
+                listAnswer = listQuestion[Host.indexCurrentQuestion].listAnswer,
+                Content = listQuestion[Host.indexCurrentQuestion].Content
+            }; //Create new question with Correct answer is null;
+            server.Brodcast(Utils.ObjectToByteArray(question));
         }
 
 
@@ -229,7 +239,11 @@ namespace Sever
 
         void Server_DataReceived(string ID, byte[] Data)
         {
+            var data = (string)Utils.ByteArrayToObject(Data);
             lvListPlayer.Items.Add(ID + (string)Utils.ByteArrayToObject(Data));
+            updateStatisticalData(data, StatisticalDataOfQuestion);
+            updateChart(StatisticalDataOfQuestion["A"], StatisticalDataOfQuestion["B"], StatisticalDataOfQuestion["C"], StatisticalDataOfQuestion["D"]);
+
         }
 
         private void MC_UI_FormClosing(object sender, FormClosingEventArgs e)
@@ -237,6 +251,45 @@ namespace Sever
             Nearest_Game.mcHasStarted = false;
             server.CloseConnection(); //Closes all of the opened connections and stops listening
 
+        }
+
+        private void btnSendAnswer_Click(object sender, EventArgs e)
+        {
+            AnswerCorrect answerCorrect = new AnswerCorrect();
+            answerCorrect.Content = listQuestion[Host.indexCurrentQuestion].AnswerCorrect;
+            server.Brodcast(Utils.ObjectToByteArray(answerCorrect));
+        }
+        /// <summary>
+        /// Initialize statistical data
+        /// </summary>
+        /// <param name="StatisticalDataOfQuestion"></param>
+        public void initStatisticalData(Dictionary<string,int> StatisticalDataOfQuestion)
+        {
+            StatisticalDataOfQuestion.Add("A", 0);
+            StatisticalDataOfQuestion.Add("B", 0);
+            StatisticalDataOfQuestion.Add("C", 0);
+            StatisticalDataOfQuestion.Add("D", 0);
+        }
+
+        public void updateStatisticalData(string vote,Dictionary<string, int> StatisticalDataOfQuestion)
+        {
+            StatisticalDataOfQuestion[vote]++;
+        }
+
+        /// <summary>
+        /// Update data chart 
+        /// </summary>
+        /// <param name="countA">Number of people choosing answers A</param>
+        /// <param name="countB">Number of people choosing answers B</param>
+        /// <param name="countC">Number of people choosing answers C</param>
+        /// <param name="countD">Number of people choosing answers D</param>
+        public void updateChart(int countA, int countB, int countC, int countD)
+        {
+            chartCountPlayerAnswer.Series["numberOfPlayerChoose"].Points.Clear();
+            chartCountPlayerAnswer.Series["numberOfPlayerChoose"].Points.AddXY("A", countA);
+            chartCountPlayerAnswer.Series["numberOfPlayerChoose"].Points.AddXY("B", countB);
+            chartCountPlayerAnswer.Series["numberOfPlayerChoose"].Points.AddXY("C", countC);
+            chartCountPlayerAnswer.Series["numberOfPlayerChoose"].Points.AddXY("D", countD);
         }
     }
 }

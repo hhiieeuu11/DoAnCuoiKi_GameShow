@@ -50,9 +50,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="DTO\AnswerCorrect.cs" />
     <Compile Include="DTO\GameShow.cs" />
     <Compile Include="DTO\Player.cs" />
     <Compile Include="DTO\Question.cs" />
+    <Compile Include="DTO\DataChart.cs" />
     <Compile Include="numberPeopleWacthing.cs">
       <SubType>UserControl</SubType>
     </Compile>

@@ -29,15 +29,18 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MC_UI));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new string[] {
             "123"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.White, null);
             System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem(new string[] {
             "456"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.White, null);
             System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem("");
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MC_UI));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.elipseNumberWatching = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.npwBox = new DTOProject.numberPeopleWacthing();
             this.pnlLeftTop = new System.Windows.Forms.Panel();
@@ -45,12 +48,15 @@
             this.lblTopicInfor = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.pnlCamera = new Guna.UI2.WinForms.Guna2Panel();
+            this.lvListPlayer = new System.Windows.Forms.ListView();
             this.proCountDown = new Guna.UI2.WinForms.Guna2CircleProgressBar();
             this.lblCountDown = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pnlLeft = new System.Windows.Forms.Panel();
             this.pnLeftBottom = new System.Windows.Forms.Panel();
             this.pnlContainsQuestion = new Guna.UI2.WinForms.Guna2Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.btnSendAnswer = new Guna.UI2.WinForms.Guna2Button();
             this.pnlAnswerGroup = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -62,7 +68,7 @@
             this.lblAnswerA = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnNext = new Guna.UI2.WinForms.Guna2Button();
-            this.btnSend = new Guna.UI2.WinForms.Guna2Button();
+            this.btnSendQuestion = new Guna.UI2.WinForms.Guna2Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblQuestion = new System.Windows.Forms.Label();
             this.guna2CustomGradientPanel2 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
@@ -73,15 +79,15 @@
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.pnlRight = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.pnlRightBottom = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.pnlRightTop = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.grvListQuestion = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
+            this.pnlRightTop = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.chartCountPlayerAnswer = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.guna2GradientPanel2 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.tmrCountDown = new System.Windows.Forms.Timer(this.components);
             this.elipseClock = new Guna.UI2.WinForms.Guna2Elipse(this.components);
-            this.lvListPlayer = new System.Windows.Forms.ListView();
             this.pnlLeftTop.SuspendLayout();
             this.pnlContainsTopic.SuspendLayout();
             this.pnlCamera.SuspendLayout();
@@ -95,8 +101,9 @@
             this.guna2CustomGradientPanel1.SuspendLayout();
             this.pnlRight.SuspendLayout();
             this.pnlRightBottom.SuspendLayout();
-            this.pnlRightTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grvListQuestion)).BeginInit();
+            this.pnlRightTop.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chartCountPlayerAnswer)).BeginInit();
             this.SuspendLayout();
             // 
             // elipseNumberWatching
@@ -172,6 +179,7 @@
             this.pnlCamera.BorderColor = System.Drawing.Color.Aqua;
             this.pnlCamera.BorderRadius = 20;
             this.pnlCamera.BorderThickness = 2;
+            this.pnlCamera.Controls.Add(this.lvListPlayer);
             this.pnlCamera.Controls.Add(this.proCountDown);
             this.pnlCamera.Controls.Add(this.npwBox);
             this.pnlCamera.Controls.Add(this.label1);
@@ -181,6 +189,22 @@
             this.pnlCamera.ShadowDecoration.Parent = this.pnlCamera;
             this.pnlCamera.Size = new System.Drawing.Size(467, 355);
             this.pnlCamera.TabIndex = 0;
+            // 
+            // lvListPlayer
+            // 
+            this.lvListPlayer.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lvListPlayer.HideSelection = false;
+            this.lvListPlayer.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
+            listViewItem1,
+            listViewItem2,
+            listViewItem3});
+            this.lvListPlayer.Location = new System.Drawing.Point(112, 13);
+            this.lvListPlayer.Name = "lvListPlayer";
+            this.lvListPlayer.ShowItemToolTips = true;
+            this.lvListPlayer.Size = new System.Drawing.Size(349, 342);
+            this.lvListPlayer.TabIndex = 37;
+            this.lvListPlayer.UseCompatibleStateImageBehavior = false;
+            this.lvListPlayer.View = System.Windows.Forms.View.Tile;
             // 
             // proCountDown
             // 
@@ -248,16 +272,52 @@
             // 
             // pnlContainsQuestion
             // 
+            this.pnlContainsQuestion.Controls.Add(this.panel4);
+            this.pnlContainsQuestion.Controls.Add(this.btnSendAnswer);
             this.pnlContainsQuestion.Controls.Add(this.pnlAnswerGroup);
             this.pnlContainsQuestion.Controls.Add(this.panel1);
             this.pnlContainsQuestion.Controls.Add(this.btnNext);
-            this.pnlContainsQuestion.Controls.Add(this.btnSend);
+            this.pnlContainsQuestion.Controls.Add(this.btnSendQuestion);
             this.pnlContainsQuestion.Controls.Add(this.panel2);
             this.pnlContainsQuestion.Location = new System.Drawing.Point(10, 9);
             this.pnlContainsQuestion.Name = "pnlContainsQuestion";
             this.pnlContainsQuestion.ShadowDecoration.Parent = this.pnlContainsQuestion;
             this.pnlContainsQuestion.Size = new System.Drawing.Size(889, 389);
             this.pnlContainsQuestion.TabIndex = 6;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.Aqua;
+            this.panel4.Location = new System.Drawing.Point(716, 337);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(3, 42);
+            this.panel4.TabIndex = 15;
+            // 
+            // btnSendAnswer
+            // 
+            this.btnSendAnswer.Animated = true;
+            this.btnSendAnswer.BackColor = System.Drawing.Color.Transparent;
+            this.btnSendAnswer.BorderColor = System.Drawing.Color.Transparent;
+            this.btnSendAnswer.BorderRadius = 20;
+            this.btnSendAnswer.BorderThickness = 2;
+            this.btnSendAnswer.CheckedState.Parent = this.btnSendAnswer;
+            this.btnSendAnswer.CustomImages.Parent = this.btnSendAnswer;
+            this.btnSendAnswer.FillColor = System.Drawing.Color.Transparent;
+            this.btnSendAnswer.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnSendAnswer.ForeColor = System.Drawing.Color.White;
+            this.btnSendAnswer.HoverState.BorderColor = System.Drawing.Color.Aqua;
+            this.btnSendAnswer.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(62)))), ((int)(((byte)(66)))));
+            this.btnSendAnswer.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("btnSendAnswer.HoverState.Image")));
+            this.btnSendAnswer.HoverState.Parent = this.btnSendAnswer;
+            this.btnSendAnswer.Image = ((System.Drawing.Image)(resources.GetObject("btnSendAnswer.Image")));
+            this.btnSendAnswer.ImageSize = new System.Drawing.Size(52, 52);
+            this.btnSendAnswer.Location = new System.Drawing.Point(725, 328);
+            this.btnSendAnswer.Name = "btnSendAnswer";
+            this.btnSendAnswer.ShadowDecoration.Parent = this.btnSendAnswer;
+            this.btnSendAnswer.Size = new System.Drawing.Size(137, 58);
+            this.btnSendAnswer.TabIndex = 14;
+            this.btnSendAnswer.UseTransparentBackground = true;
+            this.btnSendAnswer.Click += new System.EventHandler(this.btnSendAnswer_Click);
             // 
             // pnlAnswerGroup
             // 
@@ -381,7 +441,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Aqua;
-            this.panel1.Location = new System.Drawing.Point(701, 337);
+            this.panel1.Location = new System.Drawing.Point(561, 337);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(3, 42);
             this.panel1.TabIndex = 12;
@@ -405,7 +465,7 @@
             this.btnNext.HoverState.Parent = this.btnNext;
             this.btnNext.Image = ((System.Drawing.Image)(resources.GetObject("btnNext.Image")));
             this.btnNext.ImageSize = new System.Drawing.Size(52, 52);
-            this.btnNext.Location = new System.Drawing.Point(558, 328);
+            this.btnNext.Location = new System.Drawing.Point(418, 328);
             this.btnNext.Name = "btnNext";
             this.btnNext.ShadowDecoration.Parent = this.btnNext;
             this.btnNext.Size = new System.Drawing.Size(137, 58);
@@ -413,31 +473,31 @@
             this.btnNext.UseTransparentBackground = true;
             this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
-            // btnSend
+            // btnSendQuestion
             // 
-            this.btnSend.Animated = true;
-            this.btnSend.BackColor = System.Drawing.Color.Transparent;
-            this.btnSend.BorderColor = System.Drawing.Color.Transparent;
-            this.btnSend.BorderRadius = 20;
-            this.btnSend.BorderThickness = 2;
-            this.btnSend.CheckedState.Parent = this.btnSend;
-            this.btnSend.CustomImages.Parent = this.btnSend;
-            this.btnSend.FillColor = System.Drawing.Color.Transparent;
-            this.btnSend.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnSend.ForeColor = System.Drawing.Color.White;
-            this.btnSend.HoverState.BorderColor = System.Drawing.Color.Aqua;
-            this.btnSend.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(62)))), ((int)(((byte)(66)))));
-            this.btnSend.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("btnSend.HoverState.Image")));
-            this.btnSend.HoverState.Parent = this.btnSend;
-            this.btnSend.Image = ((System.Drawing.Image)(resources.GetObject("btnSend.Image")));
-            this.btnSend.ImageSize = new System.Drawing.Size(52, 52);
-            this.btnSend.Location = new System.Drawing.Point(710, 328);
-            this.btnSend.Name = "btnSend";
-            this.btnSend.ShadowDecoration.Parent = this.btnSend;
-            this.btnSend.Size = new System.Drawing.Size(137, 58);
-            this.btnSend.TabIndex = 10;
-            this.btnSend.UseTransparentBackground = true;
-            this.btnSend.Click += new System.EventHandler(this.btnSend_Click);
+            this.btnSendQuestion.Animated = true;
+            this.btnSendQuestion.BackColor = System.Drawing.Color.Transparent;
+            this.btnSendQuestion.BorderColor = System.Drawing.Color.Transparent;
+            this.btnSendQuestion.BorderRadius = 20;
+            this.btnSendQuestion.BorderThickness = 2;
+            this.btnSendQuestion.CheckedState.Parent = this.btnSendQuestion;
+            this.btnSendQuestion.CustomImages.Parent = this.btnSendQuestion;
+            this.btnSendQuestion.FillColor = System.Drawing.Color.Transparent;
+            this.btnSendQuestion.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnSendQuestion.ForeColor = System.Drawing.Color.White;
+            this.btnSendQuestion.HoverState.BorderColor = System.Drawing.Color.Aqua;
+            this.btnSendQuestion.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(62)))), ((int)(((byte)(66)))));
+            this.btnSendQuestion.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("btnSendQuestion.HoverState.Image")));
+            this.btnSendQuestion.HoverState.Parent = this.btnSendQuestion;
+            this.btnSendQuestion.Image = ((System.Drawing.Image)(resources.GetObject("btnSendQuestion.Image")));
+            this.btnSendQuestion.ImageSize = new System.Drawing.Size(52, 52);
+            this.btnSendQuestion.Location = new System.Drawing.Point(570, 328);
+            this.btnSendQuestion.Name = "btnSendQuestion";
+            this.btnSendQuestion.ShadowDecoration.Parent = this.btnSendQuestion;
+            this.btnSendQuestion.Size = new System.Drawing.Size(137, 58);
+            this.btnSendQuestion.TabIndex = 10;
+            this.btnSendQuestion.UseTransparentBackground = true;
+            this.btnSendQuestion.Click += new System.EventHandler(this.btnSendQuestion_Click);
             // 
             // panel2
             // 
@@ -553,40 +613,14 @@
             // pnlRightBottom
             // 
             this.pnlRightBottom.BackColor = System.Drawing.Color.Transparent;
-            this.pnlRightBottom.Controls.Add(this.lvListPlayer);
-            this.pnlRightBottom.Controls.Add(this.label4);
+            this.pnlRightBottom.Controls.Add(this.grvListQuestion);
+            this.pnlRightBottom.Controls.Add(this.label3);
             this.pnlRightBottom.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlRightBottom.Location = new System.Drawing.Point(5, 376);
             this.pnlRightBottom.Name = "pnlRightBottom";
             this.pnlRightBottom.ShadowDecoration.Parent = this.pnlRightBottom;
             this.pnlRightBottom.Size = new System.Drawing.Size(349, 376);
             this.pnlRightBottom.TabIndex = 8;
-            // 
-            // label4
-            // 
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label4.Font = new System.Drawing.Font("Segoe UI Black", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Yellow;
-            this.label4.Location = new System.Drawing.Point(0, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(349, 34);
-            this.label4.TabIndex = 36;
-            this.label4.Text = "Rank";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // pnlRightTop
-            // 
-            this.pnlRightTop.BackColor = System.Drawing.Color.Transparent;
-            this.pnlRightTop.Controls.Add(this.grvListQuestion);
-            this.pnlRightTop.Controls.Add(this.panel3);
-            this.pnlRightTop.Controls.Add(this.label3);
-            this.pnlRightTop.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlRightTop.Location = new System.Drawing.Point(5, 0);
-            this.pnlRightTop.Name = "pnlRightTop";
-            this.pnlRightTop.ShadowDecoration.Parent = this.pnlRightTop;
-            this.pnlRightTop.Size = new System.Drawing.Size(349, 376);
-            this.pnlRightTop.TabIndex = 7;
             // 
             // grvListQuestion
             // 
@@ -628,7 +662,7 @@
             this.grvListQuestion.RowHeadersWidth = 51;
             this.grvListQuestion.RowTemplate.Height = 24;
             this.grvListQuestion.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grvListQuestion.Size = new System.Drawing.Size(349, 337);
+            this.grvListQuestion.Size = new System.Drawing.Size(349, 342);
             this.grvListQuestion.TabIndex = 38;
             this.grvListQuestion.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
             this.grvListQuestion.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -653,16 +687,6 @@
             this.grvListQuestion.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.grvListQuestion.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.Aqua;
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.ForeColor = System.Drawing.Color.Cornsilk;
-            this.panel3.Location = new System.Drawing.Point(0, 371);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(349, 5);
-            this.panel3.TabIndex = 37;
-            // 
             // label3
             // 
             this.label3.BackColor = System.Drawing.Color.Transparent;
@@ -676,10 +700,61 @@
             this.label3.Text = "List question";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // pnlRightTop
+            // 
+            this.pnlRightTop.BackColor = System.Drawing.Color.Transparent;
+            this.pnlRightTop.Controls.Add(this.chartCountPlayerAnswer);
+            this.pnlRightTop.Controls.Add(this.panel5);
+            this.pnlRightTop.Controls.Add(this.panel3);
+            this.pnlRightTop.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlRightTop.Location = new System.Drawing.Point(5, 0);
+            this.pnlRightTop.Name = "pnlRightTop";
+            this.pnlRightTop.ShadowDecoration.Parent = this.pnlRightTop;
+            this.pnlRightTop.Size = new System.Drawing.Size(349, 376);
+            this.pnlRightTop.TabIndex = 7;
+            // 
+            // chartCountPlayerAnswer
+            // 
+            chartArea1.Name = "ChartArea1";
+            this.chartCountPlayerAnswer.ChartAreas.Add(chartArea1);
+            this.chartCountPlayerAnswer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.chartCountPlayerAnswer.Location = new System.Drawing.Point(0, 5);
+            this.chartCountPlayerAnswer.Name = "chartCountPlayerAnswer";
+            this.chartCountPlayerAnswer.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
+            series1.ChartArea = "ChartArea1";
+            series1.Name = "numberOfPlayerChoose";
+            this.chartCountPlayerAnswer.Series.Add(series1);
+            this.chartCountPlayerAnswer.Size = new System.Drawing.Size(349, 366);
+            this.chartCountPlayerAnswer.TabIndex = 41;
+            title1.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            title1.Name = "Title1";
+            title1.Text = "ANALYSIS TABLE";
+            this.chartCountPlayerAnswer.Titles.Add(title1);
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.Aqua;
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel5.ForeColor = System.Drawing.Color.Cornsilk;
+            this.panel5.Location = new System.Drawing.Point(0, 0);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(349, 5);
+            this.panel5.TabIndex = 38;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.Aqua;
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel3.ForeColor = System.Drawing.Color.Cornsilk;
+            this.panel3.Location = new System.Drawing.Point(0, 371);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(349, 5);
+            this.panel3.TabIndex = 37;
+            // 
             // guna2GradientPanel2
             // 
             this.guna2GradientPanel2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.guna2GradientPanel2.FillColor = System.Drawing.Color.Black;
+            this.guna2GradientPanel2.FillColor = System.Drawing.Color.Cyan;
             this.guna2GradientPanel2.FillColor2 = System.Drawing.Color.Aqua;
             this.guna2GradientPanel2.Location = new System.Drawing.Point(0, 0);
             this.guna2GradientPanel2.Margin = new System.Windows.Forms.Padding(0);
@@ -697,23 +772,6 @@
             // 
             this.elipseClock.BorderRadius = 100;
             this.elipseClock.TargetControl = this.proCountDown;
-            // 
-            // lvListPlayer
-            // 
-            this.lvListPlayer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lvListPlayer.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lvListPlayer.HideSelection = false;
-            this.lvListPlayer.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem1,
-            listViewItem2,
-            listViewItem3});
-            this.lvListPlayer.Location = new System.Drawing.Point(0, 34);
-            this.lvListPlayer.Name = "lvListPlayer";
-            this.lvListPlayer.ShowItemToolTips = true;
-            this.lvListPlayer.Size = new System.Drawing.Size(349, 342);
-            this.lvListPlayer.TabIndex = 37;
-            this.lvListPlayer.UseCompatibleStateImageBehavior = false;
-            this.lvListPlayer.View = System.Windows.Forms.View.Tile;
             // 
             // MC_UI
             // 
@@ -743,8 +801,9 @@
             this.guna2CustomGradientPanel1.ResumeLayout(false);
             this.pnlRight.ResumeLayout(false);
             this.pnlRightBottom.ResumeLayout(false);
-            this.pnlRightTop.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grvListQuestion)).EndInit();
+            this.pnlRightTop.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.chartCountPlayerAnswer)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -756,7 +815,7 @@
         private System.Windows.Forms.Panel pnlLeft;
         private System.Windows.Forms.Panel pnLeftBottom;
         private Guna.UI2.WinForms.Guna2Panel pnlContainsQuestion;
-        private Guna.UI2.WinForms.Guna2Button btnSend;
+        private Guna.UI2.WinForms.Guna2Button btnSendQuestion;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label lblQuestion;
         private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel2;
@@ -772,7 +831,6 @@
         private Guna.UI2.WinForms.Guna2GradientPanel pnlRightTop;
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel2;
         private System.Windows.Forms.Panel pnlAnswerGroup;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label6;
@@ -795,5 +853,9 @@
         private Guna.UI2.WinForms.Guna2CircleProgressBar proCountDown;
         private System.Windows.Forms.Label lblCountDown;
         private System.Windows.Forms.ListView lvListPlayer;
+        private System.Windows.Forms.Panel panel4;
+        private Guna.UI2.WinForms.Guna2Button btnSendAnswer;
+        public System.Windows.Forms.DataVisualization.Charting.Chart chartCountPlayerAnswer;
+        private System.Windows.Forms.Panel panel5;
     }
 }

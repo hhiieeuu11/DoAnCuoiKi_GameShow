@@ -21,3 +21,12 @@ C:\Users\HOME\OneDrive\Máy tính\GameShow\client\obj\Debug\client.HowToPlay.res
 C:\Users\HOME\OneDrive\Máy tính\GameShow\client\bin\Debug\FontAwesome.Sharp.dll
 C:\Users\HOME\OneDrive\Máy tính\GameShow\client\obj\Debug\client.AboutUs.resources
 C:\Users\HOME\OneDrive\Máy tính\GameShow\client\bin\Debug\NetComm.dll
+C:\Users\HOME\OneDrive\Máy tính\GameShow\client\bin\Debug\LiveCharts.dll
+C:\Users\HOME\OneDrive\Máy tính\GameShow\client\bin\Debug\LiveCharts.WinForms.dll
+C:\Users\HOME\OneDrive\Máy tính\GameShow\client\bin\Debug\LiveCharts.Wpf.dll
+C:\Users\HOME\OneDrive\Máy tính\GameShow\client\bin\Debug\LiveCharts.pdb
+C:\Users\HOME\OneDrive\Máy tính\GameShow\client\bin\Debug\LiveCharts.xml
+C:\Users\HOME\OneDrive\Máy tính\GameShow\client\bin\Debug\LiveCharts.WinForms.pdb
+C:\Users\HOME\OneDrive\Máy tính\GameShow\client\bin\Debug\LiveCharts.WinForms.xml
+C:\Users\HOME\OneDrive\Máy tính\GameShow\client\bin\Debug\LiveCharts.Wpf.pdb
+C:\Users\HOME\OneDrive\Máy tính\GameShow\client\bin\Debug\LiveCharts.Wpf.xml
