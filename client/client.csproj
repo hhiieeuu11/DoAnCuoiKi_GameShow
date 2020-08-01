@@ -108,6 +108,12 @@
     <Compile Include="UCQuestion.Designer.cs">
       <DependentUpon>UCQuestion.cs</DependentUpon>
     </Compile>
+    <Compile Include="Winner.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Winner.Designer.cs">
+      <DependentUpon>Winner.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AboutUs.resx">
       <DependentUpon>AboutUs.cs</DependentUpon>
     </EmbeddedResource>
@@ -134,6 +140,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UCQuestion.resx">
       <DependentUpon>UCQuestion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Winner.resx">
+      <DependentUpon>Winner.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="..\.editorconfig">
       <Link>.editorconfig</Link>

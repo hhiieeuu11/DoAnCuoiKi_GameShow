@@ -120,6 +120,12 @@
     <Compile Include="ScheduleManagement.Designer.cs">
       <DependentUpon>ScheduleManagement.cs</DependentUpon>
     </Compile>
+    <Compile Include="Scores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Scores.Designer.cs">
+      <DependentUpon>Scores.cs</DependentUpon>
+    </Compile>
     <Compile Include="UCAnswerBox.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -159,6 +165,9 @@
     </Compile>
     <EmbeddedResource Include="ScheduleManagement.resx">
       <DependentUpon>ScheduleManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scores.resx">
+      <DependentUpon>Scores.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UCAnswerBox.resx">
       <DependentUpon>UCAnswerBox.cs</DependentUpon>

@@ -167,7 +167,15 @@ namespace client
 
         private void MenuGame_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (currentChildForm != null) currentChildForm.Close();
+
+            var result = MessageBox.Show("Do you want exit game?", "Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (result == DialogResult.Yes)
+            {
+                if (currentChildForm != null) currentChildForm.Close();
+            }
+            else{
+                e.Cancel = true;
+            }
         }
 
         private void grvListGame_CellClick(object sender, DataGridViewCellEventArgs e)

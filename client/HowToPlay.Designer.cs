@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HowToPlay));
             this.pnlHow = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.iconButton3 = new FontAwesome.Sharp.IconButton();
+            this.label3 = new System.Windows.Forms.Label();
             this.btnClosed = new Guna.UI2.WinForms.Guna2CircleButton();
             this.label4 = new System.Windows.Forms.Label();
             this.iconButton2 = new FontAwesome.Sharp.IconButton();
@@ -37,8 +39,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
-            this.iconButton3 = new FontAwesome.Sharp.IconButton();
-            this.label3 = new System.Windows.Forms.Label();
             this.pnlHow.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -64,6 +64,24 @@
             resources.ApplyResources(this.pnlHow, "pnlHow");
             this.pnlHow.Name = "pnlHow";
             this.pnlHow.ShadowDecoration.Parent = this.pnlHow;
+            // 
+            // iconButton3
+            // 
+            this.iconButton3.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(this.iconButton3, "iconButton3");
+            this.iconButton3.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.iconButton3.IconChar = FontAwesome.Sharp.IconChar.Star;
+            this.iconButton3.IconColor = System.Drawing.Color.Yellow;
+            this.iconButton3.IconSize = 40;
+            this.iconButton3.Name = "iconButton3";
+            this.iconButton3.Rotation = 0D;
+            this.iconButton3.UseVisualStyleBackColor = true;
+            // 
+            // label3
+            // 
+            resources.ApplyResources(this.label3, "label3");
+            this.label3.ForeColor = System.Drawing.Color.Yellow;
+            this.label3.Name = "label3";
             // 
             // btnClosed
             // 
@@ -129,24 +147,6 @@
             resources.ApplyResources(this.lblTitle, "lblTitle");
             this.lblTitle.ForeColor = System.Drawing.Color.Cyan;
             this.lblTitle.Name = "lblTitle";
-            // 
-            // iconButton3
-            // 
-            this.iconButton3.FlatAppearance.BorderSize = 0;
-            resources.ApplyResources(this.iconButton3, "iconButton3");
-            this.iconButton3.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.iconButton3.IconChar = FontAwesome.Sharp.IconChar.Star;
-            this.iconButton3.IconColor = System.Drawing.Color.Yellow;
-            this.iconButton3.IconSize = 40;
-            this.iconButton3.Name = "iconButton3";
-            this.iconButton3.Rotation = 0D;
-            this.iconButton3.UseVisualStyleBackColor = true;
-            // 
-            // label3
-            // 
-            resources.ApplyResources(this.label3, "label3");
-            this.label3.ForeColor = System.Drawing.Color.Yellow;
-            this.label3.Name = "label3";
             // 
             // HowToPlay
             // 

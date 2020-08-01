@@ -33,3 +33,4 @@ C:\Users\HOME\OneDrive\Máy tính\GameShow\Sever\bin\Debug\LiveCharts.WinForms.p
 C:\Users\HOME\OneDrive\Máy tính\GameShow\Sever\bin\Debug\LiveCharts.WinForms.xml
 C:\Users\HOME\OneDrive\Máy tính\GameShow\Sever\bin\Debug\LiveCharts.Wpf.pdb
 C:\Users\HOME\OneDrive\Máy tính\GameShow\Sever\bin\Debug\LiveCharts.Wpf.xml
+C:\Users\HOME\OneDrive\Máy tính\GameShow\Sever\obj\Debug\Sever.Scores.resources

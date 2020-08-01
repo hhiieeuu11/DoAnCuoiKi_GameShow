@@ -11,6 +11,8 @@ namespace MyLib
 {
     public class Utils
     {
+        
+
 
         /// <summary>
         /// Convert an object to a byte array
@@ -184,10 +186,42 @@ namespace MyLib
         public static int calcWaitingTime(GameShow nearestGame)
         {
             return (int)(nearestGame.StartTime.Subtract(DateTime.Now).TotalSeconds);
-
+            
         }
 
+        /// <summary>
+        /// Update player score
+        /// </summary>
+        /// <param name="answer">player's answer</param>
+        /// <param name="ID">player's id</param>
+        /// <param name="question">Current question</param>
+        /// <param name="listScore"></param>
+        public static void updateListScores(string answer, string ID, Question question, Dictionary<string, int> listScore)
+        {
+            if (answer == "A" && question.listAnswer[3] == question.AnswerCorrect)
+            {
+                listScore[ID]++;
+            }
+            else if (answer == "B" && question.listAnswer[2] == question.AnswerCorrect)
+            {
+                listScore[ID]++;
 
+            }
+            else if (answer == "C" && question.listAnswer[1] == question.AnswerCorrect)
+            {
+                listScore[ID]++;
+            }
+            else if (answer == "D" && question.listAnswer[0] == question.AnswerCorrect)
+            {
+                listScore[ID]++;
+            }
+        }
+
+        public static Dictionary<string, int> Rank(Dictionary<string, int> listScore)
+        {
+            return listScore.OrderByDescending(x => x.Value).ToDictionary(x => x.Key, x => x.Value);
+
+        }
 
     }
 }

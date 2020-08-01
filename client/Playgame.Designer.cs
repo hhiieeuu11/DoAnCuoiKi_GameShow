@@ -34,6 +34,7 @@
             System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Playgame));
             this.pnlRight = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.chartCountPlayerAnswer = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.pnlLeft = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -56,13 +57,18 @@
             this.pnlBtnHelp = new System.Windows.Forms.Panel();
             this.proCountDown = new Guna.UI2.WinForms.Guna2CircleProgressBar();
             this.lblCountDown = new System.Windows.Forms.Label();
+            this.npwBox = new DTOProject.numberPeopleWacthing();
             this.btnAudience = new Guna.UI2.WinForms.Guna2Button();
             this.btnCallPhone = new Guna.UI2.WinForms.Guna2Button();
             this.btn5050 = new Guna.UI2.WinForms.Guna2Button();
             this.tmrCountDown = new System.Windows.Forms.Timer(this.components);
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.npwBox = new DTOProject.numberPeopleWacthing();
+            this.pnlRank = new Guna.UI2.WinForms.Guna2Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lvScores = new System.Windows.Forms.ListView();
+            this.colId = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colScores = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.pnlRight.SuspendLayout();
+            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartCountPlayerAnswer)).BeginInit();
             this.pnlLeft.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -72,17 +78,27 @@
             this.panel5.SuspendLayout();
             this.pnlBtnHelp.SuspendLayout();
             this.proCountDown.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.pnlRank.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlRight
             // 
+            this.pnlRight.Controls.Add(this.pnlRank);
             this.pnlRight.Controls.Add(this.panel2);
             this.pnlRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.pnlRight.Location = new System.Drawing.Point(974, 0);
             this.pnlRight.Name = "pnlRight";
             this.pnlRight.Size = new System.Drawing.Size(286, 703);
             this.pnlRight.TabIndex = 7;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.chartCountPlayerAnswer);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(286, 356);
+            this.panel2.TabIndex = 0;
             // 
             // chartCountPlayerAnswer
             // 
@@ -96,7 +112,7 @@
             series1.MarkerSize = 10;
             series1.Name = "numberOfPlayerChoose";
             this.chartCountPlayerAnswer.Series.Add(series1);
-            this.chartCountPlayerAnswer.Size = new System.Drawing.Size(286, 305);
+            this.chartCountPlayerAnswer.Size = new System.Drawing.Size(286, 356);
             this.chartCountPlayerAnswer.TabIndex = 28;
             title1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             title1.Name = "Title1";
@@ -349,6 +365,15 @@
             this.lblCountDown.Text = "0:15";
             this.lblCountDown.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // npwBox
+            // 
+            this.npwBox.BackColor = System.Drawing.Color.Transparent;
+            this.npwBox.Location = new System.Drawing.Point(755, 26);
+            this.npwBox.Name = "npwBox";
+            this.npwBox.Number = 0;
+            this.npwBox.Size = new System.Drawing.Size(81, 30);
+            this.npwBox.TabIndex = 22;
+            // 
             // btnAudience
             // 
             this.btnAudience.BackColor = System.Drawing.Color.Transparent;
@@ -405,23 +430,60 @@
             this.tmrCountDown.Interval = 1000;
             this.tmrCountDown.Tick += new System.EventHandler(this.tmrCountDown_Tick);
             // 
-            // panel2
+            // pnlRank
             // 
-            this.panel2.Controls.Add(this.chartCountPlayerAnswer);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(286, 305);
-            this.panel2.TabIndex = 0;
+            this.pnlRank.Controls.Add(this.lvScores);
+            this.pnlRank.Controls.Add(this.label3);
+            this.pnlRank.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlRank.Location = new System.Drawing.Point(0, 356);
+            this.pnlRank.Name = "pnlRank";
+            this.pnlRank.ShadowDecoration.Parent = this.pnlRank;
+            this.pnlRank.Size = new System.Drawing.Size(286, 347);
+            this.pnlRank.TabIndex = 1;
             // 
-            // npwBox
+            // label3
             // 
-            this.npwBox.BackColor = System.Drawing.Color.Transparent;
-            this.npwBox.Location = new System.Drawing.Point(755, 26);
-            this.npwBox.Name = "npwBox";
-            this.npwBox.Number = 0;
-            this.npwBox.Size = new System.Drawing.Size(81, 30);
-            this.npwBox.TabIndex = 22;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label3.Font = new System.Drawing.Font("Segoe UI Black", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Yellow;
+            this.label3.Location = new System.Drawing.Point(0, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(286, 34);
+            this.label3.TabIndex = 38;
+            this.label3.Text = "List question";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lvScores
+            // 
+            this.lvScores.BackgroundImageTiled = true;
+            this.lvScores.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.colId,
+            this.colScores});
+            this.lvScores.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lvScores.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lvScores.ForeColor = System.Drawing.Color.DimGray;
+            this.lvScores.FullRowSelect = true;
+            this.lvScores.GridLines = true;
+            this.lvScores.HideSelection = false;
+            this.lvScores.Location = new System.Drawing.Point(0, 34);
+            this.lvScores.Name = "lvScores";
+            this.lvScores.ShowItemToolTips = true;
+            this.lvScores.Size = new System.Drawing.Size(286, 313);
+            this.lvScores.TabIndex = 37;
+            this.lvScores.UseCompatibleStateImageBehavior = false;
+            this.lvScores.View = System.Windows.Forms.View.Details;
+            // 
+            // colId
+            // 
+            this.colId.Text = "Player";
+            this.colId.Width = 194;
+            // 
+            // colScores
+            // 
+            this.colScores.Text = "Scores";
+            this.colScores.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.colScores.Width = 86;
             // 
             // Playgame
             // 
@@ -439,6 +501,7 @@
             this.Load += new System.EventHandler(this.Playgame_Load);
             this.ClientSizeChanged += new System.EventHandler(this.Playgame_ClientSizeChanged);
             this.pnlRight.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.chartCountPlayerAnswer)).EndInit();
             this.pnlLeft.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
@@ -448,7 +511,7 @@
             this.panel5.ResumeLayout(false);
             this.pnlBtnHelp.ResumeLayout(false);
             this.proCountDown.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
+            this.pnlRank.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -483,6 +546,11 @@
         private System.Windows.Forms.Timer tmrCountDown;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartCountPlayerAnswer;
         private System.Windows.Forms.Panel panel2;
+        private Guna.UI2.WinForms.Guna2Panel pnlRank;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ListView lvScores;
+        private System.Windows.Forms.ColumnHeader colId;
+        private System.Windows.Forms.ColumnHeader colScores;
     }
 }
 

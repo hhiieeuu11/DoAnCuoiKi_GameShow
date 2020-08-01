@@ -29,18 +29,18 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem(new string[] {
             "123"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.White, null);
-            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem5 = new System.Windows.Forms.ListViewItem(new string[] {
             "456"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.White, null);
-            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem6 = new System.Windows.Forms.ListViewItem("");
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MC_UI));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.elipseNumberWatching = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.npwBox = new DTOProject.numberPeopleWacthing();
             this.pnlLeftTop = new System.Windows.Forms.Panel();
@@ -55,6 +55,8 @@
             this.pnlLeft = new System.Windows.Forms.Panel();
             this.pnLeftBottom = new System.Windows.Forms.Panel();
             this.pnlContainsQuestion = new Guna.UI2.WinForms.Guna2Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.btnRank = new Guna.UI2.WinForms.Guna2Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.btnSendAnswer = new Guna.UI2.WinForms.Guna2Button();
             this.pnlAnswerGroup = new System.Windows.Forms.Panel();
@@ -195,9 +197,9 @@
             this.lvListPlayer.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lvListPlayer.HideSelection = false;
             this.lvListPlayer.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem1,
-            listViewItem2,
-            listViewItem3});
+            listViewItem4,
+            listViewItem5,
+            listViewItem6});
             this.lvListPlayer.Location = new System.Drawing.Point(112, 13);
             this.lvListPlayer.Name = "lvListPlayer";
             this.lvListPlayer.ShowItemToolTips = true;
@@ -272,6 +274,8 @@
             // 
             // pnlContainsQuestion
             // 
+            this.pnlContainsQuestion.Controls.Add(this.panel6);
+            this.pnlContainsQuestion.Controls.Add(this.btnRank);
             this.pnlContainsQuestion.Controls.Add(this.panel4);
             this.pnlContainsQuestion.Controls.Add(this.btnSendAnswer);
             this.pnlContainsQuestion.Controls.Add(this.pnlAnswerGroup);
@@ -284,6 +288,40 @@
             this.pnlContainsQuestion.ShadowDecoration.Parent = this.pnlContainsQuestion;
             this.pnlContainsQuestion.Size = new System.Drawing.Size(889, 389);
             this.pnlContainsQuestion.TabIndex = 6;
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.Aqua;
+            this.panel6.Location = new System.Drawing.Point(408, 337);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(3, 42);
+            this.panel6.TabIndex = 17;
+            // 
+            // btnRank
+            // 
+            this.btnRank.Animated = true;
+            this.btnRank.BackColor = System.Drawing.Color.Transparent;
+            this.btnRank.BorderColor = System.Drawing.Color.Transparent;
+            this.btnRank.BorderRadius = 20;
+            this.btnRank.BorderThickness = 2;
+            this.btnRank.CheckedState.Parent = this.btnRank;
+            this.btnRank.CustomImages.Parent = this.btnRank;
+            this.btnRank.FillColor = System.Drawing.Color.Transparent;
+            this.btnRank.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnRank.ForeColor = System.Drawing.Color.White;
+            this.btnRank.HoverState.BorderColor = System.Drawing.Color.Aqua;
+            this.btnRank.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(62)))), ((int)(((byte)(66)))));
+            this.btnRank.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("btnRank.HoverState.Image")));
+            this.btnRank.HoverState.Parent = this.btnRank;
+            this.btnRank.Image = ((System.Drawing.Image)(resources.GetObject("btnRank.Image")));
+            this.btnRank.ImageSize = new System.Drawing.Size(52, 52);
+            this.btnRank.Location = new System.Drawing.Point(262, 328);
+            this.btnRank.Name = "btnRank";
+            this.btnRank.ShadowDecoration.Parent = this.btnRank;
+            this.btnRank.Size = new System.Drawing.Size(137, 58);
+            this.btnRank.TabIndex = 16;
+            this.btnRank.UseTransparentBackground = true;
+            this.btnRank.Click += new System.EventHandler(this.btnRank_Click);
             // 
             // panel4
             // 
@@ -626,32 +664,32 @@
             // 
             this.grvListQuestion.AllowUserToAddRows = false;
             this.grvListQuestion.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.grvListQuestion.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.grvListQuestion.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.grvListQuestion.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.grvListQuestion.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.grvListQuestion.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.grvListQuestion.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.grvListQuestion.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.grvListQuestion.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grvListQuestion.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grvListQuestion.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.grvListQuestion.ColumnHeadersHeight = 30;
             this.grvListQuestion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.grvListQuestion.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.grvListQuestion.DefaultCellStyle = dataGridViewCellStyle6;
             this.grvListQuestion.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grvListQuestion.EnableHeadersVisualStyles = false;
             this.grvListQuestion.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
@@ -715,21 +753,21 @@
             // 
             // chartCountPlayerAnswer
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chartCountPlayerAnswer.ChartAreas.Add(chartArea1);
+            chartArea2.Name = "ChartArea1";
+            this.chartCountPlayerAnswer.ChartAreas.Add(chartArea2);
             this.chartCountPlayerAnswer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.chartCountPlayerAnswer.Location = new System.Drawing.Point(0, 5);
             this.chartCountPlayerAnswer.Name = "chartCountPlayerAnswer";
             this.chartCountPlayerAnswer.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
-            series1.ChartArea = "ChartArea1";
-            series1.Name = "numberOfPlayerChoose";
-            this.chartCountPlayerAnswer.Series.Add(series1);
+            series2.ChartArea = "ChartArea1";
+            series2.Name = "numberOfPlayerChoose";
+            this.chartCountPlayerAnswer.Series.Add(series2);
             this.chartCountPlayerAnswer.Size = new System.Drawing.Size(349, 366);
             this.chartCountPlayerAnswer.TabIndex = 41;
-            title1.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            title1.Name = "Title1";
-            title1.Text = "ANALYSIS TABLE";
-            this.chartCountPlayerAnswer.Titles.Add(title1);
+            title2.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            title2.Name = "Title1";
+            title2.Text = "ANALYSIS TABLE";
+            this.chartCountPlayerAnswer.Titles.Add(title2);
             // 
             // panel5
             // 
@@ -857,5 +895,7 @@
         private Guna.UI2.WinForms.Guna2Button btnSendAnswer;
         public System.Windows.Forms.DataVisualization.Charting.Chart chartCountPlayerAnswer;
         private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Panel panel6;
+        private Guna.UI2.WinForms.Guna2Button btnRank;
     }
 }

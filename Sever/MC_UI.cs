@@ -7,6 +7,7 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -16,23 +17,28 @@ namespace Sever
 {
     public partial class MC_UI : Form
     {
-        int OrigTime = 15;
-
+        int OrigTime = 15;  //Time countdown
+        int numQuestionPlayed;  //Count of question played
         NetComm.Host server; //Creates the host variable object
         Color colorAnswerCorrect = Color.FromArgb(0, 192, 0);
         List <Question> listQuestion = new List<Question>();
+        int indexCurrentQuestion = 0;
+        Question currentQuestion;
         string filePath = "../../question.txt";
         DataChart statisticalData;  //Statistical data of the player's answer to each question
-
+        Dictionary<string, int> listScores = new Dictionary<string, int>();
 
 
         public MC_UI()
         {
+          
             InitializeComponent();
             reponsive();
+            numQuestionPlayed = 0;
+            Nearest_Game.mcHasStarted = true; 
             listQuestion = getListQuestionFromFile();
-            setupQuestion(listQuestion[Host.indexCurrentQuestion]);
-            Nearest_Game.mcHasStarted = true;
+            currentQuestion = listQuestion[indexCurrentQuestion];
+            setupQuestion(currentQuestion);
             statisticalData = new DataChart();
             updateChart(statisticalData);
         }
@@ -158,10 +164,11 @@ namespace Sever
         {
             resetClock();
             resetColorAnswers();
-            if (Host.indexCurrentQuestion < listQuestion.Count-1)
+            if (indexCurrentQuestion < listQuestion.Count-1)
             {
-                Host.indexCurrentQuestion++;
-                setupQuestion(listQuestion[Host.indexCurrentQuestion]);
+                indexCurrentQuestion++;
+                currentQuestion = listQuestion[indexCurrentQuestion];
+                setupQuestion(currentQuestion);
             }
             else
                 MessageBox.Show("You have run out of questions!", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -177,26 +184,29 @@ namespace Sever
             if (OrigTime <= 0)
             {
                 tmrCountDown.Enabled = false;
-                sendCorrectAnswer(Host.indexCurrentQuestion);
-                showAnswerCorrect(listQuestion[Host.indexCurrentQuestion]);
+                sendCorrectAnswer(indexCurrentQuestion);
+                showAnswerCorrect(currentQuestion);
                 btnNext.Enabled = true;
+                sendListScores(listScores);
             }
         }
 
         private void btnSendQuestion_Click(object sender, EventArgs e)
         {
-            tmrCountDown.Enabled = true;
-            btnSendQuestion.Enabled = false;
-            btnNext.Enabled = false;
 
+            numQuestionPlayed++;
             statisticalData.refesh();
             updateChart(statisticalData);
 
+            btnSendQuestion.Enabled = false;
+            btnNext.Enabled = false;
+            
+            tmrCountDown.Enabled = true;
             Question question = new Question
             {
-                Id = listQuestion[Host.indexCurrentQuestion].Id,
-                listAnswer = listQuestion[Host.indexCurrentQuestion].listAnswer,
-                Content = listQuestion[Host.indexCurrentQuestion].Content
+                Id = currentQuestion.Id,
+                listAnswer = currentQuestion.listAnswer,
+                Content = currentQuestion.Content
             }; //Create new question with Correct answer is null;
             server.Brodcast(Utils.ObjectToByteArray(question));
             server.Brodcast(Utils.ObjectToByteArray(statisticalData));
@@ -213,8 +223,7 @@ namespace Sever
             server.onConnection += new NetComm.Host.onConnectionEventHandler(server_onConnection);
             server.lostConnection += new NetComm.Host.lostConnectionEventHandler(Server_lostConnection);
             server.DataReceived += new NetComm.Host.DataReceivedEventHandler(Server_DataReceived);
-
-
+           
             //Speeding up the connection
             server.SendBufferSize = 400;
             server.ReceiveBufferSize = 50;
@@ -227,18 +236,17 @@ namespace Sever
             // MessageBox.Show(id + " connected!");
            // listIdPlayer = server.Users;
             lvListPlayer.Items.Add(id);
+            listScores.Add(id, 0);
+
+            sendListScores(listScores);
+            //lvScores.up
         }
 
-        public static int findPlayer(string id)
-        {
-            for (int i = 0; i < Host.listIdPlayer.Count; i++)
-            {
-                if (Host.listIdPlayer[i] == id) return i;
-            }
-            return -1;
-        }
+
+
         void Server_lostConnection(string id)
         {
+            listScores.Remove(id);
             lvListPlayer.Items.Remove(lvListPlayer.FindItemWithText(id));            
         }
 
@@ -249,8 +257,12 @@ namespace Sever
             updateDataChart(data, statisticalData);
             updateChart(statisticalData);
             server.Brodcast(Utils.ObjectToByteArray(statisticalData)); //Send Statistical data of the player's 
-                                                                        //answer to each question 
+                                                                       //answer to each question 
+            Utils.updateListScores(data, ID, currentQuestion, listScores);
+            listScores = Utils.Rank(listScores);
         }
+
+
 
         private void MC_UI_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -261,9 +273,15 @@ namespace Sever
 
         private void btnSendAnswer_Click(object sender, EventArgs e)
         {
-            sendCorrectAnswer(Host.indexCurrentQuestion);
+            server.Brodcast(Utils.ObjectToByteArray("EndGame"));
         }
 
+
+        private void sendListScores(Dictionary<string, int> listScores)
+        {
+            listScores = Utils.Rank(listScores);
+            server.Brodcast(Utils.ObjectToByteArray(listScores));
+        }
         public void updateDataChart(string vote, DataChart dataChart)
         {
             switch (vote)
@@ -307,6 +325,13 @@ namespace Sever
             AnswerCorrect answerCorrect = new AnswerCorrect();
             answerCorrect.Content = listQuestion[indexQuestion].AnswerCorrect;
             server.Brodcast(Utils.ObjectToByteArray(answerCorrect));
+        }
+
+        private void btnRank_Click(object sender, EventArgs e)
+        {
+            listScores = Utils.Rank(listScores);
+            Form frmScores = new Scores(listScores);
+            frmScores.ShowDialog();
         }
     }
 }

@@ -20,5 +20,6 @@ namespace DTOProject.DTO
         {
             listAnswer = new List<string>();
         }
+
     }
 }

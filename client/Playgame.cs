@@ -21,10 +21,11 @@ namespace client
         int OrigTime = COUNTDOWN_TIME; // count down time
         string nameClient;
         NetComm.Client client; //The client object used for the communication
-
+        Form currentChildForm = null;
 
         public Playgame(string name)
         {
+
             InitializeComponent();
             pnlLeft.Width = this.Width - pnlRight.Width;
             //Connecting to the host
@@ -86,16 +87,16 @@ namespace client
 
         void client_DataReceived(byte[] Data, string ID)
         {
-            pnlInforQuestion.Show();
+            
             var data =  Utils.ByteArrayToObject(Data);
             if (data is DataChart)
             {
-                DataChart dataChart = (DataChart)data;
-                updateChart(dataChart);
+                updateChart((DataChart)data);
             }
             else if (data is Question)
             {
                 choosed = false;
+                pnlInforQuestion.Show();
                 setQuestion((Question)data);
                 enableButtonAnswer();
                 tmrCountDown.Enabled = true;
@@ -104,6 +105,19 @@ namespace client
             else if(data is AnswerCorrect)
             {
                 showAnswerCorrect((AnswerCorrect)data);
+            }
+            else if(data is Dictionary<string, int>)
+            {
+
+                updateRank((Dictionary<string, int>)data);
+            }
+            else if(data is string)
+            {
+                string signal = (string)data;
+                if(signal == "EndGame")
+                {
+                    OpenChildForm(new Winner(lvScores.Items[0].Text, lvScores.Items[1].Text, lvScores.Items[2].Text));
+                }
             }
            
         }
@@ -115,6 +129,21 @@ namespace client
             chartCountPlayerAnswer.Series["numberOfPlayerChoose"].Points.AddXY("B", dataChart.CountB);
             chartCountPlayerAnswer.Series["numberOfPlayerChoose"].Points.AddXY("C", dataChart.CountC);
             chartCountPlayerAnswer.Series["numberOfPlayerChoose"].Points.AddXY("D", dataChart.CountD);
+        }
+
+       public void updateRank(Dictionary<string,int> listScores)
+        {
+            lvScores.Items.Clear();
+            foreach (var player in listScores)
+            {
+                
+                ListViewItem item = new ListViewItem();
+                item.Text = player.Key;
+                item.SubItems.Add(player.Value.ToString());
+                if (player.Key == nameClient) item.BackColor = Color.FromArgb(187, 225, 250);
+                lvScores.Items.Add(item);
+
+            }
         }
 
         public void showAnswerCorrect(AnswerCorrect answerCorrect)
@@ -168,7 +197,25 @@ namespace client
         }
 
 
-
+        private void OpenChildForm(Form childForm)
+        {
+            //open only form
+            if (currentChildForm != null)
+            {
+                currentChildForm.Close();
+            }
+            currentChildForm = childForm;
+            //End
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Width = this.Width;
+            childForm.Height = this.Height;
+            childForm.Location = new Point(0, 0);
+            this.Controls.Add(childForm);
+            this.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+        }
 
         #endregion
 
