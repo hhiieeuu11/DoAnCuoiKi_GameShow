@@ -15,11 +15,13 @@ namespace Sever
 {
     public partial class QuestionManagement : Form
     {
+        #region DEFINE
         string filePath = Host.fileQuestionPath;
         int rowEdit = -1;
         int currentRow = -1;
-        int currentColum= -1;
+        int currentColum = -1;
         int numColumSort = 0;
+        #endregion
 
         #region Function
 
@@ -149,15 +151,15 @@ namespace Sever
         }
         public bool checkIdNotExists(string id)
         {
-            foreach(var question in Host.listQuestion)
+            foreach (var question in Host.listQuestion)
             {
-                if (String.Equals(id,question.Id)) return false;
+                if (String.Equals(id, question.Id)) return false;
             }
             return true;
         }
         public bool checkHasAnswerCorrect()
         {
-            foreach( Control ctl in pnlAnswerGroup.Controls)
+            foreach (Control ctl in pnlAnswerGroup.Controls)
             {
                 UCAnswerBox uc = (UCAnswerBox)ctl;
                 if (uc.isAnswerCorrect) return true;
@@ -170,7 +172,7 @@ namespace Sever
             foreach (Control ctl in pnlAnswerGroup.Controls)
             {
                 UCAnswerBox uc = (UCAnswerBox)ctl;
-                if (uc.isAnswerCorrect) count++; 
+                if (uc.isAnswerCorrect) count++;
             }
             return count == 1;
         }
@@ -191,7 +193,7 @@ namespace Sever
         public bool checkInputQuestion()
         {
             // ID empty
-            if (string.IsNullOrEmpty(txtId.Text))    
+            if (string.IsNullOrEmpty(txtId.Text))
             {
                 MessageBox.Show("You forgot to enter the ID for the question!!", "Input error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtId.Focus();
@@ -199,7 +201,7 @@ namespace Sever
             }
 
             //ID already exists
-            else if (!checkIdNotExists(txtId.Text)) 
+            else if (!checkIdNotExists(txtId.Text))
             {
                 MessageBox.Show("ID already exists!!", "Input error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtId.Focus();
@@ -215,14 +217,14 @@ namespace Sever
             }
 
             //Don't have enough 4 answers
-            else if (!noEmptyAnswer()) 
+            else if (!noEmptyAnswer())
             {
                 MessageBox.Show("You don't have enough 4 answers!!", "Input error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
 
             //Don't have the answer correct
-            else if (!checkHasAnswerCorrect()) 
+            else if (!checkHasAnswerCorrect())
             {
                 MessageBox.Show(" You don't have the answer correct!!", "Input error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
@@ -251,7 +253,7 @@ namespace Sever
         /// Check input question, but don't check case ID already exists.
         /// </summary>
         /// <returns></returns>
-        public bool checkInputEdit() 
+        public bool checkInputEdit()
         {
             // ID empty
             if (string.IsNullOrEmpty(txtId.Text))
@@ -323,7 +325,7 @@ namespace Sever
         public QuestionManagement()
         {
             InitializeComponent();
-            Host.listQuestion = getScheduleFromFile(filePath,numColumSort);
+            Host.listQuestion = getScheduleFromFile(filePath, numColumSort);
             pnlRight.Width = this.Width - pnlForm.Width;
             btnSave.Hide();
         }
@@ -362,7 +364,7 @@ namespace Sever
         private void QuestionManagement_ClientSizeChanged(object sender, EventArgs e)
         {
             pnlRight.Width = this.Width - pnlForm.Width;
-            
+
         }
         private void btnSave_Click(object sender, EventArgs e)
         {
@@ -375,6 +377,7 @@ namespace Sever
                 saveListGameShow(filePath); //Backup list game show
                 grvListQuestion.DataSource = Host.listQuestion;
             }
+            txtId.Enabled = true;
         }
 
         public void setDataToForm(Question question)
@@ -387,7 +390,7 @@ namespace Sever
                 UCAnswerBox uc = (UCAnswerBox)ctl;
                 uc.Content = question.listAnswer[i++];
                 if (uc.Content == question.AnswerCorrect) uc.isAnswerCorrect = true;
-               
+
             }
             txtTopicInfor.Text = question.TopicInfor;
         }

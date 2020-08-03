@@ -14,11 +14,11 @@ namespace Sever
 {
     public partial class Nearest_Game : Form
     {
+        #region DEFINE
         string filePath = Host.fileSchedulePath;
         int OrigTime;
         public static bool mcHasStarted = false;
-
-
+        #endregion
         public Nearest_Game()
         {
             InitializeComponent();
@@ -28,6 +28,7 @@ namespace Sever
 
         }
 
+        #region FUNCTION
         /// <summary>
         /// Calculate the time distance with the nearest game
         /// </summary>
@@ -81,7 +82,7 @@ namespace Sever
                 if (OrigTime <= 0)
                 {
                     tmrCountDown.Enabled = false;
-                    
+
                     if (!mcHasStarted)  //If Form MC_UI has started, program won't start one more MC_UI
                     {
                         Host.startMC();
@@ -90,7 +91,6 @@ namespace Sever
                 }
             }
         }
-
-
+        #endregion
     }
 }

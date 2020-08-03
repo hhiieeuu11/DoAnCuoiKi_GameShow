@@ -12,11 +12,7 @@ namespace client
 {
     public partial class HowToPlay : Form
     {
-        public HowToPlay()
-        {
-            InitializeComponent();
-        }
-
+        #region EVENT
         private void btnClosed_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -26,6 +22,10 @@ namespace client
         {
             pnlHow.Location = new Point((this.Width - pnlHow.Width) / 2, (this.Height - pnlHow.Height) / 2);
         }
-
+        #endregion
+        public HowToPlay()
+        {
+            InitializeComponent();
+        }
     }
 }

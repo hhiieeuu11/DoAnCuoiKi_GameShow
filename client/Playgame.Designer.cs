@@ -186,10 +186,10 @@
             // panel1
             // 
             this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
-            this.panel1.Controls.Add(this.axVideoChatReceiver1);
             this.panel1.Controls.Add(this.proCountDown);
             this.panel1.Controls.Add(this.npwBox);
             this.panel1.Controls.Add(this.pnlInforQuestion);
+            this.panel1.Controls.Add(this.axVideoChatReceiver1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -198,11 +198,12 @@
             // 
             // axVideoChatReceiver1
             // 
+            this.axVideoChatReceiver1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.axVideoChatReceiver1.Enabled = true;
-            this.axVideoChatReceiver1.Location = new System.Drawing.Point(315, 26);
+            this.axVideoChatReceiver1.Location = new System.Drawing.Point(0, 0);
             this.axVideoChatReceiver1.Name = "axVideoChatReceiver1";
             this.axVideoChatReceiver1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axVideoChatReceiver1.OcxState")));
-            this.axVideoChatReceiver1.Size = new System.Drawing.Size(560, 312);
+            this.axVideoChatReceiver1.Size = new System.Drawing.Size(977, 703);
             this.axVideoChatReceiver1.TabIndex = 30;
             // 
             // proCountDown

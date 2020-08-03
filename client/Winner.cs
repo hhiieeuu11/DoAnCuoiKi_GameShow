@@ -12,17 +12,7 @@ namespace client
 {
     public partial class Winner : Form
     {
-        public Winner()
-        {
-            InitializeComponent();
-        }
-        public Winner(string top1, string top2, string top3)
-        {
-            InitializeComponent();
-            lblTop1.Text = top1;
-            lblTop2.Text = top2;
-            lblTop3.Text = top3;
-        }
+        #region EVENT
         private void btnClosed_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -32,5 +22,20 @@ namespace client
         {
             pnlRank.Location = new Point((this.Width - pnlRank.Width) / 2, (this.Height - pnlRank.Height) / 2);
         }
+        #endregion
+        public Winner()
+        {
+            InitializeComponent();
+        }
+        #region FUNCTION
+        public Winner(string top1, string top2, string top3)
+        {
+            InitializeComponent();
+            lblTop1.Text = top1;
+            lblTop2.Text = top2;
+            lblTop3.Text = top3;
+        }
+        #endregion
+
     }
 }

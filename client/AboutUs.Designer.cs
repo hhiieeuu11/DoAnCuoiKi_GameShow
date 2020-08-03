@@ -33,13 +33,6 @@
             this.btnClosed = new Guna.UI2.WinForms.Guna2CircleButton();
             this.pnlContent = new Guna.UI2.WinForms.Guna2Panel();
             this.pnlGrCard = new Guna.UI2.WinForms.Guna2Panel();
-            this.lblaboutus = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2GradientPanel7 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
@@ -67,12 +60,16 @@
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.lblaboutus = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.pnlMain.SuspendLayout();
             this.pnlContent.SuspendLayout();
             this.pnlGrCard.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.guna2Panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.guna2GradientPanel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
@@ -94,6 +91,9 @@
             this.guna2GradientPanel3.SuspendLayout();
             this.guna2GradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
+            this.panel1.SuspendLayout();
+            this.guna2Panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlMain
@@ -143,7 +143,7 @@
             // 
             // pnlGrCard
             // 
-            this.pnlGrCard.BorderStyle = System.Drawing.Drawing2D.DashStyle.Dot;
+            this.pnlGrCard.BorderStyle = System.Drawing.Drawing2D.DashStyle.Dash;
             this.pnlGrCard.Controls.Add(this.guna2GradientPanel7);
             this.pnlGrCard.Controls.Add(this.guna2GradientPanel4);
             this.pnlGrCard.Controls.Add(this.guna2GradientPanel2);
@@ -152,88 +152,6 @@
             this.pnlGrCard.ShadowDecoration.Parent = this.pnlGrCard;
             this.pnlGrCard.Size = new System.Drawing.Size(1023, 431);
             this.pnlGrCard.TabIndex = 0;
-            // 
-            // lblaboutus
-            // 
-            this.lblaboutus.BackColor = System.Drawing.Color.Transparent;
-            this.lblaboutus.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblaboutus.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblaboutus.ForeColor = System.Drawing.Color.Cyan;
-            this.lblaboutus.Location = new System.Drawing.Point(0, 0);
-            this.lblaboutus.Name = "lblaboutus";
-            this.lblaboutus.Size = new System.Drawing.Size(1260, 62);
-            this.lblaboutus.TabIndex = 18;
-            this.lblaboutus.Text = "About Us";
-            this.lblaboutus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.Controls.Add(this.guna2Panel1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 516);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1260, 187);
-            this.panel1.TabIndex = 17;
-            // 
-            // guna2Panel1
-            // 
-            this.guna2Panel1.Controls.Add(this.label9);
-            this.guna2Panel1.Controls.Add(this.label8);
-            this.guna2Panel1.Controls.Add(this.label7);
-            this.guna2Panel1.Controls.Add(this.guna2PictureBox1);
-            this.guna2Panel1.Location = new System.Drawing.Point(210, 3);
-            this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.ShadowDecoration.Parent = this.guna2Panel1;
-            this.guna2Panel1.Size = new System.Drawing.Size(820, 157);
-            this.guna2Panel1.TabIndex = 0;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.Cyan;
-            this.label9.Location = new System.Drawing.Point(183, 102);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(356, 50);
-            this.label9.TabIndex = 7;
-            this.label9.Text = "Đồ Án : GameShow";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.Cyan;
-            this.label8.Location = new System.Drawing.Point(183, 54);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(430, 50);
-            this.label8.TabIndex = 6;
-            this.label8.Text = "Bộ Môn : Lập Trình Win";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.Cyan;
-            this.label7.Location = new System.Drawing.Point(181, 6);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(645, 50);
-            this.label7.TabIndex = 5;
-            this.label7.Text = "Trường Đại Học Khoa Học Tự Nhiên";
-            // 
-            // guna2PictureBox1
-            // 
-            this.guna2PictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.guna2PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.Image")));
-            this.guna2PictureBox1.Location = new System.Drawing.Point(0, 3);
-            this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.ShadowDecoration.Parent = this.guna2PictureBox1;
-            this.guna2PictureBox1.Size = new System.Drawing.Size(164, 139);
-            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2PictureBox1.TabIndex = 4;
-            this.guna2PictureBox1.TabStop = false;
-            this.guna2PictureBox1.UseTransparentBackground = true;
             // 
             // guna2GradientPanel7
             // 
@@ -600,6 +518,88 @@
             this.guna2CirclePictureBox1.TabIndex = 0;
             this.guna2CirclePictureBox1.TabStop = false;
             // 
+            // lblaboutus
+            // 
+            this.lblaboutus.BackColor = System.Drawing.Color.Transparent;
+            this.lblaboutus.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblaboutus.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblaboutus.ForeColor = System.Drawing.Color.Cyan;
+            this.lblaboutus.Location = new System.Drawing.Point(0, 0);
+            this.lblaboutus.Name = "lblaboutus";
+            this.lblaboutus.Size = new System.Drawing.Size(1260, 62);
+            this.lblaboutus.TabIndex = 18;
+            this.lblaboutus.Text = "About Us";
+            this.lblaboutus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Controls.Add(this.guna2Panel1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(0, 516);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1260, 187);
+            this.panel1.TabIndex = 17;
+            // 
+            // guna2Panel1
+            // 
+            this.guna2Panel1.Controls.Add(this.label9);
+            this.guna2Panel1.Controls.Add(this.label8);
+            this.guna2Panel1.Controls.Add(this.label7);
+            this.guna2Panel1.Controls.Add(this.guna2PictureBox1);
+            this.guna2Panel1.Location = new System.Drawing.Point(210, 3);
+            this.guna2Panel1.Name = "guna2Panel1";
+            this.guna2Panel1.ShadowDecoration.Parent = this.guna2Panel1;
+            this.guna2Panel1.Size = new System.Drawing.Size(820, 157);
+            this.guna2Panel1.TabIndex = 0;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.Cyan;
+            this.label9.Location = new System.Drawing.Point(183, 102);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(356, 50);
+            this.label9.TabIndex = 7;
+            this.label9.Text = "Đồ Án : GameShow";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.Cyan;
+            this.label8.Location = new System.Drawing.Point(183, 54);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(430, 50);
+            this.label8.TabIndex = 6;
+            this.label8.Text = "Bộ Môn : Lập Trình Win";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.Cyan;
+            this.label7.Location = new System.Drawing.Point(181, 6);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(645, 50);
+            this.label7.TabIndex = 5;
+            this.label7.Text = "Trường Đại Học Khoa Học Tự Nhiên";
+            // 
+            // guna2PictureBox1
+            // 
+            this.guna2PictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.guna2PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.Image")));
+            this.guna2PictureBox1.Location = new System.Drawing.Point(0, 3);
+            this.guna2PictureBox1.Name = "guna2PictureBox1";
+            this.guna2PictureBox1.ShadowDecoration.Parent = this.guna2PictureBox1;
+            this.guna2PictureBox1.Size = new System.Drawing.Size(164, 139);
+            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2PictureBox1.TabIndex = 4;
+            this.guna2PictureBox1.TabStop = false;
+            this.guna2PictureBox1.UseTransparentBackground = true;
+            // 
             // AboutUs
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -614,10 +614,6 @@
             this.pnlMain.ResumeLayout(false);
             this.pnlContent.ResumeLayout(false);
             this.pnlGrCard.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.guna2Panel1.ResumeLayout(false);
-            this.guna2Panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.guna2GradientPanel7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
@@ -639,6 +635,10 @@
             this.guna2GradientPanel3.ResumeLayout(false);
             this.guna2GradientPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.guna2Panel1.ResumeLayout(false);
+            this.guna2Panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

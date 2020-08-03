@@ -28,21 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.Timer tmrCountDown;
             this.panel5 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.cboFillGame = new Guna.UI2.WinForms.Guna2ComboBox();
             this.pnlBottom = new System.Windows.Forms.Panel();
             this.pnlFillGame = new System.Windows.Forms.Panel();
-            tmrCountDown = new System.Windows.Forms.Timer(this.components);
             this.panel5.SuspendLayout();
             this.pnlBottom.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // tmrCountDown
-            // 
-            tmrCountDown.Tick += new System.EventHandler(this.tmrCountDown_Tick);
             // 
             // panel5
             // 

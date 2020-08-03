@@ -11,7 +11,7 @@ namespace Sever
 {
     public partial class Host : Form
     {
-       // List<NetComm.Client> listClient = new List<NetComm.Client>();
+        // List<NetComm.Client> listClient = new List<NetComm.Client>();
         public static List<string> listIdPlayer = new List<string>();
         //List<string> usersList = null;
 
@@ -28,7 +28,7 @@ namespace Sever
         private Form currentChildForm;
 
 
-        
+
         public Color activeColor = Color.Cyan;
         //public Color activeColor = Color.FromArgb(199, 0, 57);
         #endregion
@@ -48,7 +48,7 @@ namespace Sever
         #region Function
         public void activateButton(object sender, Color color)
         {
-            if(sender != null)
+            if (sender != null)
             {
                 disableButton();
 
@@ -72,7 +72,7 @@ namespace Sever
         {
             if (currentBtn != null)
             {
-                currentBtn.BackColor = Color.FromArgb(14,15,28);
+                currentBtn.BackColor = Color.FromArgb(14, 15, 28);
                 currentBtn.ForeColor = Color.White;
                 currentBtn.TextAlign = ContentAlignment.MiddleLeft;
                 currentBtn.IconColor = Color.White;
@@ -108,13 +108,40 @@ namespace Sever
             iconCurrentChildForm.IconColor = Color.MediumPurple;
             lblTitleChildForm.Text = "Home";
         }
+
+        public static void startMC()
+        {
+            Form frmMC = new MC_UI();
+            frmMC.Show();
+        }
+
+        public static int findPlayer(string id)
+        {
+            for (int i = 0; i < Host.listIdPlayer.Count; i++)
+            {
+                if (Host.listIdPlayer[i] == id) return i;
+            }
+            return -1;
+        }
+
+        /// <summary>
+        /// Remove player when player outgame
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public bool playerDisconnect(string id)
+        {
+            int indexPlayer = Host.findPlayer(id);
+            if (indexPlayer > -1)
+            {
+                //lvListPlayer.Items[indexPlayer].Remove();
+                return true;
+            }
+            return false;
+        }
         #endregion
 
         #region Event
-        private void btnLogo_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void btnHome_Click(object sender, EventArgs e)
         {
@@ -141,52 +168,15 @@ namespace Sever
         }
         private void btnMC_Click(object sender, EventArgs e)
         {
-
-            activateButton(sender, activeColor);
-            Form frmMC = new MC_UI();
-            frmMC.Show();
-            this.WindowState = FormWindowState.Minimized;
-            
+            var result = MessageBox.Show("Do you want start game at now?", "Message", MessageBoxButtons.YesNo,MessageBoxIcon.Warning);
+            if(result == DialogResult.Yes)
+            {
+                activateButton(sender, activeColor);
+                Form frmMC = new MC_UI();
+                frmMC.Show();
+                this.WindowState = FormWindowState.Minimized;
+            }
         }
         #endregion
-
-
-        public static void startMC()
-        {
-            Form frmMC = new MC_UI();
-            frmMC.Show();
-        }
-
-        public static int findPlayer(string id)
-        {
-            for(int i = 0; i < Host.listIdPlayer.Count; i++)
-            {
-                if (Host.listIdPlayer[i] == id) return i;
-            }
-            return -1;
-        }
-
-
-      // public static void Sen
-        
-
-
-
-        /// <summary>
-        /// Remove player when player outgame
-        /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
-        public  bool playerDisconnect(string id)
-        {
-            int indexPlayer = Host.findPlayer(id);
-            if (indexPlayer > -1)
-            {
-                //lvListPlayer.Items[indexPlayer].Remove();
-                return true;
-            }
-            return false;
-        }
-
     }
 }

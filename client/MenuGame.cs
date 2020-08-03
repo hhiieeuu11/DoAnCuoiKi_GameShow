@@ -11,12 +11,14 @@ namespace client
 {
     public partial class MenuGame : Form
     {
+        #region DEFINE
         List<GameShow> listGameShow = new List<GameShow>();
         string filePath = "../../../Schedule_Game.txt";
-        Form currentChildForm=null;
+        Form currentChildForm = null;
         int numColumSort = 0;
         int currentColum = -1, currentRow = -1;
         int countDownTime;
+        #endregion
 
         public MenuGame()
         {
@@ -27,6 +29,8 @@ namespace client
             OpenChildForm(new HowToPlay());
             reponsive();
         }
+
+        #region FUNCTION
         public List<GameShow> getScheduleFromFile(string pathFile, int numColumSort)
         {
             StreamReader sr = new StreamReader(pathFile);
@@ -80,7 +84,7 @@ namespace client
                 lblGameID.Text = nearestGame.ID;
                 lblStartTime.Text = nearestGame.StartTime.ToString();
                 lblGameName.Text = nearestGame.Name;
-                countDownTime = Utils.calcWaitingTime(nearestGame);// get countdown time
+                countDownTime = Utils.calcWaitingTime(nearestGame) + 1;// get countdown time
                 tmrCountDown.Enabled = true;
 
             }
@@ -113,16 +117,16 @@ namespace client
             pnlMenu.Width = (int)(this.Width * 0.42);
             pnlLeft.Width = (int)(this.Width * 0.48);
             pnlMenuControls.Location = new Point((pnlMenu.Width - pnlMenuControls.Width) / 2, (pnlMenu.Height - pnlMenuControls.Height) / 2);
-            if(currentChildForm!=null) currentChildForm.Size = this.Size;
+            if (currentChildForm != null) currentChildForm.Size = this.Size;
         }
 
+        #endregion
 
+        #region EVENT
         private void MenuGame_SizeChanged(object sender, EventArgs e)
         {
             reponsive();
         }
-
-
         private void btnHow_Click(object sender, EventArgs e)
         {
             OpenChildForm(new HowToPlay());
@@ -132,7 +136,7 @@ namespace client
         {
             countDownTime--;
             lblTimeEnterGame.Text = lblCountDown.Text = countDownTime / 60 + ":" + ((countDownTime % 60) >= 10 ? (countDownTime % 60).ToString() : "0" + countDownTime % 60);
-            
+
             if (countDownTime <= 10)
             {
                 if (countDownTime % 2 == 0) txtUsername.BorderColor = Color.Red;
@@ -173,9 +177,20 @@ namespace client
             {
                 if (currentChildForm != null) currentChildForm.Close();
             }
-            else{
+            else
+            {
                 e.Cancel = true;
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new Playgame(txtUsername.Text));
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            OpenChildForm(new Playgame(txtUsername.Text));
         }
 
         private void grvListGame_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -214,8 +229,8 @@ namespace client
                 numColumSort = 4;
                 getScheduleFromFile(filePath, numColumSort);
             }
-
-
         }
+        #endregion
+
     }
 }

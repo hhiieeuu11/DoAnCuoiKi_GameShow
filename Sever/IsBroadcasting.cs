@@ -14,7 +14,10 @@ namespace Sever
 {
     public partial class IsBroadcasting : Form
     {
+        #region DEFINE
         int OrigTime;
+        #endregion
+
         public IsBroadcasting()
         {
             InitializeComponent();
@@ -22,6 +25,7 @@ namespace Sever
             setInforNearestGame(gameIsBroadcasting);
         }
 
+        #region FUNCTION
         /// <summary>
         /// Calculate the time distance with the nearest game
         /// </summary>
@@ -56,9 +60,11 @@ namespace Sever
             }
 
         }
+        #endregion
 
+        #region EVENT
         private void tmrCountDown_Tick(object sender, EventArgs e)
-        {   
+        {
             OrigTime--;
             lblCountDown.Text = OrigTime / 60 + ":" + ((OrigTime % 60) >= 10 ? (OrigTime % 60).ToString() : "0" + OrigTime % 60);
             if (OrigTime <= 10)
@@ -69,8 +75,7 @@ namespace Sever
                     tmrCountDown.Enabled = false;
                 }
             }
-
-
         }
+        #endregion
     }
 }

@@ -17,13 +17,14 @@ namespace Sever
 {
     public partial class ScheduleManagement : Form
     {
+        #region DEFINE
         string fileSchedulePath = Host.fileSchedulePath;
         int numColumSort = 0;
-        int currentColum = -1 , currentRow = -1;
+        int currentColum = -1, currentRow = -1;
         int rowEdit = -1;
+        #endregion
 
-
-        #region Check Function
+        #region FUNCTION
         private bool checkIdNotExists(string id)
         {
             foreach (var game in Host.listGameShow)
@@ -32,22 +33,6 @@ namespace Sever
             }
             return true;
         }
-        #endregion
-
-
-        public ScheduleManagement()
-        {
-            InitializeComponent();
-            refreshForm();
-            btnSave.Hide();
-            Host.listGameShow = getScheduleFromFile(fileSchedulePath, numColumSort);
-            pnlLeftBottom.Height = this.Height - pnlLeftTop.Height;
-            pnlRight.Width = this.Width - pnlLeft.Width;
-            txtID.Select();
-        }
-
-
-
         /// <summary>
         /// Get information gameshow from form input
         /// </summary>
@@ -116,13 +101,13 @@ namespace Sever
         /// <param name="fileSchedulePath">Path to file save</param>
         /// <param name="game"></param>
         /// <returns></returns>
-        private bool SaveGameShow(string fileSchedulePath,GameShow game)
+        private bool SaveGameShow(string fileSchedulePath, GameShow game)
         {
             StreamWriter sw = new StreamWriter(fileSchedulePath, true);
             sw.WriteLine("!" + game.ID);
             sw.WriteLine("@" + game.Name);
-           
-            sw.WriteLine("#" +game.StartTime);
+
+            sw.WriteLine("#" + game.StartTime);
             sw.WriteLine("$" + game.EndTime);
             sw.WriteLine("%" + game.NumberPlayer);
             sw.Close();
@@ -149,7 +134,7 @@ namespace Sever
         /// <param name="pathFile"></param>
         /// <param name="numColumSort"></param>
         /// <returns></returns>
-        public List<GameShow> getScheduleFromFile(string pathFile,int numColumSort) 
+        public List<GameShow> getScheduleFromFile(string pathFile, int numColumSort)
         {
             StreamReader sr = new StreamReader(pathFile);
             List<GameShow> listGameShow = new List<GameShow>();
@@ -216,9 +201,19 @@ namespace Sever
             Host.listGameShow = getScheduleFromFile(fileSchedulePath, numColumSort); //update ListGameShow from the file
             grvSchedule.DataSource = Host.listGameShow;
         }
+        #endregion
 
-
-
+        public ScheduleManagement()
+        {
+            InitializeComponent();
+            refreshForm();
+            btnSave.Hide();
+            Host.listGameShow = getScheduleFromFile(fileSchedulePath, numColumSort);
+            pnlLeftBottom.Height = this.Height - pnlLeftTop.Height;
+            pnlRight.Width = this.Width - pnlLeft.Width;
+            txtID.Select();
+        }
+        #region EVENT
         private void ScheduleManagement_SizeChanged(object sender, EventArgs e)
         {
             pnlLeftBottom.Height = this.Height - pnlLeftTop.Height;
@@ -230,11 +225,11 @@ namespace Sever
 
             if (game != null)
             {
-                bool saveFinish = SaveGameShow(fileSchedulePath,game);
+                bool saveFinish = SaveGameShow(fileSchedulePath, game);
                 if (saveFinish)
                 {
                     refreshForm();
-                    getScheduleFromFile(fileSchedulePath,numColumSort);
+                    getScheduleFromFile(fileSchedulePath, numColumSort);
                 }
             }
         }
@@ -283,7 +278,6 @@ namespace Sever
                 setDataIntoForm(Host.listGameShow[currentRow]);
             }
         }
-
         private void btnRefresh_Click(object sender, EventArgs e)
         {
             refreshForm();
@@ -308,6 +302,7 @@ namespace Sever
                 saveListGameShow(fileSchedulePath); //Backup list game show
                 grvSchedule.DataSource = Host.listGameShow;
             }
+            txtID.Enabled = true;
         }
 
         private void btnRemoveAll_Click(object sender, EventArgs e)
@@ -329,8 +324,6 @@ namespace Sever
             rowEdit = currentRow;
         }
 
-
-
         private void btnRemove_Click(object sender, EventArgs e)
         {
             if (currentRow != -1 && currentRow < Host.listGameShow.Count)
@@ -345,5 +338,6 @@ namespace Sever
                 grvSchedule.DataSource = Host.listGameShow;
             }
         }
+        #endregion
     }
 }

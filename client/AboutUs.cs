@@ -12,11 +12,8 @@ namespace client
 {
     public partial class AboutUs : Form
     {
-        public AboutUs()
-        {
-            InitializeComponent();
-        }
 
+        #region EVENT
         private void AboutUs_SizeChanged(object sender, EventArgs e)
         {
             pnlMain.Location = new Point((this.Width - pnlMain.Width) / 2, (this.Height - pnlMain.Height) / 2);
@@ -26,7 +23,11 @@ namespace client
         {
             this.Close();
         }
+        #endregion
 
-
+        public AboutUs()
+        {
+            InitializeComponent();
+        }
     }
 }

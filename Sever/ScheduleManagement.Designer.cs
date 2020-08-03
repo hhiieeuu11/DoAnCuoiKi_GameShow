@@ -93,6 +93,9 @@
             this.pnlLeftBottom.Name = "pnlLeftBottom";
             this.pnlLeftBottom.Size = new System.Drawing.Size(476, 81);
             this.pnlLeftBottom.TabIndex = 5;
+            
+            ////////////////////////////////////////////////////////////////////
+           // this.pnlLeftBottom.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlLeftBottom_Paint);
             // 
             // btnRefresh
             // 

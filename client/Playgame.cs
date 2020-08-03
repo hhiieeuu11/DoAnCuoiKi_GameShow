@@ -16,13 +16,14 @@ namespace client
     public partial class Playgame : Form
     {
 
+        #region DEFINE
         const int COUNTDOWN_TIME = 15;
         bool choosed = false;   //The player has chosen the answer = True else False; 
         int OrigTime = COUNTDOWN_TIME; // count down time
         string nameClient;
         NetComm.Client client; //The client object used for the communication
         Form currentChildForm = null;
-
+        #endregion
         public Playgame(string name)
         {
 
@@ -31,53 +32,11 @@ namespace client
             //Connecting to the host
             pnlInforQuestion.Hide();
             nameClient = name;
-
-
         }
-
         public Playgame()
         {
             InitializeComponent();
             pnlLeft.Width = this.Width - pnlRight.Width;
-        }
-
-   
-
-        private void Playgame_ClientSizeChanged(object sender, EventArgs e)
-        {
-            pnlLeft.Width = this.Width - pnlRight.Width;
-            pnlInforQuestion.Location = new Point((pnlLeft.Width - pnlInforQuestion.Width) / 2, pnlLeft.Height - pnlInforQuestion.Height-30);
-            if (currentChildForm != null) currentChildForm.Size = this.Size;
-        }
-
-        private void btnClosed_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-
-        private void Playgame_Load(object sender, EventArgs e)
-        {
-
-            axVideoChatReceiver1.ReceiveAudioStream = true;
-            axVideoChatReceiver1.ReceiveVideoStream = true;
-            axVideoChatReceiver1.Listen("localhost", 1333);
-
-            client = new NetComm.Client(); //Initialize the client object
-            //Adding event handling methods for the client
-            client.Connected += new NetComm.Client.ConnectedEventHandler(client_Connected);
-            client.Disconnected += new NetComm.Client.DisconnectedEventHandler(client_Disconnected);
-            client.DataReceived += new NetComm.Client.DataReceivedEventHandler(client_DataReceived);
-            client.Connect("localhost", 5000, nameClient); //Connecting to the host (on the same machine) with port 5000 and ID is variable name in contrustor function
-
-
-
-        }
-
-        private void Playgame_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            if (client.isConnected) client.Disconnect(); //Disconnects if the 
-                                                         //client is connected, closing the communication thread
         }
 
         #region Function
@@ -85,7 +44,7 @@ namespace client
         void client_Connected()
         {
             //MessageBox.Show("Connected successfully!");
-            
+
         }
         void client_Disconnected()
         {
@@ -94,8 +53,8 @@ namespace client
 
         void client_DataReceived(byte[] Data, string ID)
         {
-            
-            var data =  Utils.ByteArrayToObject(Data);
+
+            var data = Utils.ByteArrayToObject(Data);
             if (data is DataChart)
             {
                 updateChart((DataChart)data);
@@ -109,19 +68,19 @@ namespace client
                 tmrCountDown.Enabled = true;
                 resetClock();
             }
-            else if(data is AnswerCorrect)
+            else if (data is AnswerCorrect)
             {
                 showAnswerCorrect((AnswerCorrect)data);
             }
-            else if(data is Dictionary<string, int>)
+            else if (data is Dictionary<string, int>)
             {
 
                 updateRank((Dictionary<string, int>)data);
             }
-            else if(data is string)
+            else if (data is string)
             {
                 string signal = (string)data;
-                if(signal == "EndGame")
+                if (signal == "EndGame")
                 {
                     showWinner(lvScores);
                 }
@@ -130,7 +89,7 @@ namespace client
                     npwBox.Number = int.Parse(signal);
                 }
             }
-           
+
         }
         public void showWinner(ListView lvScores)
         {
@@ -151,12 +110,12 @@ namespace client
             chartCountPlayerAnswer.Series["numberOfPlayerChoose"].Points.AddXY("D", dataChart.CountD);
         }
 
-       public void updateRank(Dictionary<string,int> listScores)
+        public void updateRank(Dictionary<string, int> listScores)
         {
             lvScores.Items.Clear();
             foreach (var player in listScores)
             {
-                
+
                 ListViewItem item = new ListViewItem();
                 item.Text = player.Key;
                 item.SubItems.Add(player.Value.ToString());
@@ -171,7 +130,7 @@ namespace client
             foreach (var ctl in pnlAnwserGroup.Controls)
             {
                 Guna2Button btn = (Guna2Button)ctl;
-                if (btn.Text == answerCorrect.Content) btn.FillColor = Color.Lime; 
+                if (btn.Text == answerCorrect.Content) btn.FillColor = Color.Lime;
             }
         }
 
@@ -183,9 +142,9 @@ namespace client
         {
             int i = 0;
             lblQuestion.Text = question.Content;
-            foreach(Control ctl in pnlAnwserGroup.Controls)
+            foreach (Control ctl in pnlAnwserGroup.Controls)
             {
-                
+
                 Guna2Button btn = (Guna2Button)ctl;
                 btn.Text = question.listAnswer[i++];
             }
@@ -239,7 +198,7 @@ namespace client
 
         #endregion
 
-
+        #region EVENT
         private void btn_Click(object sender, EventArgs e)
         {
             choosed = true; //Check The player has chosen the answer 
@@ -267,7 +226,45 @@ namespace client
                 if (!choosed) unableButtonAnswer();
             }
         }
+        private void Playgame_ClientSizeChanged(object sender, EventArgs e)
+        {
+            pnlLeft.Width = this.Width - pnlRight.Width;
+            pnlInforQuestion.Location = new Point((pnlLeft.Width - pnlInforQuestion.Width) / 2, pnlLeft.Height - pnlInforQuestion.Height - 30);
+            if (currentChildForm != null) currentChildForm.Size = this.Size;
+            axVideoChatReceiver1.MP4Height = (short)pnlLeft.Height;
+            axVideoChatReceiver1.MP4Width = (short)pnlLeft.Width;
+        }
 
- 
+        private void btnClosed_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+
+        private void Playgame_Load(object sender, EventArgs e)
+        {
+
+            axVideoChatReceiver1.ReceiveAudioStream = true;
+            axVideoChatReceiver1.ReceiveVideoStream = true;
+            axVideoChatReceiver1.Listen("10.126.3.98", 1333);
+
+            client = new NetComm.Client(); //Initialize the client object
+            //Adding event handling methods for the client
+            client.Connected += new NetComm.Client.ConnectedEventHandler(client_Connected);
+            client.Disconnected += new NetComm.Client.DisconnectedEventHandler(client_Disconnected);
+            client.DataReceived += new NetComm.Client.DataReceivedEventHandler(client_DataReceived);
+            client.Connect("10.126.3.98", 5000, nameClient); //Connecting to the host (on the same machine) with port 5000 and ID is variable name in contrustor function
+
+
+
+        }
+
+        private void Playgame_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (client.isConnected) client.Disconnect(); //Disconnects if the 
+                                                         //client is connected, closing the communication thread
+        }
+        #endregion
+
     }
 }

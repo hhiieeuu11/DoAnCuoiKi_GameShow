@@ -12,10 +12,7 @@ namespace Sever
 {
     public partial class Scores : Form
     {
-        public Scores()
-        {
-            InitializeComponent();
-        }
+        #region FUNCTION
         public Scores(Dictionary<string, int> listScores)
         {
             InitializeComponent();
@@ -27,9 +24,16 @@ namespace Sever
                 lvScores.Items.Add(item);
             }
         }
+        #endregion
+        #region EVENT
         private void btnClosed_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+        #endregion
+        public Scores()
+        {
+            InitializeComponent();
         }
     }
 }
