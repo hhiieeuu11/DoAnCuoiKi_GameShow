@@ -1,0 +1,24 @@
+C:\TestWPF\videochatpronew\WpfApplication1\VideoChatReceiverAxLib\bin\Debug\VideoChatReceiverAxLib.dll
+C:\TestWPF\videochatpronew\WpfApplication1\VideoChatReceiverAxLib\bin\Debug\VideoChatReceiverAxLib.pdb
+C:\TestWPF\videochatpronew\WpfApplication1\VideoChatReceiverAxLib\bin\Debug\Interop.VideoChatReceiverLib.dll
+C:\TestWPF\videochatpronew\WpfApplication1\VideoChatReceiverAxLib\bin\Debug\AxInterop.VideoChatReceiverLib.dll
+C:\TestWPF\videochatpronew\WpfApplication1\VideoChatReceiverAxLib\obj\Debug\Interop.VideoChatReceiverLib.dll
+C:\TestWPF\videochatpronew\WpfApplication1\VideoChatReceiverAxLib\obj\Debug\AxInterop.VideoChatReceiverLib.dll
+C:\TestWPF\videochatpronew\WpfApplication1\VideoChatReceiverAxLib\obj\Debug\VideoChatReceiverAxLib.csproj.ResolveComReference.cache
+C:\TestWPF\videochatpronew\WpfApplication1\VideoChatReceiverAxLib\obj\Debug\VideoChatReceiverAxLib.UserControl1.resources
+C:\TestWPF\videochatpronew\WpfApplication1\VideoChatReceiverAxLib\obj\Debug\VideoChatReceiverAxLib.csproj.GenerateResource.Cache
+C:\TestWPF\videochatpronew\WpfApplication1\VideoChatReceiverAxLib\obj\Debug\VideoChatReceiverAxLib.dll
+C:\TestWPF\videochatpronew\WpfApplication1\VideoChatReceiverAxLib\obj\Debug\VideoChatReceiverAxLib.pdb
+C:\TestWPF\videochatpronew\WpfApplication1\VideoChatReceiverAxLib\obj\Debug\VideoChatReceiverAxLib.csprojResolveAssemblyReference.cache
+C:\TestWPF\videochatpronew -receiver\WpfApplication1\VideoChatReceiverAxLib\bin\Debug\VideoChatReceiverAxLib.dll
+C:\TestWPF\videochatpronew -receiver\WpfApplication1\VideoChatReceiverAxLib\bin\Debug\VideoChatReceiverAxLib.pdb
+C:\TestWPF\videochatpronew -receiver\WpfApplication1\VideoChatReceiverAxLib\bin\Debug\Interop.VideoChatReceiverLib.dll
+C:\TestWPF\videochatpronew -receiver\WpfApplication1\VideoChatReceiverAxLib\bin\Debug\AxInterop.VideoChatReceiverLib.dll
+C:\TestWPF\videochatpronew -receiver\WpfApplication1\VideoChatReceiverAxLib\obj\Debug\VideoChatReceiverAxLib.csprojResolveAssemblyReference.cache
+C:\TestWPF\videochatpronew -receiver\WpfApplication1\VideoChatReceiverAxLib\obj\Debug\Interop.VideoChatReceiverLib.dll
+C:\TestWPF\videochatpronew -receiver\WpfApplication1\VideoChatReceiverAxLib\obj\Debug\AxInterop.VideoChatReceiverLib.dll
+C:\TestWPF\videochatpronew -receiver\WpfApplication1\VideoChatReceiverAxLib\obj\Debug\VideoChatReceiverAxLib.csproj.ResolveComReference.cache
+C:\TestWPF\videochatpronew -receiver\WpfApplication1\VideoChatReceiverAxLib\obj\Debug\VideoChatReceiverAxLib.UserControl1.resources
+C:\TestWPF\videochatpronew -receiver\WpfApplication1\VideoChatReceiverAxLib\obj\Debug\VideoChatReceiverAxLib.csproj.GenerateResource.Cache
+C:\TestWPF\videochatpronew -receiver\WpfApplication1\VideoChatReceiverAxLib\obj\Debug\VideoChatReceiverAxLib.dll
+C:\TestWPF\videochatpronew -receiver\WpfApplication1\VideoChatReceiverAxLib\obj\Debug\VideoChatReceiverAxLib.pdb

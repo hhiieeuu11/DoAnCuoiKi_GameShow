@@ -32,11 +32,11 @@
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.lblTitle = new System.Windows.Forms.Label();
             this.pnlRank = new Guna.UI2.WinForms.Guna2Panel();
-            this.btnClosed = new Guna.UI2.WinForms.Guna2CircleButton();
             this.lblTop1 = new System.Windows.Forms.Label();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.lblTop3 = new System.Windows.Forms.Label();
             this.lblTop2 = new System.Windows.Forms.Label();
+            this.btnClosed = new Guna.UI2.WinForms.Guna2CircleButton();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.pnlRank.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
@@ -73,7 +73,6 @@
             this.pnlRank.BorderColor = System.Drawing.Color.Cyan;
             this.pnlRank.BorderRadius = 20;
             this.pnlRank.BorderThickness = 2;
-            this.pnlRank.Controls.Add(this.btnClosed);
             this.pnlRank.Controls.Add(this.lblTop1);
             this.pnlRank.Controls.Add(this.guna2Panel1);
             this.pnlRank.Controls.Add(this.lblTitle);
@@ -82,26 +81,6 @@
             this.pnlRank.ShadowDecoration.Parent = this.pnlRank;
             this.pnlRank.Size = new System.Drawing.Size(879, 548);
             this.pnlRank.TabIndex = 2;
-            // 
-            // btnClosed
-            // 
-            this.btnClosed.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnClosed.CheckedState.Parent = this.btnClosed;
-            this.btnClosed.CustomImages.Parent = this.btnClosed;
-            this.btnClosed.FillColor = System.Drawing.Color.Transparent;
-            this.btnClosed.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnClosed.ForeColor = System.Drawing.Color.White;
-            this.btnClosed.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("btnClosed.HoverState.Image")));
-            this.btnClosed.HoverState.Parent = this.btnClosed;
-            this.btnClosed.Image = ((System.Drawing.Image)(resources.GetObject("btnClosed.Image")));
-            this.btnClosed.ImageSize = new System.Drawing.Size(60, 60);
-            this.btnClosed.Location = new System.Drawing.Point(819, 3);
-            this.btnClosed.Name = "btnClosed";
-            this.btnClosed.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.btnClosed.ShadowDecoration.Parent = this.btnClosed;
-            this.btnClosed.Size = new System.Drawing.Size(60, 60);
-            this.btnClosed.TabIndex = 15;
-            this.btnClosed.Click += new System.EventHandler(this.btnClosed_Click);
             // 
             // lblTop1
             // 
@@ -148,13 +127,37 @@
             this.lblTop2.Text = "Top2";
             this.lblTop2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // btnClosed
+            // 
+            this.btnClosed.Animated = true;
+            this.btnClosed.BackColor = System.Drawing.Color.Transparent;
+            this.btnClosed.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnClosed.CheckedState.Parent = this.btnClosed;
+            this.btnClosed.CustomImages.Parent = this.btnClosed;
+            this.btnClosed.FillColor = System.Drawing.Color.Transparent;
+            this.btnClosed.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnClosed.ForeColor = System.Drawing.Color.White;
+            this.btnClosed.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("btnClosed.HoverState.Image")));
+            this.btnClosed.HoverState.Parent = this.btnClosed;
+            this.btnClosed.Image = ((System.Drawing.Image)(resources.GetObject("btnClosed.Image")));
+            this.btnClosed.ImageSize = new System.Drawing.Size(60, 60);
+            this.btnClosed.Location = new System.Drawing.Point(960, 0);
+            this.btnClosed.Name = "btnClosed";
+            this.btnClosed.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.btnClosed.ShadowDecoration.Parent = this.btnClosed;
+            this.btnClosed.Size = new System.Drawing.Size(60, 60);
+            this.btnClosed.TabIndex = 16;
+            this.btnClosed.UseTransparentBackground = true;
+            this.btnClosed.Click += new System.EventHandler(this.btnClosed_Click);
+            // 
             // Winner
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1019, 639);
-            this.Controls.Add(this.pnlRank);
+            this.Controls.Add(this.btnClosed);
             this.Controls.Add(this.guna2PictureBox1);
+            this.Controls.Add(this.pnlRank);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Winner";

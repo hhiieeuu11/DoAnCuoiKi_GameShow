@@ -132,6 +132,12 @@
     <Compile Include="UCAnswerBox.Designer.cs">
       <DependentUpon>UCAnswerBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="Winner.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Winner.Designer.cs">
+      <DependentUpon>Winner.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AboutUsSV.resx">
       <DependentUpon>AboutUsSV.cs</DependentUpon>
     </EmbeddedResource>
@@ -172,6 +178,9 @@
     <EmbeddedResource Include="UCAnswerBox.resx">
       <DependentUpon>UCAnswerBox.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Winner.resx">
+      <DependentUpon>Winner.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\DTOProject.DTO.GameShow.datasource" />
     <None Include="Properties\Settings.settings">
@@ -205,6 +214,51 @@
       <Project>{80da8437-9a3a-4887-bf9e-909aab9b9d68}</Project>
       <Name>MyLib</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AxVideoChatReceiverLib">
+      <Guid>{E1A9DB8F-E712-4705-8A66-4CD75B534552}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="AxVideoChatSenderLib">
+      <Guid>{F9D8E1C3-CDFE-4136-ABF0-36FF5BCA7F83}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VideoChatReceiverLib">
+      <Guid>{E1A9DB8F-E712-4705-8A66-4CD75B534552}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VideoChatSenderLib">
+      <Guid>{F9D8E1C3-CDFE-4136-ABF0-36FF5BCA7F83}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

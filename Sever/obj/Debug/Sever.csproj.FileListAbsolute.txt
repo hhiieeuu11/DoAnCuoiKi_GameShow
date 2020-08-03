@@ -34,3 +34,13 @@ C:\Users\HOME\OneDrive\Máy tính\GameShow\Sever\bin\Debug\LiveCharts.WinForms.x
 C:\Users\HOME\OneDrive\Máy tính\GameShow\Sever\bin\Debug\LiveCharts.Wpf.pdb
 C:\Users\HOME\OneDrive\Máy tính\GameShow\Sever\bin\Debug\LiveCharts.Wpf.xml
 C:\Users\HOME\OneDrive\Máy tính\GameShow\Sever\obj\Debug\Sever.Scores.resources
+C:\Users\HOME\OneDrive\Máy tính\GameShow\Sever\obj\Debug\client.Winner.resources
+C:\Users\HOME\OneDrive\Máy tính\GameShow\Sever\bin\Debug\Interop.VideoChatSenderLib.dll
+C:\Users\HOME\OneDrive\Máy tính\GameShow\Sever\bin\Debug\AxInterop.VideoChatSenderLib.dll
+C:\Users\HOME\OneDrive\Máy tính\GameShow\Sever\obj\Debug\Interop.VideoChatSenderLib.dll
+C:\Users\HOME\OneDrive\Máy tính\GameShow\Sever\obj\Debug\AxInterop.VideoChatSenderLib.dll
+C:\Users\HOME\OneDrive\Máy tính\GameShow\Sever\obj\Debug\Sever.csproj.ResolveComReference.cache
+C:\Users\HOME\OneDrive\Máy tính\GameShow\Sever\bin\Debug\Interop.VideoChatReceiverLib.dll
+C:\Users\HOME\OneDrive\Máy tính\GameShow\Sever\bin\Debug\AxInterop.VideoChatReceiverLib.dll
+C:\Users\HOME\OneDrive\Máy tính\GameShow\Sever\obj\Debug\Interop.VideoChatReceiverLib.dll
+C:\Users\HOME\OneDrive\Máy tính\GameShow\Sever\obj\Debug\AxInterop.VideoChatReceiverLib.dll

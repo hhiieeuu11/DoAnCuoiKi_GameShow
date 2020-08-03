@@ -1,0 +1,123 @@
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Video Chat Sender Sample (Peer to Peer)</title>
+</head>
+
+<body ONLOAD="MyInit()">
+
+<SCRIPT LANGUAGE="JavaScript">             
+
+
+
+
+function MyInit()
+  {
+  
+
+  ivideodevicecount = VideoChatSender1.GetVideoDeviceCount()
+  
+  for(i=0;i <ivideodevicecount;i++)
+  cbovideodevice.options[i]=new Option(VideoChatSender1.GetVideoDeviceName(i),1)
+
+   iaudiodevicecount = VideoChatSender1.GetAudioDeviceCount()
+  
+  for(i=0;i <iaudiodevicecount;i++)
+  cboaudiodevice.options[i]=new Option(VideoChatSender1.GetAudioDeviceName(i),1)
+
+  
+  }
+  
+  
+  
+function MyConnect()
+{
+	
+	
+	
+	
+	VideoChatSender1.VideoDevice=cbovideodevice.selectedIndex
+	
+	VideoChatSender1.AudioDevice=cboaudiodevice.selectedIndex
+	
+	
+	VideoChatSender1.VideoFormat =cbovideoformat.options[cbovideoformat.selectedIndex].value
+
+
+	VideoChatSender1.FrameRate=15
+
+	VideoChatSender1.VideoBitrate=txtVideoBitrate.value
+	
+
+	VideoChatSender1.AudioComplexity=0
+	
+	VideoChatSender1.AudioQuality=8
+	VideoChatSender1.SendVideoStream=1
+	VideoChatSender1.SendAudioStream=1
+	
+	 iResult=VideoChatSender1.Connect(txtIPAddress.value,txtPortNo.value)
+	
+	if(iResult==3)
+	alert("video bitrate too small, please increate the videobitrate")
+
+
+}  
+
+</script>
+
+
+<p>Video Device
+  <select size="1" name="cbovideodevice">
+  </select></p>
+
+<p>Audio Device
+  <select size="1" name="cboaudiodevice">
+  </select></p>
+  
+<p>Video Format
+  <select size="1" name="cbovideoformat">
+  
+  <option value='0'>160x120</option>
+      <option value='1'>176x144</option>
+      <option value='2'>320x240</option>
+      <option value='3'>352x288</option>
+      <option value='4'>640x480</option>
+  
+  </select></p> Video Bitrate <input TYPE="Text" Name="txtVideoBitrate" Value="90000" size="15"> <br><br>
+  
+Input the Server IP Address 
+<input TYPE="Text" Name="txtIPAddress" Value="127.0.0.1" size="15"> Port No. <input TYPE="Text" Name="txtPortNo" Value="7000" size="5">  <input TYPE="BUTTON" Name="btnConnect" Value="Connect" onClick="MyConnect()"> 
+
+ 
+
+<p>
+
+<object CLASSID="clsid:5220cb21-c88d-11cf-b347-00aa00a28331" width="14" height="14">
+  <param NAME="LPKPath" VALUE="VideoChatSender.lpk">
+</object>
+<p>
+<object classid="clsid:9DA66AFA-F784-426A-82F6-7DD754C1A039" id="VideoChatSender1" width="355" height="319">
+  <param name="_Version" value="65536">
+  <param name="_ExtentX" value="9393">
+  <param name="_ExtentY" value="8440">
+  <param name="_StockProps" value="0">
+  <param name="LicenseKey" value="Demo">
+  <param name="VideoFormat" value="0">
+  <param name="SendAudioStream" value="1">
+  <param name="SendVideoStream" value="1">
+  <param name="AudioComplexity" value="0">
+  <param name="VideoBitrate" value="10000">
+  <param name="FrameRate" value="15">
+  <param name="AudioQuality" value="8">
+  <param name="AudioDevice" value="0">
+  <param name="VideoDevice" value="0">
+</object>
+
+</p>
+
+</body>
+
+</html>

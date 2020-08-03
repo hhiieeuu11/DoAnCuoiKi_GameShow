@@ -29,36 +29,27 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem(new string[] {
-            "123"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.White, null);
-            System.Windows.Forms.ListViewItem listViewItem5 = new System.Windows.Forms.ListViewItem(new string[] {
-            "456"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.White, null);
-            System.Windows.Forms.ListViewItem listViewItem6 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MC_UI));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.elipseNumberWatching = new Guna.UI2.WinForms.Guna2Elipse(this.components);
-            this.npwBox = new DTOProject.numberPeopleWacthing();
             this.pnlLeftTop = new System.Windows.Forms.Panel();
             this.pnlContainsTopic = new Guna.UI2.WinForms.Guna2Panel();
             this.lblTopicInfor = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.pnlCamera = new Guna.UI2.WinForms.Guna2Panel();
-            this.lvListPlayer = new System.Windows.Forms.ListView();
             this.proCountDown = new Guna.UI2.WinForms.Guna2CircleProgressBar();
             this.lblCountDown = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.npwBox = new DTOProject.numberPeopleWacthing();
             this.pnlLeft = new System.Windows.Forms.Panel();
             this.pnLeftBottom = new System.Windows.Forms.Panel();
             this.pnlContainsQuestion = new Guna.UI2.WinForms.Guna2Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.btnRank = new Guna.UI2.WinForms.Guna2Button();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.btnSendAnswer = new Guna.UI2.WinForms.Guna2Button();
             this.pnlAnswerGroup = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -90,6 +81,8 @@
             this.guna2GradientPanel2 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.tmrCountDown = new System.Windows.Forms.Timer(this.components);
             this.elipseClock = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.axVideoChatSender1 = new AxVideoChatSenderLib.AxVideoChatSender();
             this.pnlLeftTop.SuspendLayout();
             this.pnlContainsTopic.SuspendLayout();
             this.pnlCamera.SuspendLayout();
@@ -106,21 +99,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.grvListQuestion)).BeginInit();
             this.pnlRightTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartCountPlayerAnswer)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.axVideoChatSender1)).BeginInit();
             this.SuspendLayout();
             // 
             // elipseNumberWatching
             // 
             this.elipseNumberWatching.BorderRadius = 20;
-            this.elipseNumberWatching.TargetControl = this.npwBox;
-            // 
-            // npwBox
-            // 
-            this.npwBox.BackColor = System.Drawing.Color.Transparent;
-            this.npwBox.Location = new System.Drawing.Point(12, 13);
-            this.npwBox.Name = "npwBox";
-            this.npwBox.Number = 0;
-            this.npwBox.Size = new System.Drawing.Size(81, 30);
-            this.npwBox.TabIndex = 1;
             // 
             // pnlLeftTop
             // 
@@ -181,32 +165,15 @@
             this.pnlCamera.BorderColor = System.Drawing.Color.Aqua;
             this.pnlCamera.BorderRadius = 20;
             this.pnlCamera.BorderThickness = 2;
-            this.pnlCamera.Controls.Add(this.lvListPlayer);
             this.pnlCamera.Controls.Add(this.proCountDown);
             this.pnlCamera.Controls.Add(this.npwBox);
-            this.pnlCamera.Controls.Add(this.label1);
+            this.pnlCamera.Controls.Add(this.axVideoChatSender1);
             this.pnlCamera.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlCamera.Location = new System.Drawing.Point(0, 0);
             this.pnlCamera.Name = "pnlCamera";
             this.pnlCamera.ShadowDecoration.Parent = this.pnlCamera;
             this.pnlCamera.Size = new System.Drawing.Size(467, 355);
             this.pnlCamera.TabIndex = 0;
-            // 
-            // lvListPlayer
-            // 
-            this.lvListPlayer.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lvListPlayer.HideSelection = false;
-            this.lvListPlayer.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem4,
-            listViewItem5,
-            listViewItem6});
-            this.lvListPlayer.Location = new System.Drawing.Point(112, 13);
-            this.lvListPlayer.Name = "lvListPlayer";
-            this.lvListPlayer.ShowItemToolTips = true;
-            this.lvListPlayer.Size = new System.Drawing.Size(349, 342);
-            this.lvListPlayer.TabIndex = 37;
-            this.lvListPlayer.UseCompatibleStateImageBehavior = false;
-            this.lvListPlayer.View = System.Windows.Forms.View.Tile;
             // 
             // proCountDown
             // 
@@ -216,7 +183,7 @@
             this.proCountDown.Controls.Add(this.lblCountDown);
             this.proCountDown.FillColor = System.Drawing.Color.Transparent;
             this.proCountDown.FillThickness = 10;
-            this.proCountDown.Location = new System.Drawing.Point(12, 49);
+            this.proCountDown.Location = new System.Drawing.Point(3, 41);
             this.proCountDown.Maximum = 15;
             this.proCountDown.Name = "proCountDown";
             this.proCountDown.ProgressColor = System.Drawing.Color.Red;
@@ -225,7 +192,7 @@
             this.proCountDown.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.proCountDown.ShadowDecoration.Parent = this.proCountDown;
             this.proCountDown.Size = new System.Drawing.Size(80, 80);
-            this.proCountDown.TabIndex = 6;
+            this.proCountDown.TabIndex = 9;
             // 
             // lblCountDown
             // 
@@ -238,19 +205,14 @@
             this.lblCountDown.Text = "0:15";
             this.lblCountDown.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label1
+            // npwBox
             // 
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Image = ((System.Drawing.Image)(resources.GetObject("label1.Image")));
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(467, 355);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "CAMERA";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.npwBox.BackColor = System.Drawing.Color.Transparent;
+            this.npwBox.Location = new System.Drawing.Point(3, 5);
+            this.npwBox.Name = "npwBox";
+            this.npwBox.Number = 0;
+            this.npwBox.Size = new System.Drawing.Size(81, 30);
+            this.npwBox.TabIndex = 8;
             // 
             // pnlLeft
             // 
@@ -276,8 +238,6 @@
             // 
             this.pnlContainsQuestion.Controls.Add(this.panel6);
             this.pnlContainsQuestion.Controls.Add(this.btnRank);
-            this.pnlContainsQuestion.Controls.Add(this.panel4);
-            this.pnlContainsQuestion.Controls.Add(this.btnSendAnswer);
             this.pnlContainsQuestion.Controls.Add(this.pnlAnswerGroup);
             this.pnlContainsQuestion.Controls.Add(this.panel1);
             this.pnlContainsQuestion.Controls.Add(this.btnNext);
@@ -292,7 +252,7 @@
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.Aqua;
-            this.panel6.Location = new System.Drawing.Point(408, 337);
+            this.panel6.Location = new System.Drawing.Point(576, 337);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(3, 42);
             this.panel6.TabIndex = 17;
@@ -315,47 +275,13 @@
             this.btnRank.HoverState.Parent = this.btnRank;
             this.btnRank.Image = ((System.Drawing.Image)(resources.GetObject("btnRank.Image")));
             this.btnRank.ImageSize = new System.Drawing.Size(52, 52);
-            this.btnRank.Location = new System.Drawing.Point(262, 328);
+            this.btnRank.Location = new System.Drawing.Point(430, 328);
             this.btnRank.Name = "btnRank";
             this.btnRank.ShadowDecoration.Parent = this.btnRank;
             this.btnRank.Size = new System.Drawing.Size(137, 58);
             this.btnRank.TabIndex = 16;
             this.btnRank.UseTransparentBackground = true;
             this.btnRank.Click += new System.EventHandler(this.btnRank_Click);
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.Aqua;
-            this.panel4.Location = new System.Drawing.Point(716, 337);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(3, 42);
-            this.panel4.TabIndex = 15;
-            // 
-            // btnSendAnswer
-            // 
-            this.btnSendAnswer.Animated = true;
-            this.btnSendAnswer.BackColor = System.Drawing.Color.Transparent;
-            this.btnSendAnswer.BorderColor = System.Drawing.Color.Transparent;
-            this.btnSendAnswer.BorderRadius = 20;
-            this.btnSendAnswer.BorderThickness = 2;
-            this.btnSendAnswer.CheckedState.Parent = this.btnSendAnswer;
-            this.btnSendAnswer.CustomImages.Parent = this.btnSendAnswer;
-            this.btnSendAnswer.FillColor = System.Drawing.Color.Transparent;
-            this.btnSendAnswer.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnSendAnswer.ForeColor = System.Drawing.Color.White;
-            this.btnSendAnswer.HoverState.BorderColor = System.Drawing.Color.Aqua;
-            this.btnSendAnswer.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(62)))), ((int)(((byte)(66)))));
-            this.btnSendAnswer.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("btnSendAnswer.HoverState.Image")));
-            this.btnSendAnswer.HoverState.Parent = this.btnSendAnswer;
-            this.btnSendAnswer.Image = ((System.Drawing.Image)(resources.GetObject("btnSendAnswer.Image")));
-            this.btnSendAnswer.ImageSize = new System.Drawing.Size(52, 52);
-            this.btnSendAnswer.Location = new System.Drawing.Point(725, 328);
-            this.btnSendAnswer.Name = "btnSendAnswer";
-            this.btnSendAnswer.ShadowDecoration.Parent = this.btnSendAnswer;
-            this.btnSendAnswer.Size = new System.Drawing.Size(137, 58);
-            this.btnSendAnswer.TabIndex = 14;
-            this.btnSendAnswer.UseTransparentBackground = true;
-            this.btnSendAnswer.Click += new System.EventHandler(this.btnSendAnswer_Click);
             // 
             // pnlAnswerGroup
             // 
@@ -479,7 +405,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Aqua;
-            this.panel1.Location = new System.Drawing.Point(561, 337);
+            this.panel1.Location = new System.Drawing.Point(729, 337);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(3, 42);
             this.panel1.TabIndex = 12;
@@ -503,7 +429,7 @@
             this.btnNext.HoverState.Parent = this.btnNext;
             this.btnNext.Image = ((System.Drawing.Image)(resources.GetObject("btnNext.Image")));
             this.btnNext.ImageSize = new System.Drawing.Size(52, 52);
-            this.btnNext.Location = new System.Drawing.Point(418, 328);
+            this.btnNext.Location = new System.Drawing.Point(586, 328);
             this.btnNext.Name = "btnNext";
             this.btnNext.ShadowDecoration.Parent = this.btnNext;
             this.btnNext.Size = new System.Drawing.Size(137, 58);
@@ -529,7 +455,7 @@
             this.btnSendQuestion.HoverState.Parent = this.btnSendQuestion;
             this.btnSendQuestion.Image = ((System.Drawing.Image)(resources.GetObject("btnSendQuestion.Image")));
             this.btnSendQuestion.ImageSize = new System.Drawing.Size(52, 52);
-            this.btnSendQuestion.Location = new System.Drawing.Point(570, 328);
+            this.btnSendQuestion.Location = new System.Drawing.Point(738, 328);
             this.btnSendQuestion.Name = "btnSendQuestion";
             this.btnSendQuestion.ShadowDecoration.Parent = this.btnSendQuestion;
             this.btnSendQuestion.Size = new System.Drawing.Size(137, 58);
@@ -664,32 +590,32 @@
             // 
             this.grvListQuestion.AllowUserToAddRows = false;
             this.grvListQuestion.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            this.grvListQuestion.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.grvListQuestion.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.grvListQuestion.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.grvListQuestion.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.grvListQuestion.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.grvListQuestion.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.grvListQuestion.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.grvListQuestion.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grvListQuestion.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grvListQuestion.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.grvListQuestion.ColumnHeadersHeight = 30;
             this.grvListQuestion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.grvListQuestion.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.grvListQuestion.DefaultCellStyle = dataGridViewCellStyle3;
             this.grvListQuestion.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grvListQuestion.EnableHeadersVisualStyles = false;
             this.grvListQuestion.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
@@ -753,21 +679,21 @@
             // 
             // chartCountPlayerAnswer
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chartCountPlayerAnswer.ChartAreas.Add(chartArea2);
+            chartArea1.Name = "ChartArea1";
+            this.chartCountPlayerAnswer.ChartAreas.Add(chartArea1);
             this.chartCountPlayerAnswer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.chartCountPlayerAnswer.Location = new System.Drawing.Point(0, 5);
             this.chartCountPlayerAnswer.Name = "chartCountPlayerAnswer";
             this.chartCountPlayerAnswer.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
-            series2.ChartArea = "ChartArea1";
-            series2.Name = "numberOfPlayerChoose";
-            this.chartCountPlayerAnswer.Series.Add(series2);
+            series1.ChartArea = "ChartArea1";
+            series1.Name = "numberOfPlayerChoose";
+            this.chartCountPlayerAnswer.Series.Add(series1);
             this.chartCountPlayerAnswer.Size = new System.Drawing.Size(349, 366);
             this.chartCountPlayerAnswer.TabIndex = 41;
-            title2.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            title2.Name = "Title1";
-            title2.Text = "ANALYSIS TABLE";
-            this.chartCountPlayerAnswer.Titles.Add(title2);
+            title1.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            title1.Name = "Title1";
+            title1.Text = "ANALYSIS TABLE";
+            this.chartCountPlayerAnswer.Titles.Add(title1);
             // 
             // panel5
             // 
@@ -808,8 +734,23 @@
             // 
             // elipseClock
             // 
-            this.elipseClock.BorderRadius = 100;
+            this.elipseClock.BorderRadius = 80;
             this.elipseClock.TargetControl = this.proCountDown;
+            // 
+            // guna2Elipse1
+            // 
+            this.guna2Elipse1.BorderRadius = 20;
+            this.guna2Elipse1.TargetControl = this.npwBox;
+            // 
+            // axVideoChatSender1
+            // 
+            this.axVideoChatSender1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.axVideoChatSender1.Enabled = true;
+            this.axVideoChatSender1.Location = new System.Drawing.Point(0, 0);
+            this.axVideoChatSender1.Name = "axVideoChatSender1";
+            this.axVideoChatSender1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axVideoChatSender1.OcxState")));
+            this.axVideoChatSender1.Size = new System.Drawing.Size(467, 355);
+            this.axVideoChatSender1.TabIndex = 7;
             // 
             // MC_UI
             // 
@@ -842,6 +783,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.grvListQuestion)).EndInit();
             this.pnlRightTop.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.chartCountPlayerAnswer)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.axVideoChatSender1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -882,20 +824,18 @@
         private Guna.UI2.WinForms.Guna2Panel pnlContainsTopic;
         private System.Windows.Forms.Label label7;
         private Guna.UI2.WinForms.Guna2Panel pnlCamera;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblTopicInfor;
-        private DTOProject.numberPeopleWacthing npwBox;
         private System.Windows.Forms.Timer tmrCountDown;
         private Guna.UI2.WinForms.Guna2Elipse elipseClock;
-        private Guna.UI2.WinForms.Guna2CircleProgressBar proCountDown;
-        private System.Windows.Forms.Label lblCountDown;
-        private System.Windows.Forms.ListView lvListPlayer;
-        private System.Windows.Forms.Panel panel4;
-        private Guna.UI2.WinForms.Guna2Button btnSendAnswer;
         public System.Windows.Forms.DataVisualization.Charting.Chart chartCountPlayerAnswer;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel6;
         private Guna.UI2.WinForms.Guna2Button btnRank;
+        private Guna.UI2.WinForms.Guna2CircleProgressBar proCountDown;
+        private System.Windows.Forms.Label lblCountDown;
+        private DTOProject.numberPeopleWacthing npwBox;
+        private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
+        private AxVideoChatSenderLib.AxVideoChatSender axVideoChatSender1;
     }
 }

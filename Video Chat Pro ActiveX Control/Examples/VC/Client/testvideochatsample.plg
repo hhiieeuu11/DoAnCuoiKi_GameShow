@@ -1,0 +1,64 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: testvideochatsample - Win32 Release--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating command line "rc.exe /l 0x409 /fo"Release/testvideochatsample.res" /d "NDEBUG" /d "_AFXDLL" "C:\Program Files\Video Chat Pro ActiveX ControlXXX\Examples\VC\Client\testvideochatsample.rc"" 
+Creating temporary file "C:\DOCUME~1\Jimmy\LOCALS~1\Temp\RSP4.tmp" with contents
+[
+/nologo /MD /W3 /GX /O2 /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /FR"Release/" /Fp"Release/testvideochatsample.pch" /Yu"stdafx.h" /Fo"Release/" /Fd"Release/" /FD /c 
+"C:\Program Files\Video Chat Pro ActiveX ControlXXX\Examples\VC\Client\DlgSet.cpp"
+"C:\Program Files\Video Chat Pro ActiveX ControlXXX\Examples\VC\Client\testvideochatsample.cpp"
+"C:\Program Files\Video Chat Pro ActiveX ControlXXX\Examples\VC\Client\testvideochatsampleDlg.cpp"
+"C:\Program Files\Video Chat Pro ActiveX ControlXXX\Examples\VC\Client\videochat.cpp"
+"C:\Program Files\Video Chat Pro ActiveX ControlXXX\Examples\VC\Client\videochatreceiver.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\Jimmy\LOCALS~1\Temp\RSP4.tmp" 
+Creating temporary file "C:\DOCUME~1\Jimmy\LOCALS~1\Temp\RSP5.tmp" with contents
+[
+/nologo /MD /W3 /GX /O2 /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /FR"Release/" /Fp"Release/testvideochatsample.pch" /Yc"stdafx.h" /Fo"Release/" /Fd"Release/" /FD /c 
+"C:\Program Files\Video Chat Pro ActiveX ControlXXX\Examples\VC\Client\StdAfx.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\Jimmy\LOCALS~1\Temp\RSP5.tmp" 
+Creating temporary file "C:\DOCUME~1\Jimmy\LOCALS~1\Temp\RSP6.tmp" with contents
+[
+/nologo /subsystem:windows /incremental:no /pdb:"Release/Client.pdb" /machine:I386 /out:"Release/Client.exe" 
+".\Release\DlgSet.obj"
+".\Release\StdAfx.obj"
+".\Release\testvideochatsample.obj"
+".\Release\testvideochatsampleDlg.obj"
+".\Release\videochat.obj"
+".\Release\videochatreceiver.obj"
+".\Release\testvideochatsample.res"
+]
+Creating command line "link.exe @C:\DOCUME~1\Jimmy\LOCALS~1\Temp\RSP6.tmp"
+<h3>Output Window</h3>
+Compiling resources...
+Compiling...
+StdAfx.cpp
+Compiling...
+DlgSet.cpp
+testvideochatsample.cpp
+testvideochatsampleDlg.cpp
+C:\Program Files\Video Chat Pro ActiveX ControlXXX\Examples\VC\Client\testvideochatsampleDlg.cpp(326) : warning C4101: 'iFontSize' : unreferenced local variable
+C:\Program Files\Video Chat Pro ActiveX ControlXXX\Examples\VC\Client\testvideochatsampleDlg.cpp(559) : warning C4244: 'argument' : conversion from 'long' to 'short', possible loss of data
+C:\Program Files\Video Chat Pro ActiveX ControlXXX\Examples\VC\Client\testvideochatsampleDlg.cpp(562) : warning C4244: 'argument' : conversion from 'long' to 'short', possible loss of data
+C:\Program Files\Video Chat Pro ActiveX ControlXXX\Examples\VC\Client\testvideochatsampleDlg.cpp(563) : warning C4244: 'argument' : conversion from 'long' to 'short', possible loss of data
+videochat.cpp
+videochatreceiver.cpp
+Generating Code...
+Linking...
+Creating command line "bscmake.exe /nologo /o"Release/testvideochatsample.bsc"  ".\Release\StdAfx.sbr" ".\Release\DlgSet.sbr" ".\Release\testvideochatsample.sbr" ".\Release\testvideochatsampleDlg.sbr" ".\Release\videochat.sbr" ".\Release\videochatreceiver.sbr""
+Creating browse info file...
+<h3>Output Window</h3>
+
+
+
+<h3>Results</h3>
+Client.exe - 0 error(s), 4 warning(s)
+</pre>
+</body>
+</html>

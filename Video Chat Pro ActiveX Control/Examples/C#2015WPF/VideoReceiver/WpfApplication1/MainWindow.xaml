@@ -1,0 +1,24 @@
+﻿<Window x:Class="WpfApplication1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApplication1"
+        xmlns:wf="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms"
+        xmlns:axreceiver="clr-namespace:AxVideoChatReceiverLib;assembly=AxInterop.VideoChatReceiverLib"
+        mc:Ignorable="d"
+        Title="Video Reciever" Height="400" Width="900">
+    <Grid Loaded="Grid_Loaded">
+
+
+        <WindowsFormsHost Name="wfh2" Margin="22,25,563.6,75.4" >
+            <axreceiver:AxVideoChatReceiver x:Name="axVideoChatReceiver" Visible="False"/>
+        </WindowsFormsHost>
+        <Button x:Name="buttonStartListen" Content="Start Listening" HorizontalAlignment="Left" Height="36" Margin="368,176,0,0" VerticalAlignment="Top" Width="108" Click="buttonStartListen_Click"/>
+        <Button x:Name="buttonDisconnectListen" Content="Disconnect" HorizontalAlignment="Left" Height="36" Margin="488,176,0,0" VerticalAlignment="Top" Width="108" Click="buttonDisconnectListen_Click"/>
+        <Label x:Name="label5_Copy5" Content="Listening IP Address" HorizontalAlignment="Left" Height="30" Margin="368,55,0,0" VerticalAlignment="Top" Width="128" />
+        <TextBox x:Name="txtListenIP"  HorizontalAlignment="Left" Height="25" Margin="502,58,0,0" TextWrapping="Wrap" Text="127.0.0.1" VerticalAlignment="Top" Width="64"/>
+        <Label x:Name="label5_Copy6" Content="Port No." HorizontalAlignment="Left" Height="30" Margin="378,115,0,0" VerticalAlignment="Top" Width="70"/>
+        <TextBox x:Name="txtListenPortno"  HorizontalAlignment="Left" Height="25" Margin="502,119,0,0" TextWrapping="Wrap" Text="7000" VerticalAlignment="Top" Width="64"/>
+    </Grid>
+</Window>

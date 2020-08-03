@@ -1,0 +1,51 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: testvideochatsample - Win32 Release--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating command line "rc.exe /l 0x804 /fo"Release/testvideochatsample.res" /d "NDEBUG" /d "_AFXDLL" "C:\installer\videochatpro\Examples\vc\Server\testvideochatsample\testvideochatsample.rc"" 
+Creating temporary file "C:\Users\jimmy\AppData\Local\Temp\RSP3E78.tmp" with contents
+[
+/nologo /MD /W3 /GX /O2 /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /Fp"Release/testvideochatsample.pch" /Yu"stdafx.h" /Fo"Release/" /Fd"Release/" /FD /c 
+"C:\installer\videochatpro\Examples\vc\Server\testvideochatsample\testvideochatsample.cpp"
+"C:\installer\videochatpro\Examples\vc\Server\testvideochatsample\testvideochatsampleDlg.cpp"
+"C:\installer\videochatpro\Examples\vc\Server\testvideochatsample\videochatserver.cpp"
+]
+Creating command line "cl.exe @C:\Users\jimmy\AppData\Local\Temp\RSP3E78.tmp" 
+Creating temporary file "C:\Users\jimmy\AppData\Local\Temp\RSP3E79.tmp" with contents
+[
+/nologo /MD /W3 /GX /O2 /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /Fp"Release/testvideochatsample.pch" /Yc"stdafx.h" /Fo"Release/" /Fd"Release/" /FD /c 
+"C:\installer\videochatpro\Examples\vc\Server\testvideochatsample\StdAfx.cpp"
+]
+Creating command line "cl.exe @C:\Users\jimmy\AppData\Local\Temp\RSP3E79.tmp" 
+Creating temporary file "C:\Users\jimmy\AppData\Local\Temp\RSP3E7A.tmp" with contents
+[
+/nologo /subsystem:windows /incremental:no /pdb:"Release/Server.pdb" /machine:I386 /out:"Release/Server.exe" 
+.\Release\StdAfx.obj
+.\Release\testvideochatsample.obj
+.\Release\testvideochatsampleDlg.obj
+.\Release\videochatserver.obj
+.\Release\testvideochatsample.res
+]
+Creating command line "link.exe @C:\Users\jimmy\AppData\Local\Temp\RSP3E7A.tmp"
+<h3>Output Window</h3>
+Compiling resources...
+Compiling...
+StdAfx.cpp
+Compiling...
+testvideochatsample.cpp
+testvideochatsampleDlg.cpp
+videochatserver.cpp
+Generating Code...
+Linking...
+
+
+
+<h3>Results</h3>
+Server.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

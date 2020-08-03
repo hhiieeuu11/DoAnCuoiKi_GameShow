@@ -1,0 +1,11 @@
+C:\TestWPF\videochatpronew\WpfApplication1\VideoChatSenderAxLib\bin\Debug\VideoChatSenderAxLib.dll
+C:\TestWPF\videochatpronew\WpfApplication1\VideoChatSenderAxLib\bin\Debug\VideoChatSenderAxLib.pdb
+C:\TestWPF\videochatpronew\WpfApplication1\VideoChatSenderAxLib\bin\Debug\Interop.VideoChatSenderLib.dll
+C:\TestWPF\videochatpronew\WpfApplication1\VideoChatSenderAxLib\bin\Debug\AxInterop.VideoChatSenderLib.dll
+C:\TestWPF\videochatpronew\WpfApplication1\VideoChatSenderAxLib\obj\Debug\Interop.VideoChatSenderLib.dll
+C:\TestWPF\videochatpronew\WpfApplication1\VideoChatSenderAxLib\obj\Debug\AxInterop.VideoChatSenderLib.dll
+C:\TestWPF\videochatpronew\WpfApplication1\VideoChatSenderAxLib\obj\Debug\VideoChatSenderAxLib.csproj.ResolveComReference.cache
+C:\TestWPF\videochatpronew\WpfApplication1\VideoChatSenderAxLib\obj\Debug\VideoChatSenderAxLib.UserControl1.resources
+C:\TestWPF\videochatpronew\WpfApplication1\VideoChatSenderAxLib\obj\Debug\VideoChatSenderAxLib.csproj.GenerateResource.Cache
+C:\TestWPF\videochatpronew\WpfApplication1\VideoChatSenderAxLib\obj\Debug\VideoChatSenderAxLib.dll
+C:\TestWPF\videochatpronew\WpfApplication1\VideoChatSenderAxLib\obj\Debug\VideoChatSenderAxLib.pdb

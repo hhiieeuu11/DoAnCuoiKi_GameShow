@@ -1,4 +1,5 @@
-﻿using DTOProject.DTO;
+﻿using client;
+using DTOProject.DTO;
 using MyLib;
 using System;
 using System.Collections.Generic;
@@ -17,7 +18,11 @@ namespace Sever
 {
     public partial class MC_UI : Form
     {
-        int OrigTime = 15;  //Time countdown
+
+        const int TIME_COUNT_DOWN = 15;
+        const int NUMBER_QUESTION = 2;
+
+        int OrigTime = TIME_COUNT_DOWN;  //Time countdown
         int numQuestionPlayed;  //Count of question played
         NetComm.Host server; //Creates the host variable object
         Color colorAnswerCorrect = Color.FromArgb(0, 192, 0);
@@ -27,6 +32,8 @@ namespace Sever
         string filePath = "../../question.txt";
         DataChart statisticalData;  //Statistical data of the player's answer to each question
         Dictionary<string, int> listScores = new Dictionary<string, int>();
+
+        Form currentChildForm = null;
 
 
         public MC_UI()
@@ -105,8 +112,10 @@ namespace Sever
             //Setup localtion of pnlContainsQuestion
             int newLocalX = pnlLeft.Width - pnlContainsQuestion.Width;
             pnlContainsQuestion.Location = new Point(newLocalX / 2, pnlContainsQuestion.Location.Y);
-            
-            
+
+            if (currentChildForm != null) currentChildForm.Size = this.Size;
+
+
         }
 
         /// <summary>
@@ -164,16 +173,33 @@ namespace Sever
         {
             resetClock();
             resetColorAnswers();
-            if (indexCurrentQuestion < listQuestion.Count-1)
+            if (indexCurrentQuestion < NUMBER_QUESTION - 1)
             {
                 indexCurrentQuestion++;
                 currentQuestion = listQuestion[indexCurrentQuestion];
                 setupQuestion(currentQuestion);
             }
             else
-                MessageBox.Show("You have run out of questions!", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            {
+                MessageBox.Show("You have run out of questions!Do you want show final results", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                showWinner(listScores);
+                server.Brodcast(Utils.ObjectToByteArray("EndGame"));
+                btnSendQuestion.Enabled = false;
+            }
             btnNext.Enabled = false;
             btnSendQuestion.Enabled = true;
+        }
+
+        public void showWinner(Dictionary<string, int> listScores)
+        {
+            if (listScores.Count < 1)
+                OpenChildForm(new Winner("", "", ""));
+            if (listScores.Count == 1)
+                OpenChildForm(new Winner(listScores.Keys.ElementAt(0),"", ""));
+            if (listScores.Count == 2)
+                OpenChildForm(new Winner(listScores.Keys.ElementAt(0), listScores.Keys.ElementAt(1), ""));
+            if (listScores.Count > 2)
+                OpenChildForm(new Winner(listScores.Keys.ElementAt(0), listScores.Keys.ElementAt(1), listScores.Keys.ElementAt(2)));
         }
 
         private void CountDown_Tick(object sender, EventArgs e)
@@ -193,29 +219,52 @@ namespace Sever
 
         private void btnSendQuestion_Click(object sender, EventArgs e)
         {
-
-            numQuestionPlayed++;
-            statisticalData.refesh();
-            updateChart(statisticalData);
-
-            btnSendQuestion.Enabled = false;
-            btnNext.Enabled = false;
-            
-            tmrCountDown.Enabled = true;
-            Question question = new Question
+            if (server.Users.Count == 0)
             {
-                Id = currentQuestion.Id,
-                listAnswer = currentQuestion.listAnswer,
-                Content = currentQuestion.Content
-            }; //Create new question with Correct answer is null;
-            server.Brodcast(Utils.ObjectToByteArray(question));
-            server.Brodcast(Utils.ObjectToByteArray(statisticalData));
+                MessageBox.Show("Haven't player at present!", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                numQuestionPlayed++;
+                statisticalData.refesh();
+                updateChart(statisticalData);
+
+                btnSendQuestion.Enabled = false;
+                btnNext.Enabled = false;
+            
+                tmrCountDown.Enabled = true;
+                Question question = new Question
+                {
+                    Id = currentQuestion.Id,
+                    listAnswer = currentQuestion.listAnswer,
+                    Content = currentQuestion.Content
+                }; //Create new question with Correct answer is null;
+                server.Brodcast(Utils.ObjectToByteArray(question));
+                server.Brodcast(Utils.ObjectToByteArray(statisticalData));
+            }
+            
         }
 
 
         #endregion
         private void MC_UI_Load(object sender, EventArgs e)
         {
+
+
+            axVideoChatSender1.VideoDevice = 0;
+            axVideoChatSender1.AudioDevice = 0;
+            axVideoChatSender1.VideoFormat = 0;
+            axVideoChatSender1.FrameRate = 15;
+            axVideoChatSender1.VideoBitrate = 128000;
+            axVideoChatSender1.AudioComplexity = 0;
+            axVideoChatSender1.AudioQuality = 8;
+            axVideoChatSender1.SendAudioStream = true;
+            axVideoChatSender1.SendVideoStream = true;
+
+            axVideoChatSender1.Connect("localhost", 1333);
+            axVideoChatSender1.ConferenceNumber = 50;
+            axVideoChatSender1.ConferenceUserID = 3000;
+
             server = new NetComm.Host(5000);    //Initialize the Server object, 
                                                 //connection will use the 2020 port number
             server.StartConnection(); 		//Starts listening for incoming clients
@@ -228,6 +277,8 @@ namespace Sever
             server.SendBufferSize = 400;
             server.ReceiveBufferSize = 50;
             server.NoDelay = true;
+
+
         }
 
         public void server_onConnection(string id)
@@ -235,10 +286,10 @@ namespace Sever
             //listIdPlayer.Add(id);
             // MessageBox.Show(id + " connected!");
            // listIdPlayer = server.Users;
-            lvListPlayer.Items.Add(id);
             listScores.Add(id, 0);
-
             sendListScores(listScores);
+            npwBox.Number = server.Users.Count;
+            sendNumberPlayer(server.Users.Count);
             //lvScores.up
         }
 
@@ -247,13 +298,13 @@ namespace Sever
         void Server_lostConnection(string id)
         {
             listScores.Remove(id);
-            lvListPlayer.Items.Remove(lvListPlayer.FindItemWithText(id));            
+            npwBox.Number = server.Users.Count;
+            sendNumberPlayer(server.Users.Count);
         }
 
         void Server_DataReceived(string ID, byte[] Data)
         {
             var data = (string)Utils.ByteArrayToObject(Data);
-            lvListPlayer.Items.Add(ID + (string)Utils.ByteArrayToObject(Data));
             updateDataChart(data, statisticalData);
             updateChart(statisticalData);
             server.Brodcast(Utils.ObjectToByteArray(statisticalData)); //Send Statistical data of the player's 
@@ -271,12 +322,12 @@ namespace Sever
 
         }
 
-        private void btnSendAnswer_Click(object sender, EventArgs e)
+
+
+        public void sendNumberPlayer(int count)
         {
-            server.Brodcast(Utils.ObjectToByteArray("EndGame"));
+            server.Brodcast(Utils.ObjectToByteArray(count.ToString()));
         }
-
-
         private void sendListScores(Dictionary<string, int> listScores)
         {
             listScores = Utils.Rank(listScores);
@@ -327,11 +378,33 @@ namespace Sever
             server.Brodcast(Utils.ObjectToByteArray(answerCorrect));
         }
 
+        private void OpenChildForm(Form childForm)
+        {
+            //open only form
+            if (currentChildForm != null)
+            {
+                currentChildForm.Close();
+            }
+            currentChildForm = childForm;
+            //End
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Width = this.Width;
+            childForm.Height = this.Height;
+            childForm.Location = new Point(0, 0);
+            this.Controls.Add(childForm);
+            this.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+        }
+
         private void btnRank_Click(object sender, EventArgs e)
         {
             listScores = Utils.Rank(listScores);
             Form frmScores = new Scores(listScores);
             frmScores.ShowDialog();
         }
+
+
     }
 }

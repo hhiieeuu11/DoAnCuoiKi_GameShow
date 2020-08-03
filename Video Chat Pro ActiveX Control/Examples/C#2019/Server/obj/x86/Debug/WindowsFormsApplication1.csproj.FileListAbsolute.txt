@@ -1,0 +1,15 @@
+C:\Users\HOME\OneDrive\Máy tính\GameShow\Video Chat Pro ActiveX Control\Examples\C#2019\Server\bin\Debug\WindowsFormsApplication1.exe.config
+C:\Users\HOME\OneDrive\Máy tính\GameShow\Video Chat Pro ActiveX Control\Examples\C#2019\Server\bin\Debug\WindowsFormsApplication1.exe
+C:\Users\HOME\OneDrive\Máy tính\GameShow\Video Chat Pro ActiveX Control\Examples\C#2019\Server\bin\Debug\WindowsFormsApplication1.pdb
+C:\Users\HOME\OneDrive\Máy tính\GameShow\Video Chat Pro ActiveX Control\Examples\C#2019\Server\bin\Debug\Interop.VideoChatServerLib.dll
+C:\Users\HOME\OneDrive\Máy tính\GameShow\Video Chat Pro ActiveX Control\Examples\C#2019\Server\bin\Debug\AxInterop.VideoChatServerLib.dll
+C:\Users\HOME\OneDrive\Máy tính\GameShow\Video Chat Pro ActiveX Control\Examples\C#2019\Server\obj\x86\Debug\WindowsFormsApplication1.csprojAssemblyReference.cache
+C:\Users\HOME\OneDrive\Máy tính\GameShow\Video Chat Pro ActiveX Control\Examples\C#2019\Server\obj\x86\Debug\Interop.VideoChatServerLib.dll
+C:\Users\HOME\OneDrive\Máy tính\GameShow\Video Chat Pro ActiveX Control\Examples\C#2019\Server\obj\x86\Debug\AxInterop.VideoChatServerLib.dll
+C:\Users\HOME\OneDrive\Máy tính\GameShow\Video Chat Pro ActiveX Control\Examples\C#2019\Server\obj\x86\Debug\WindowsFormsApplication1.csproj.ResolveComReference.cache
+C:\Users\HOME\OneDrive\Máy tính\GameShow\Video Chat Pro ActiveX Control\Examples\C#2019\Server\obj\x86\Debug\WindowsFormsApplication1.Form1.resources
+C:\Users\HOME\OneDrive\Máy tính\GameShow\Video Chat Pro ActiveX Control\Examples\C#2019\Server\obj\x86\Debug\WindowsFormsApplication1.Properties.Resources.resources
+C:\Users\HOME\OneDrive\Máy tính\GameShow\Video Chat Pro ActiveX Control\Examples\C#2019\Server\obj\x86\Debug\WindowsFormsApplication1.csproj.GenerateResource.cache
+C:\Users\HOME\OneDrive\Máy tính\GameShow\Video Chat Pro ActiveX Control\Examples\C#2019\Server\obj\x86\Debug\WindowsFormsApplication1.csproj.CoreCompileInputs.cache
+C:\Users\HOME\OneDrive\Máy tính\GameShow\Video Chat Pro ActiveX Control\Examples\C#2019\Server\obj\x86\Debug\WindowsFormsApplication1.exe
+C:\Users\HOME\OneDrive\Máy tính\GameShow\Video Chat Pro ActiveX Control\Examples\C#2019\Server\obj\x86\Debug\WindowsFormsApplication1.pdb

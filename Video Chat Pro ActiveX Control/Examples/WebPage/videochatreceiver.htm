@@ -1,0 +1,61 @@
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Video Chat Receiver Sample (peer to peer)</title>
+</head>
+
+<body>
+
+<SCRIPT LANGUAGE="JavaScript">             
+
+
+
+
+
+  
+  
+function MyListen()
+{
+	
+	VideoChatReceiver1.ReceiveVideoStream =1
+	VideoChatReceiver1.ReceiveAudioStream =1
+	iResult=VideoChatReceiver1.Listen(txtIPAddress.value,txtPortNo.value)
+	
+	
+	 
+
+
+}  
+
+</script>
+
+
+<br><br>
+  
+Listen From IP Address 
+<input TYPE="Text" Name="txtIPAddress" Value="127.0.0.1" size="15"> Port No. <input TYPE="Text" Name="txtPortNo" Value="7000" size="5">  <input TYPE="BUTTON" Name="btnConnect" Value="Start Listening" onClick="MyListen()"> 
+
+ 
+
+<p>
+&#12288;</p>
+
+<p>
+<object CLASSID="clsid:5220cb21-c88d-11cf-b347-00aa00a28331" width="14" height="14">
+  <param NAME="LPKPath" VALUE="VideoChatReceiver.lpk">
+</object>
+
+<object classid="clsid:7DD8AFB4-618D-4067-981A-9345DF0AFCF8" id="VideoChatReceiver1" width="432" height="376">
+  <param name="_Version" value="65536">
+  <param name="_ExtentX" value="11430">
+  <param name="_ExtentY" value="9948">
+  <param name="_StockProps" value="0">
+</object>
+</p>
+
+</body>
+
+</html>

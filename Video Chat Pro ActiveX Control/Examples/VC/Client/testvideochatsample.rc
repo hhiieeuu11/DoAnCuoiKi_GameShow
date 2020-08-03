@@ -1,0 +1,480 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_DIALOG1 DIALOG DISCARDABLE  0, 0, 223, 194
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+FONT 10, "Arial"
+BEGIN
+    LTEXT           "Stream to IP address",IDC_STATICCONNECTIP,16,50,96,19
+    EDITTEXT        IDC_EDITCONNECTIP,117,50,72,12,ES_AUTOHSCROLL
+    LTEXT           "Port No",IDC_STATIC,16,103,30,9
+    LTEXT           "Conference Number",IDC_STATIC,16,129,76,13
+    LTEXT           "User ID",IDC_STATIC,16,151,38,9
+    PUSHBUTTON      "OK",IDC_BUTTON1,119,169,58,14
+    EDITTEXT        IDC_EDITPORTNO,119,104,72,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDITCONFNO,119,128,72,12,ES_AUTOHSCROLL | 
+                    WS_DISABLED
+    EDITTEXT        IDC_EDITUSERID,119,149,72,12,ES_AUTOHSCROLL | 
+                    WS_DISABLED
+    GROUPBOX        "Type",IDC_STATIC,14,7,199,36
+    CONTROL         "One to one Video Chat",IDC_RADIOVIDEOCHATTYPE,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP,20,24,86,15
+    CONTROL         "Multiple people video chat",IDC_RADIO2,"Button",
+                    BS_AUTORADIOBUTTON,113,24,100,13
+    LTEXT           "IP address of Current computer (For Listening)",
+                    IDC_STATICLISTENIP,15,73,96,19
+    EDITTEXT        IDC_EDITLISTENIP,116,74,72,12,ES_AUTOHSCROLL
+END
+
+IDD_ABOUTBOX DIALOG DISCARDABLE  0, 0, 235, 55
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About testvideochatsample"
+FONT 8, "MS Sans Serif"
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,20,20
+    LTEXT           "testvideochatsample Version 1.0",IDC_STATIC,40,10,119,8,
+                    SS_NOPREFIX
+    LTEXT           "Copyright (C) 2007",IDC_STATIC,40,25,119,8
+    DEFPUSHBUTTON   "OK",IDOK,178,7,50,14,WS_GROUP
+END
+
+IDD_TESTVIDEOCHATSAMPLE_DIALOG DIALOGEX 0, 0, 1018, 543
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION 
+"This sample demonstrates the using of the video chat functionalities of the Video Chat Pro ActiveX"
+
+FONT 7, "Arial"
+BEGIN
+    CONTROL         "",IDC_VIDEOCHATCTRL1,
+                    "{9DA66AFA-F784-426A-82F6-7DD754C1A039}",WS_TABSTOP,17,
+                    315,279,185
+    CONTROL         "",IDC_VIDEOCHATRECEIVECTRL1,
+                    "{7DD8AFB4-618D-4067-981A-9345DF0AFCF8}",WS_TABSTOP,453,
+                    70,503,233
+    GROUPBOX        "Connect",IDC_STATIC,7,55,411,473
+    GROUPBOX        "Listen",IDC_STATIC,426,58,555,423
+    LTEXT           "Video Device",IDC_STATIC,25,64,48,15
+    COMBOBOX        IDC_COMBO1,83,63,112,128,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    LTEXT           "Audio Device",IDC_STATIC,203,65,48,15
+    COMBOBOX        IDC_COMBO2,275,63,135,128,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    LTEXT           "Video Format",IDC_STATIC,24,153,48,11
+    COMBOBOX        IDC_COMBO3,82,148,71,128,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    LTEXT           "Video Bitrate",IDC_STATIC,24,168,48,11
+    EDITTEXT        IDC_EDITVIDEOBITRATE,82,164,75,16,ES_AUTOHSCROLL
+    LTEXT           "bits",IDC_STATIC,170,166,24,12
+    LTEXT           "Audio Complexity",IDC_STATIC,101,182,63,12
+    COMBOBOX        IDC_CBOAUDIOCOMPLEX,172,178,57,78,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Audio Quality",IDC_STATIC,279,150,64,12
+    COMBOBOX        IDC_CBOAUDIOQUALITY,350,150,57,72,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Stream to IP Address",IDC_STATIC,23,33,45,19
+    EDITTEXT        IDC_EDITCONNECTIP,90,32,74,12,ES_AUTOHSCROLL
+    LTEXT           "Port No",IDC_STATIC,195,17,33,12
+    EDITTEXT        IDC_EDITCONNECTPORT,236,16,41,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "Connect",IDC_BUTTON1,250,185,72,22
+    PUSHBUTTON      "Disconnect",IDC_BUTTON2,330,185,72,21
+    LTEXT           "Frame Rate",IDC_STATIC,168,148,48,11
+    EDITTEXT        IDC_EDITFRAMERATE,226,149,40,13,ES_AUTOHSCROLL
+    CONTROL         "Send Video Stream",IDC_CHECKSENDVIDEO,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,243,166,80,13
+    CONTROL         "Send Audio Stream",IDC_CHECKSENDAUDIO,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,330,164,96,15
+    LTEXT           "Video Bitrate (bits/sec)",IDC_STATIC,306,443,79,11
+    LTEXT           "0",IDC_STATICVIDEOBITRATE,306,457,45,12
+    LTEXT           "Audio Bitrate (bits/sec)",IDC_STATIC,302,473,79,11
+    LTEXT           "0",IDC_STATICAUDIOBITRATE,308,489,39,12
+    CONTROL         "Receive Video Stream",IDC_CHECKRECVIDEO,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,439,313,95,13
+    CONTROL         "Received Audio Stream",IDC_CHECKRECAUDIO,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,550,313,96,15
+    PUSHBUTTON      "Start Listening",IDC_BUTTON3,441,429,93,22
+    PUSHBUTTON      "Disconnect",IDC_BUTTON4,547,429,93,22,WS_DISABLED
+    LTEXT           "Display Image when no video stream",IDC_STATIC,666,315,
+                    131,17
+    EDITTEXT        IDC_EDIT1,799,315,106,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "Sel Image",IDC_BUTTON5,909,315,66,15
+    LTEXT           "Conference Number",IDC_STATIC,314,17,69,8
+    EDITTEXT        IDC_EDT_CONF_NO,398,15,77,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDT_USER_ID,559,15,69,14,ES_AUTOHSCROLL
+    LTEXT           "User ID",IDC_STATIC,506,17,27,8
+    GROUPBOX        "Virtual ScreenCapture Area",IDC_STATIC,23,80,386,66
+    LTEXT           "Left",IDC_STATIC,30,90,16,14
+    EDITTEXT        IDC_EDIT2,50,89,33,13,ES_AUTOHSCROLL | WS_DISABLED
+    LTEXT           "Top",IDC_STATIC,92,90,16,14
+    EDITTEXT        IDC_EDIT5,111,89,33,13,ES_AUTOHSCROLL | WS_DISABLED
+    LTEXT           "Width",IDC_STATIC,150,90,26,14
+    EDITTEXT        IDC_EDIT7,177,89,33,13,ES_AUTOHSCROLL | WS_DISABLED
+    LTEXT           "Height",IDC_STATIC,214,90,26,14
+    EDITTEXT        IDC_EDIT8,241,89,33,13,ES_AUTOHSCROLL | WS_DISABLED
+    CONTROL         "Full Screen",IDC_CHECK1,"Button",BS_AUTOCHECKBOX | 
+                    WS_DISABLED | WS_TABSTOP,275,91,52,10
+    GROUPBOX        "Aspect Ratio of Max Video Window",IDC_STATIC,440,335,
+                    207,32
+    CONTROL         "4:3",IDC_RADIOASPECTRATIO1,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,449,353,34,9
+    CONTROL         "16:9",IDC_RADIOASPECTRATIO2,"Button",BS_AUTORADIOBUTTON,
+                    505,353,35,10
+    CONTROL         "Stretch",IDC_RADIOASPECTRATIO3,"Button",
+                    BS_AUTORADIOBUTTON,562,353,42,10
+    CONTROL         "Capture to File",IDC_CHKCAPTUREFILE,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,445,373,72,12
+    CONTROL         "Max First Video Window",IDC_CHKMAXFIRST,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,530,372,101,12
+    GROUPBOX        "",IDC_STATIC,445,385,159,25
+    CONTROL         "MP4",IDC_RADIOOUTMP4,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,456,397,36,9
+    CONTROL         "WMV",IDC_RADIOOUTWMV,"Button",BS_AUTORADIOBUTTON,517,
+                    397,31,9
+    GROUPBOX        "MP4",IDC_STATIC,658,341,293,68
+    LTEXT           "Width",IDC_STATIC,669,357,30,11
+    EDITTEXT        IDC_EDITMP4WIDTH,706,357,42,10,ES_AUTOHSCROLL
+    LTEXT           "Height",IDC_STATIC,761,357,30,11
+    EDITTEXT        IDC_EDITMP4HEIGHT,801,357,38,10,ES_AUTOHSCROLL
+    LTEXT           "Audio Channel",IDC_STATIC,849,357,55,10
+    EDITTEXT        IDC_EDITAUDIOCHANNEL,908,357,31,11,ES_AUTOHSCROLL
+    LTEXT           "Video bitrate",IDC_STATIC,670,373,44,11
+    EDITTEXT        IDC_EDITMP4VIDEOBITRATE,724,374,46,12,ES_AUTOHSCROLL
+    LTEXT           "Audio bitrate",IDC_STATIC,775,374,44,11
+    EDITTEXT        IDC_EDITMP4AUDIOBITRATE,840,372,46,12,ES_AUTOHSCROLL
+    LTEXT           "Frame rate",IDC_STATIC,674,392,44,11
+    EDITTEXT        IDC_EDITMP4FRAMERATE,725,391,46,12,ES_AUTOHSCROLL
+    LTEXT           "Audio samplerate",IDC_STATIC,778,392,58,11
+    EDITTEXT        IDC_EDITMP4AUDIOSAMPLERATE,841,387,46,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "HighlightColor",IDC_BTNCURSORHIGHLIGHT,344,90,55,15
+    PUSHBUTTON      "Left Click Color",IDC_BTNLEFTCLICKCOLOR,344,107,60,15
+    PUSHBUTTON      "Right Click Color",IDC_BTNRIGHTCLICKCOLOR,343,124,60,15
+    CONTROL         "Use System Cursor",IDC_CHKUSESYSCURSOR,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,38,106,85,9
+    EDITTEXT        IDC_EDITCUSTOMCURSOR,34,128,207,15,ES_AUTOHSCROLL | 
+                    WS_DISABLED
+    PUSHBUTTON      "Select",IDC_BTNSELCUSTOMCURSOR,246,127,37,16,
+                    WS_DISABLED
+    LTEXT           "Index of Video Window",IDC_STATIC,443,457,79,12
+    EDITTEXT        IDC_EDITINDEXVIDEOWND,532,455,47,16,ES_AUTOHSCROLL
+    PUSHBUTTON      "Snapshot",IDC_BTNSNAPSHOT,592,453,67,20
+    PUSHBUTTON      "Show one to one mode",IDC_BTNSHOWONE2ONE,672,428,86,22
+    PUSHBUTTON      "Close one to one mode",IDC_BTNCLOSEONE2ONE2,673,453,86,
+                    22
+    LTEXT           "Custom Cursor File",IDC_STATIC,35,118,84,10
+    LISTBOX         IDC_LIST1,776,431,199,44,LBS_SORT | LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Events",IDC_STATIC,777,415,49,10
+    LTEXT           "Listening IP (For one to one mode)",IDC_STATIC,20,9,65,
+                    19
+    EDITTEXT        IDC_EDITLISTENIP,90,7,74,12,ES_AUTOHSCROLL
+    CONTROL         "Use default VMR",IDC_CHECKRECEIVEVIDEO,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,450,416,94,13
+    CONTROL         "Use default VMR",IDC_CHKVMRSENDER,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,14,180,73,13
+    LTEXT           "( if you see black screen, try unselect this checkbox)",
+                    IDC_STATIC,547,417,205,11
+    CONTROL         "Use Mouse Highlight",IDC_CHKMOUSEHIGHLIGHT,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,138,105,93,12
+    GROUPBOX        "",IDC_STATIC,18,206,398,53
+    COMBOBOX        IDC_CBOROTATE,70,212,108,168,CBS_DROPDOWNLIST | 
+                    WS_DISABLED | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Rotate",IDC_STATIC,25,216,35,12
+    CONTROL         "Invert Color",IDC_CHKINVERTCOLOR,"Button",
+                    BS_AUTOCHECKBOX | WS_DISABLED | WS_TABSTOP,25,228,66,8
+    CONTROL         "GrayScale",IDC_CHKGRAYSCALE,"Button",BS_AUTOCHECKBOX | 
+                    WS_DISABLED | WS_TABSTOP,101,228,64,8
+    LTEXT           "Lightness",IDC_STATIC,26,240,35,10
+    EDITTEXT        IDC_EDITLIGHTR,70,240,36,13,ES_AUTOHSCROLL | WS_DISABLED
+    EDITTEXT        IDC_EDITLIGHTG,109,240,36,13,ES_AUTOHSCROLL | 
+                    WS_DISABLED
+    EDITTEXT        IDC_EDITLIGHTB,149,240,36,13,ES_AUTOHSCROLL | 
+                    WS_DISABLED
+    PUSHBUTTON      "Change",IDC_BTNLIGHTNESSCHANGE,189,242,44,10,
+                    WS_DISABLED
+    PUSHBUTTON      "Default",IDC_BTNLIGHTDEFAULT,242,242,43,11,WS_DISABLED
+    GROUPBOX        "Chat Banner",IDC_STATIC,15,259,399,50
+    LTEXT           "Text",IDC_STATIC,26,271,24,12
+    EDITTEXT        IDC_EDITCHATMESSAGE,62,269,137,13,ES_AUTOHSCROLL | 
+                    WS_DISABLED
+    PUSHBUTTON      "Send",IDC_BUTTONCHATMSGSEND,212,269,38,14,WS_DISABLED
+    COMBOBOX        IDC_CBOCHATFONT,257,273,56,112,CBS_DROPDOWNLIST | 
+                    WS_DISABLED | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_CBOCHATFONTSIZE,317,273,42,109,CBS_DROPDOWNLIST | 
+                    WS_DISABLED | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_CBOFONTSTYLE,364,273,42,101,CBS_DROPDOWNLIST | 
+                    WS_DISABLED | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "State",IDC_STATIC,27,289,24,12
+    COMBOBOX        IDC_CBOSTATE,64,287,102,138,CBS_DROPDOWNLIST | 
+                    WS_DISABLED | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Fill background",IDC_CHKFILLBG,"Button",BS_AUTOCHECKBOX | 
+                    WS_DISABLED | WS_TABSTOP,181,291,69,13
+    LTEXT           "Direction",IDC_STATIC,258,293,37,10
+    COMBOBOX        IDC_CBOCHATDIR,307,293,103,104,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Fade In Time",IDC_STATIC,305,324,64,12
+    EDITTEXT        IDC_EDITFADEIN,377,319,30,13,ES_AUTOHSCROLL | 
+                    WS_DISABLED
+    LTEXT           "Fade Out Time",IDC_STATIC,305,340,64,12
+    EDITTEXT        IDC_EDITFADEOUT,376,337,30,13,ES_AUTOHSCROLL | 
+                    WS_DISABLED
+    LTEXT           "(0-1.0)",IDC_STATIC,326,311,38,9
+    PUSHBUTTON      "Set",IDC_BUTTONFADETIME,379,351,24,10,WS_DISABLED
+    LTEXT           "Text Color",IDC_STATIC,302,379,40,14
+    EDITTEXT        IDC_EDITTEXTALPHA,346,378,24,10,ES_AUTOHSCROLL | 
+                    WS_DISABLED
+    LTEXT           "Alpha(0-255)",IDC_STATIC,327,365,44,11
+    PUSHBUTTON      "Select",IDC_BUTTONTEXTCOLOR,377,377,35,12,WS_DISABLED
+    LTEXT           "Bg Color",IDC_STATIC,303,396,40,14
+    EDITTEXT        IDC_EDITBGALPHA,346,397,24,10,ES_AUTOHSCROLL | 
+                    WS_DISABLED
+    PUSHBUTTON      "Select",IDC_BUTTONBGCOLOR,378,397,35,12,WS_DISABLED
+    LTEXT           "X",IDC_STATIC,303,413,8,8
+    EDITTEXT        IDC_EDITCHATX,318,413,28,9,ES_AUTOHSCROLL | WS_DISABLED
+    LTEXT           "Y",IDC_STATIC,350,413,9,9
+    EDITTEXT        IDC_EDITCHATY,364,413,28,9,ES_AUTOHSCROLL | WS_DISABLED
+    PUSHBUTTON      "Set",IDC_BUTTONCHATPOS,395,413,19,11,WS_DISABLED
+    LTEXT           "Speed (1-6)",IDC_STATIC,303,429,40,8
+    EDITTEXT        IDC_EDITCHATSPEED,363,427,28,13,ES_AUTOHSCROLL | 
+                    WS_DISABLED
+    PUSHBUTTON      "Set",IDC_BUTTONCHATSPEED,394,431,19,11,WS_DISABLED
+    COMBOBOX        IDC_CBOEFFECTTYPE,68,194,164,173,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Effect Type",IDC_STATIC,15,195,48,11
+    LTEXT           "Image",IDC_STATIC,191,214,27,9
+    EDITTEXT        IDC_EDITOVERLAYIMAGE,219,212,151,14,ES_AUTOHSCROLL | 
+                    WS_DISABLED
+    PUSHBUTTON      "Select",IDC_BTNSELOVERLAYIMAGE,374,214,36,14,
+                    WS_DISABLED
+    PUSHBUTTON      "Draw",IDC_BTNOVERLAYIMAGEDRAW,374,229,36,14,WS_DISABLED
+    LTEXT           "Alpha",IDC_STATIC,309,243,25,8
+    EDITTEXT        IDC_EDITOVERLAYIMAGEALPHA,340,243,28,11,ES_AUTOHSCROLL | 
+                    WS_DISABLED
+    PUSHBUTTON      "Color",IDC_BTNOVERLAYIMAGETRANCOLOR,374,244,36,12,
+                    WS_DISABLED
+    LTEXT           "X",IDC_STATIC,192,229,23,8
+    EDITTEXT        IDC_EDITOVERLAYIMAGEX,219,227,28,11,ES_AUTOHSCROLL | 
+                    WS_DISABLED
+    LTEXT           "Y",IDC_STATIC,260,229,23,8
+    EDITTEXT        IDC_EDITOVERLAYIMAGEY,287,227,28,11,ES_AUTOHSCROLL | 
+                    WS_DISABLED
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_DIALOG1, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 216
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 187
+    END
+
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_TESTVIDEOCHATSAMPLE_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 1011
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 536
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\testvideochatsample.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\testvideochatsample.ico"
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "Comments", "\0"
+            VALUE "CompanyName", "\0"
+            VALUE "FileDescription", "Video Chat Pro Client Sample\0"
+            VALUE "FileVersion", "1, 0, 0, 1\0"
+            VALUE "InternalName", "Client.exe\0"
+            VALUE "LegalCopyright", "Copyright (C) 2012 Viscom Software\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "Client.exe\0"
+            VALUE "PrivateBuild", "\0"
+            VALUE "ProductName", "Video Chat Pro Client Sample\0"
+            VALUE "ProductVersion", "1, 0, 0, 1\0"
+            VALUE "SpecialBuild", "\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_TESTVIDEOCHATSAMPLE_DIALOG DLGINIT
+BEGIN
+    IDC_VIDEOCHATCTRL1, 0x376, 142, 0
+0x002c, 0x0000, 0x0043, 0x006f, 0x0070, 0x0079, 0x0072, 0x0069, 0x0067, 
+0x0068, 0x0074, 0x0020, 0x0028, 0x0063, 0x0029, 0x0020, 0x0032, 0x0030, 
+0x0031, 0x0032, 0x0020, 0x0056, 0x0069, 0x0073, 0x0063, 0x006f, 0x006d, 
+0x0020, 0x0073, 0x006f, 0x0066, 0x0074, 0x0077, 0x0061, 0x0072, 0x0065, 
+0x0020, 0x0076, 0x0069, 0x0064, 0x0065, 0x006f, 0x0063, 0x0068, 0x0061, 
+0x0074, 0x0000, 0x0001, 0x2412, 0x0000, 0x1cbb, 0x0000, 0x0000, 0x0000, 
+0x4404, 0x6d65, 0x006f, 0x0100, 0x0001, 0x1000, 0x0027, 0x0f00, 0x0000, 
+0x0800, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+    IDC_VIDEOCHATRECEIVECTRL1, 0x376, 115, 0
+0x0028, 0x0000, 0x0043, 0x006f, 0x0070, 0x0079, 0x0072, 0x0069, 0x0067, 
+0x0068, 0x0074, 0x0020, 0x0028, 0x0063, 0x0029, 0x0020, 0x0032, 0x0030, 
+0x0031, 0x0032, 0x0020, 0x0056, 0x0069, 0x0073, 0x0063, 0x006f, 0x006d, 
+0x0020, 0x0053, 0x006f, 0x0066, 0x0074, 0x0077, 0x0061, 0x0072, 0x0065, 
+0x0020, 0x0035, 0x0036, 0x0033, 0x0035, 0x0038, 0x0000, 0x0001, 0x4102, 
+0x0000, 0x242c, 0x0000, 0x0000, 0x0000, 0x0400, 0x6544, 0x6f6d, 0x0000, 
+0x0000, 0x0000, 0x0000, "\000" 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_ABOUTBOX            "&About testvideochatsample..."
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\testvideochatsample.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

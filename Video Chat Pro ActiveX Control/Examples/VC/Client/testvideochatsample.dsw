@@ -1,0 +1,31 @@
+Microsoft Developer Studio Workspace File, Format Version 6.00
+# WARNING: DO NOT EDIT OR DELETE THIS WORKSPACE FILE!
+
+###############################################################################
+
+Project: "testvideochatsample"=.\testvideochatsample.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Global:
+
+Package=<5>
+{{{
+}}}
+
+Package=<3>
+{{{
+    {9DA66AFA-F784-426A-82F6-7DD754C1A039}
+    {7DD8AFB4-618D-4067-981A-9345DF0AFCF8}
+}}}
+
+###############################################################################
+

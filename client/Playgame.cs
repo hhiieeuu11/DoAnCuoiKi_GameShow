@@ -31,13 +31,14 @@ namespace client
             //Connecting to the host
             pnlInforQuestion.Hide();
             nameClient = name;
+
+
         }
-        #region
+
         public Playgame()
         {
             InitializeComponent();
             pnlLeft.Width = this.Width - pnlRight.Width;
-           
         }
 
    
@@ -46,22 +47,31 @@ namespace client
         {
             pnlLeft.Width = this.Width - pnlRight.Width;
             pnlInforQuestion.Location = new Point((pnlLeft.Width - pnlInforQuestion.Width) / 2, pnlLeft.Height - pnlInforQuestion.Height-30);
+            if (currentChildForm != null) currentChildForm.Size = this.Size;
         }
 
         private void btnClosed_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-#endregion
+
 
         private void Playgame_Load(object sender, EventArgs e)
         {
+
+            axVideoChatReceiver1.ReceiveAudioStream = true;
+            axVideoChatReceiver1.ReceiveVideoStream = true;
+            axVideoChatReceiver1.Listen("localhost", 1333);
+
             client = new NetComm.Client(); //Initialize the client object
             //Adding event handling methods for the client
             client.Connected += new NetComm.Client.ConnectedEventHandler(client_Connected);
             client.Disconnected += new NetComm.Client.DisconnectedEventHandler(client_Disconnected);
             client.DataReceived += new NetComm.Client.DataReceivedEventHandler(client_DataReceived);
             client.Connect("localhost", 5000, nameClient); //Connecting to the host (on the same machine) with port 5000 and ID is variable name in contrustor function
+
+
+
         }
 
         private void Playgame_FormClosing(object sender, FormClosingEventArgs e)
@@ -80,9 +90,6 @@ namespace client
         void client_Disconnected()
         {
             MessageBox.Show("Disconnected from host!");
-
-            //this.Close();
-
         }
 
         void client_DataReceived(byte[] Data, string ID)
@@ -116,10 +123,23 @@ namespace client
                 string signal = (string)data;
                 if(signal == "EndGame")
                 {
-                    OpenChildForm(new Winner(lvScores.Items[0].Text, lvScores.Items[1].Text, lvScores.Items[2].Text));
+                    showWinner(lvScores);
+                }
+                else
+                {
+                    npwBox.Number = int.Parse(signal);
                 }
             }
            
+        }
+        public void showWinner(ListView lvScores)
+        {
+            if (lvScores.Items.Count == 1)
+                OpenChildForm(new Winner(lvScores.Items[0].Text, "", ""));
+            if (lvScores.Items.Count == 2)
+                OpenChildForm(new Winner(lvScores.Items[0].Text, lvScores.Items[1].Text, ""));
+            if (lvScores.Items.Count > 2)
+                OpenChildForm(new Winner(lvScores.Items[0].Text, lvScores.Items[1].Text, lvScores.Items[2].Text));
         }
 
         public void updateChart(DataChart dataChart)
@@ -248,6 +268,6 @@ namespace client
             }
         }
 
-
+ 
     }
 }
