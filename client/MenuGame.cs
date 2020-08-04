@@ -137,6 +137,10 @@ namespace client
             countDownTime--;
             lblTimeEnterGame.Text = lblCountDown.Text = countDownTime / 60 + ":" + ((countDownTime % 60) >= 10 ? (countDownTime % 60).ToString() : "0" + countDownTime % 60);
 
+            if (countDownTime == 20)
+            {
+                MessageBox.Show("Nhập tên đi bạn ơi!!!","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+            }
             if (countDownTime <= 10)
             {
                 if (countDownTime % 2 == 0) txtUsername.BorderColor = Color.Red;

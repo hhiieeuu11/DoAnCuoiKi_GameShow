@@ -43,7 +43,6 @@
             this.chartCountPlayerAnswer = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.pnlLeft = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.axVideoChatReceiver1 = new AxVideoChatReceiverLib.AxVideoChatReceiver();
             this.proCountDown = new Guna.UI2.WinForms.Guna2CircleProgressBar();
             this.lblCountDown = new System.Windows.Forms.Label();
             this.npwBox = new DTOProject.numberPeopleWacthing();
@@ -63,6 +62,7 @@
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel11 = new System.Windows.Forms.Panel();
             this.lblQuestion = new System.Windows.Forms.Label();
+            this.axVideoChatReceiver1 = new AxVideoChatReceiverLib.AxVideoChatReceiver();
             this.tmrCountDown = new System.Windows.Forms.Timer(this.components);
             this.ElipseNumberPeopleWatching = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
@@ -72,12 +72,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.chartCountPlayerAnswer)).BeginInit();
             this.pnlLeft.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.axVideoChatReceiver1)).BeginInit();
             this.proCountDown.SuspendLayout();
             this.pnlInforQuestion.SuspendLayout();
             this.pnlAnwserGroup.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
             this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.axVideoChatReceiver1)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlRight
@@ -195,16 +195,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(977, 703);
             this.panel1.TabIndex = 18;
-            // 
-            // axVideoChatReceiver1
-            // 
-            this.axVideoChatReceiver1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.axVideoChatReceiver1.Enabled = true;
-            this.axVideoChatReceiver1.Location = new System.Drawing.Point(0, 0);
-            this.axVideoChatReceiver1.Name = "axVideoChatReceiver1";
-            this.axVideoChatReceiver1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axVideoChatReceiver1.OcxState")));
-            this.axVideoChatReceiver1.Size = new System.Drawing.Size(977, 703);
-            this.axVideoChatReceiver1.TabIndex = 30;
             // 
             // proCountDown
             // 
@@ -426,6 +416,16 @@
             this.lblQuestion.Text = "Question";
             this.lblQuestion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // axVideoChatReceiver1
+            // 
+            this.axVideoChatReceiver1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.axVideoChatReceiver1.Enabled = true;
+            this.axVideoChatReceiver1.Location = new System.Drawing.Point(0, 0);
+            this.axVideoChatReceiver1.Name = "axVideoChatReceiver1";
+            this.axVideoChatReceiver1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axVideoChatReceiver1.OcxState")));
+            this.axVideoChatReceiver1.Size = new System.Drawing.Size(977, 703);
+            this.axVideoChatReceiver1.TabIndex = 30;
+            // 
             // tmrCountDown
             // 
             this.tmrCountDown.Interval = 1000;
@@ -462,12 +462,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.chartCountPlayerAnswer)).EndInit();
             this.pnlLeft.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.axVideoChatReceiver1)).EndInit();
             this.proCountDown.ResumeLayout(false);
             this.pnlInforQuestion.ResumeLayout(false);
             this.pnlAnwserGroup.ResumeLayout(false);
             this.guna2Panel1.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.axVideoChatReceiver1)).EndInit();
             this.ResumeLayout(false);
 
         }

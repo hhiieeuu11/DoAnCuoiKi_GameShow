@@ -150,7 +150,7 @@ namespace Sever
 
             //Init Server 
             axVideoChatServer1.InitServer(NUMBER_PORT_VIDEO, 300);
-            axVideoChatServer1.UseRandomNumber = true;
+            axVideoChatServer1.UseRandomNumber = false;
             NUMBER_CONFERENCE = axVideoChatServer1.CreateConference();
             int idMC = axVideoChatServer1.AddUser(NUMBER_CONFERENCE);
 
@@ -158,7 +158,7 @@ namespace Sever
 
             axVideoChatSender1.VideoDevice = 0;
             axVideoChatSender1.AudioDevice = 0;
-            axVideoChatSender1.VideoFormat = 0;
+            axVideoChatSender1.VideoFormat = 0; 
             axVideoChatSender1.FrameRate = 15;
             axVideoChatSender1.VideoBitrate = 128000;
             axVideoChatSender1.AudioComplexity = 0;
@@ -436,9 +436,6 @@ namespace Sever
             MessageBox.Show(axVideoChatServer1.AddUser(NUMBER_CONFERENCE).ToString() + " -- "+ NUMBER_CONFERENCE + " -- "+NUMBER_PORT_VIDEO );
         }
 
-        private void axVideoChatServer1_ClientConnected(object sender, AxVideoChatServerLib._DVideoChatServerEvents_ClientConnectedEvent e)
-        {
-            MessageBox.Show("ID:" + e.iUserID + "\nConfNumber : " + e.iConfNumber);
-        }
+
     }
 }

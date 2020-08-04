@@ -57,6 +57,7 @@ namespace client
         {
            var result = MessageBox.Show("Disconnected from host!\nDo you want exit game?","Disconected",MessageBoxButtons.OK,MessageBoxIcon.Warning );
             if (result == DialogResult.OK) { this.Close(); }
+            
         }
 
         void client_DataReceived(byte[] Data, string ID)
@@ -192,9 +193,10 @@ namespace client
         {
             axVideoChatReceiver1.ReceiveAudioStream = true;
             axVideoChatReceiver1.ReceiveVideoStream = true;
+            axVideoChatReceiver1.VideoWindowAutoMax = true;
             axVideoChatReceiver1.ConferenceNumber = confID;
             axVideoChatReceiver1.ConferenceUserID = userId;
-            var a = axVideoChatReceiver1.Listen(strIPAddress, numPortVideo);
+            axVideoChatReceiver1.Listen(strIPAddress, numPortVideo);
             return;
         }
 
@@ -253,8 +255,8 @@ namespace client
             pnlLeft.Width = this.Width - pnlRight.Width;
             pnlInforQuestion.Location = new Point((pnlLeft.Width - pnlInforQuestion.Width) / 2, pnlLeft.Height - pnlInforQuestion.Height - 30);
             if (currentChildForm != null) currentChildForm.Size = this.Size;
-            axVideoChatReceiver1.MP4Height = (short)pnlLeft.Height;
-            axVideoChatReceiver1.MP4Width = (short)pnlLeft.Width;
+            axVideoChatReceiver1.MP4Height = (short)axVideoChatReceiver1.Height;
+            axVideoChatReceiver1.MP4Width = (short)axVideoChatReceiver1.Width;
         }
 
         private void btnClosed_Click(object sender, EventArgs e)
