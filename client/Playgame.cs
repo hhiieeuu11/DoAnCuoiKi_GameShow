@@ -7,6 +7,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -17,12 +18,19 @@ namespace client
     {
 
         #region DEFINE
+        const int NUMBER_CONF_ID = 5000;
+        const string strIPAddress = "10.126.4.53";
+        const int numPortVideo = 1333;
+        const int numPortData = 5000;
+
         const int COUNTDOWN_TIME = 15;
         bool choosed = false;   //The player has chosen the answer = True else False; 
         int OrigTime = COUNTDOWN_TIME; // count down time
         string nameClient;
         NetComm.Client client; //The client object used for the communication
         Form currentChildForm = null;
+        Random rd = new Random();
+
         #endregion
         public Playgame(string name)
         {
@@ -43,19 +51,23 @@ namespace client
 
         void client_Connected()
         {
-            //MessageBox.Show("Connected successfully!");
-
+           
         }
         void client_Disconnected()
         {
-            MessageBox.Show("Disconnected from host!");
+           var result = MessageBox.Show("Disconnected from host!\nDo you want exit game?","Disconected",MessageBoxButtons.OK,MessageBoxIcon.Warning );
+            if (result == DialogResult.OK) { this.Close(); }
         }
 
         void client_DataReceived(byte[] Data, string ID)
         {
 
             var data = Utils.ByteArrayToObject(Data);
-            if (data is DataChart)
+            if(data is int)
+            {
+                connectStream((int)data, NUMBER_CONF_ID, strIPAddress, numPortVideo);
+            }
+            else if (data is DataChart)
             {
                 updateChart((DataChart)data);
             }
@@ -176,6 +188,16 @@ namespace client
         }
 
 
+        public void connectStream(int userId,int confID,string strIPAddress,int numPortVideo)
+        {
+            axVideoChatReceiver1.ReceiveAudioStream = true;
+            axVideoChatReceiver1.ReceiveVideoStream = true;
+            axVideoChatReceiver1.ConferenceNumber = confID;
+            axVideoChatReceiver1.ConferenceUserID = userId;
+            var a = axVideoChatReceiver1.Listen(strIPAddress, numPortVideo);
+            return;
+        }
+
         private void OpenChildForm(Form childForm)
         {
             //open only form
@@ -243,20 +265,12 @@ namespace client
 
         private void Playgame_Load(object sender, EventArgs e)
         {
-
-            axVideoChatReceiver1.ReceiveAudioStream = true;
-            axVideoChatReceiver1.ReceiveVideoStream = true;
-            axVideoChatReceiver1.Listen("10.126.3.98", 1333);
-
             client = new NetComm.Client(); //Initialize the client object
             //Adding event handling methods for the client
             client.Connected += new NetComm.Client.ConnectedEventHandler(client_Connected);
             client.Disconnected += new NetComm.Client.DisconnectedEventHandler(client_Disconnected);
             client.DataReceived += new NetComm.Client.DataReceivedEventHandler(client_DataReceived);
-            client.Connect("10.126.3.98", 5000, nameClient); //Connecting to the host (on the same machine) with port 5000 and ID is variable name in contrustor function
-
-
-
+            client.Connect(strIPAddress, numPortData, nameClient); //Connecting to the host (on the same machine) with port 5000 and ID is variable name in contrustor function
         }
 
         private void Playgame_FormClosing(object sender, FormClosingEventArgs e)

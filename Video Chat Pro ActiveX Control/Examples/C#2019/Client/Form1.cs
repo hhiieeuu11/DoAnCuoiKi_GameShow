@@ -1290,12 +1290,7 @@ namespace videochatsample
                      axVideoChatReceiver1.MP4Audiobitrate = Convert.ToInt32(txtmp4audiobitrate.Text);
                      axVideoChatReceiver1.MP4Audiochannel = (short)Convert.ToInt32(this.txtmp4audiochannels.Text);
                      axVideoChatReceiver1.MP4AudioSamplerate = Convert.ToInt32(txtmp4audiosamplerate.Text);
-                     axVideoChatReceiver1.MP4FrameRate = (short)Convert.ToInt32(txtmp4framerate.Text);
-
-
-
-
-                   
+                     axVideoChatReceiver1.MP4FrameRate = (short)Convert.ToInt32(txtmp4framerate.Text);                   
                  }
              }
              else

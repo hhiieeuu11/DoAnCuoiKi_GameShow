@@ -29,25 +29,28 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MC_UI));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MC_UI));
             this.elipseNumberWatching = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.pnlLeftTop = new System.Windows.Forms.Panel();
             this.pnlContainsTopic = new Guna.UI2.WinForms.Guna2Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.lblTopicInfor = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.pnlCamera = new Guna.UI2.WinForms.Guna2Panel();
+            this.axVideoChatSender1 = new AxVideoChatSenderLib.AxVideoChatSender();
             this.proCountDown = new Guna.UI2.WinForms.Guna2CircleProgressBar();
             this.lblCountDown = new System.Windows.Forms.Label();
             this.npwBox = new DTOProject.numberPeopleWacthing();
             this.pnlLeft = new System.Windows.Forms.Panel();
             this.pnLeftBottom = new System.Windows.Forms.Panel();
             this.pnlContainsQuestion = new Guna.UI2.WinForms.Guna2Panel();
+            this.axVideoChatServer1 = new AxVideoChatServerLib.AxVideoChatServer();
             this.panel6 = new System.Windows.Forms.Panel();
             this.btnRank = new Guna.UI2.WinForms.Guna2Button();
             this.pnlAnswerGroup = new System.Windows.Forms.Panel();
@@ -82,14 +85,15 @@
             this.tmrCountDown = new System.Windows.Forms.Timer(this.components);
             this.elipseClock = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
-            this.axVideoChatSender1 = new AxVideoChatSenderLib.AxVideoChatSender();
             this.pnlLeftTop.SuspendLayout();
             this.pnlContainsTopic.SuspendLayout();
             this.pnlCamera.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.axVideoChatSender1)).BeginInit();
             this.proCountDown.SuspendLayout();
             this.pnlLeft.SuspendLayout();
             this.pnLeftBottom.SuspendLayout();
             this.pnlContainsQuestion.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.axVideoChatServer1)).BeginInit();
             this.pnlAnswerGroup.SuspendLayout();
             this.panel2.SuspendLayout();
             this.guna2CustomGradientPanel2.SuspendLayout();
@@ -99,7 +103,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.grvListQuestion)).BeginInit();
             this.pnlRightTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartCountPlayerAnswer)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.axVideoChatSender1)).BeginInit();
             this.SuspendLayout();
             // 
             // elipseNumberWatching
@@ -122,6 +125,7 @@
             this.pnlContainsTopic.BorderColor = System.Drawing.Color.Lime;
             this.pnlContainsTopic.BorderRadius = 10;
             this.pnlContainsTopic.BorderThickness = 2;
+            this.pnlContainsTopic.Controls.Add(this.button1);
             this.pnlContainsTopic.Controls.Add(this.lblTopicInfor);
             this.pnlContainsTopic.CustomBorderColor = System.Drawing.Color.Aqua;
             this.pnlContainsTopic.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -130,6 +134,16 @@
             this.pnlContainsTopic.ShadowDecoration.Parent = this.pnlContainsTopic;
             this.pnlContainsTopic.Size = new System.Drawing.Size(443, 312);
             this.pnlContainsTopic.TabIndex = 41;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(67, 89);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(124, 126);
+            this.button1.TabIndex = 35;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // lblTopicInfor
             // 
@@ -165,15 +179,25 @@
             this.pnlCamera.BorderColor = System.Drawing.Color.Aqua;
             this.pnlCamera.BorderRadius = 20;
             this.pnlCamera.BorderThickness = 2;
+            this.pnlCamera.Controls.Add(this.axVideoChatSender1);
             this.pnlCamera.Controls.Add(this.proCountDown);
             this.pnlCamera.Controls.Add(this.npwBox);
-            this.pnlCamera.Controls.Add(this.axVideoChatSender1);
             this.pnlCamera.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlCamera.Location = new System.Drawing.Point(0, 0);
             this.pnlCamera.Name = "pnlCamera";
             this.pnlCamera.ShadowDecoration.Parent = this.pnlCamera;
             this.pnlCamera.Size = new System.Drawing.Size(467, 355);
             this.pnlCamera.TabIndex = 0;
+            // 
+            // axVideoChatSender1
+            // 
+            this.axVideoChatSender1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.axVideoChatSender1.Enabled = true;
+            this.axVideoChatSender1.Location = new System.Drawing.Point(0, 0);
+            this.axVideoChatSender1.Name = "axVideoChatSender1";
+            this.axVideoChatSender1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axVideoChatSender1.OcxState")));
+            this.axVideoChatSender1.Size = new System.Drawing.Size(467, 355);
+            this.axVideoChatSender1.TabIndex = 10;
             // 
             // proCountDown
             // 
@@ -236,6 +260,7 @@
             // 
             // pnlContainsQuestion
             // 
+            this.pnlContainsQuestion.Controls.Add(this.axVideoChatServer1);
             this.pnlContainsQuestion.Controls.Add(this.panel6);
             this.pnlContainsQuestion.Controls.Add(this.btnRank);
             this.pnlContainsQuestion.Controls.Add(this.pnlAnswerGroup);
@@ -248,6 +273,16 @@
             this.pnlContainsQuestion.ShadowDecoration.Parent = this.pnlContainsQuestion;
             this.pnlContainsQuestion.Size = new System.Drawing.Size(889, 389);
             this.pnlContainsQuestion.TabIndex = 6;
+            // 
+            // axVideoChatServer1
+            // 
+            this.axVideoChatServer1.Enabled = true;
+            this.axVideoChatServer1.Location = new System.Drawing.Point(29, 337);
+            this.axVideoChatServer1.Name = "axVideoChatServer1";
+            this.axVideoChatServer1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axVideoChatServer1.OcxState")));
+            this.axVideoChatServer1.Size = new System.Drawing.Size(44, 40);
+            this.axVideoChatServer1.TabIndex = 18;
+            this.axVideoChatServer1.ClientConnected += new AxVideoChatServerLib._DVideoChatServerEvents_ClientConnectedEventHandler(this.axVideoChatServer1_ClientConnected);
             // 
             // panel6
             // 
@@ -742,16 +777,6 @@
             this.guna2Elipse1.BorderRadius = 20;
             this.guna2Elipse1.TargetControl = this.npwBox;
             // 
-            // axVideoChatSender1
-            // 
-            this.axVideoChatSender1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.axVideoChatSender1.Enabled = true;
-            this.axVideoChatSender1.Location = new System.Drawing.Point(0, 0);
-            this.axVideoChatSender1.Name = "axVideoChatSender1";
-            this.axVideoChatSender1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axVideoChatSender1.OcxState")));
-            this.axVideoChatSender1.Size = new System.Drawing.Size(467, 355);
-            this.axVideoChatSender1.TabIndex = 7;
-            // 
             // MC_UI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
@@ -769,10 +794,12 @@
             this.pnlLeftTop.ResumeLayout(false);
             this.pnlContainsTopic.ResumeLayout(false);
             this.pnlCamera.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.axVideoChatSender1)).EndInit();
             this.proCountDown.ResumeLayout(false);
             this.pnlLeft.ResumeLayout(false);
             this.pnLeftBottom.ResumeLayout(false);
             this.pnlContainsQuestion.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.axVideoChatServer1)).EndInit();
             this.pnlAnswerGroup.ResumeLayout(false);
             this.pnlAnswerGroup.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -783,7 +810,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.grvListQuestion)).EndInit();
             this.pnlRightTop.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.chartCountPlayerAnswer)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.axVideoChatSender1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -837,5 +863,7 @@
         private DTOProject.numberPeopleWacthing npwBox;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
         private AxVideoChatSenderLib.AxVideoChatSender axVideoChatSender1;
+        private AxVideoChatServerLib.AxVideoChatServer axVideoChatServer1;
+        private System.Windows.Forms.Button button1;
     }
 }

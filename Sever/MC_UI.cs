@@ -21,6 +21,10 @@ namespace Sever
         #region DEFINE
         const int TIME_COUNT_DOWN = 15;
         const int NUMBER_QUESTION = 2;
+        const string STR_IPADDRESS = "10.126.4.53";
+        const int NUMBER_PORT_DATA = 5000;
+        const int NUMBER_PORT_VIDEO = 1333;
+        int NUMBER_CONFERENCE;
 
         int OrigTime = TIME_COUNT_DOWN;  //Time countdown
         int numQuestionPlayed;  //Count of question played
@@ -34,6 +38,8 @@ namespace Sever
         Dictionary<string, int> listScores = new Dictionary<string, int>();
 
         Form currentChildForm = null;
+        Random rd = new Random();
+
         #endregion
         public MC_UI()
         {
@@ -130,21 +136,7 @@ namespace Sever
         {
 
 
-            axVideoChatSender1.VideoDevice = 0;
-            axVideoChatSender1.AudioDevice = 0;
-            axVideoChatSender1.VideoFormat = 0;
-            axVideoChatSender1.FrameRate = 15;
-            axVideoChatSender1.VideoBitrate = 128000;
-            axVideoChatSender1.AudioComplexity = 0;
-            axVideoChatSender1.AudioQuality = 8;
-            axVideoChatSender1.SendAudioStream = true;
-            axVideoChatSender1.SendVideoStream = true;
-
-            axVideoChatSender1.Connect("10.126.3.98", 1333);
-            //axVideoChatSender1.ConferenceNumber = 50;
-            //axVideoChatSender1.ConferenceUserID = 3000;
-
-            server = new NetComm.Host(5000);    //Initialize the Server object, 
+            server = new NetComm.Host(NUMBER_PORT_DATA);    //Initialize the Server object, 
                                                 //connection will use the 2020 port number
             server.StartConnection(); 		//Starts listening for incoming clients
             server.onConnection += new NetComm.Host.onConnectionEventHandler(server_onConnection);
@@ -156,19 +148,43 @@ namespace Sever
             server.ReceiveBufferSize = 50;
             server.NoDelay = true;
 
+            //Init Server 
+            axVideoChatServer1.InitServer(NUMBER_PORT_VIDEO, 300);
+            axVideoChatServer1.UseRandomNumber = true;
+            NUMBER_CONFERENCE = axVideoChatServer1.CreateConference();
+            int idMC = axVideoChatServer1.AddUser(NUMBER_CONFERENCE);
 
+            //Init camera MC
+
+            axVideoChatSender1.VideoDevice = 0;
+            axVideoChatSender1.AudioDevice = 0;
+            axVideoChatSender1.VideoFormat = 0;
+            axVideoChatSender1.FrameRate = 15;
+            axVideoChatSender1.VideoBitrate = 128000;
+            axVideoChatSender1.AudioComplexity = 0;
+            axVideoChatSender1.AudioQuality = 8;
+            axVideoChatSender1.SendAudioStream = true;
+            axVideoChatSender1.SendVideoStream = true;
+
+
+            axVideoChatSender1.ConferenceNumber = NUMBER_CONFERENCE;
+            axVideoChatSender1.ConferenceUserID = idMC;
+            var a = axVideoChatSender1.Connect(STR_IPADDRESS, NUMBER_PORT_VIDEO);
         }
 
         public void server_onConnection(string id)
         {
-            //listIdPlayer.Add(id);
-            // MessageBox.Show(id + " connected!");
-            // listIdPlayer = server.Users;
+            //Create user id 
+            int userIdVideo = axVideoChatServer1.AddUser(NUMBER_CONFERENCE);
+
+            //Send id to user by sending signal
+            server.SendData(id, Utils.ObjectToByteArray(userIdVideo)); 
+
+            //Send data
             listScores.Add(id, 0);
             sendListScores(listScores);
             npwBox.Number = server.Users.Count;
             sendNumberPlayer(server.Users.Count);
-            //lvScores.up
         }
 
 
@@ -182,13 +198,24 @@ namespace Sever
 
         void Server_DataReceived(string ID, byte[] Data)
         {
-            var data = (string)Utils.ByteArrayToObject(Data);
-            updateDataChart(data, statisticalData);
-            updateChart(statisticalData);
-            server.Brodcast(Utils.ObjectToByteArray(statisticalData)); //Send Statistical data of the player's 
-                                                                       //answer to each question 
-            Utils.updateListScores(data, ID, currentQuestion, listScores);
-            listScores = Utils.Rank(listScores);
+            object data = Utils.ByteArrayToObject(Data);
+            if (data is int)
+            {
+                //Processing data when users submit id 
+                axVideoChatServer1.AddUser((int)data);
+            }
+            else
+            {
+                //Processing data when users submit answers
+                var anwser = (string)Utils.ByteArrayToObject(Data);
+                updateDataChart(anwser, statisticalData);
+                updateChart(statisticalData);
+                server.Brodcast(Utils.ObjectToByteArray(statisticalData)); //Send Statistical data of the player's 
+                                                                           //answer to each question 
+                Utils.updateListScores(anwser, ID, currentQuestion, listScores);
+                listScores = Utils.Rank(listScores);
+            }
+            
         }
 
 
@@ -401,7 +428,17 @@ namespace Sever
 
         }
 
+
         #endregion
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(axVideoChatServer1.AddUser(NUMBER_CONFERENCE).ToString() + " -- "+ NUMBER_CONFERENCE + " -- "+NUMBER_PORT_VIDEO );
+        }
+
+        private void axVideoChatServer1_ClientConnected(object sender, AxVideoChatServerLib._DVideoChatServerEvents_ClientConnectedEvent e)
+        {
+            MessageBox.Show("ID:" + e.iUserID + "\nConfNumber : " + e.iConfNumber);
+        }
     }
 }

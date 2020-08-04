@@ -39,15 +39,15 @@ namespace WindowsFormsApplication1
             this.listBox1.Items.Clear();
          
         
-            this.button1.Enabled = false;
-            this.button2.Enabled = true;
+            this.btnCreate.Enabled = false;
+            this.btnAdd.Enabled = true;
         }
 
         
         private void Form1_Load(object sender, EventArgs e)
         {
-            this.button1.Enabled = true;
-            this.button2.Enabled = false;
+            this.btnCreate.Enabled = true;
+            this.btnAdd.Enabled = false;
         }
 
         private void Form1_Closing(object sender, System.ComponentModel.CancelEventArgs e)

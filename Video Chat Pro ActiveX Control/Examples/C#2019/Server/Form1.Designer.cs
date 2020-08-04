@@ -35,8 +35,8 @@
             this.textConfNo = new System.Windows.Forms.TextBox();
             this.chkUseRandomNo = new System.Windows.Forms.CheckBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnCreate = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.textSelectedUserID = new System.Windows.Forms.TextBox();
             this.listBox1 = new System.Windows.Forms.ListBox();
@@ -105,27 +105,27 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "User ID  (if the user connected, it will mark *** )";
             // 
-            // button1
+            // btnCreate
             // 
-            this.button1.Location = new System.Drawing.Point(457, 114);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(327, 36);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Create Conference";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnCreate.Location = new System.Drawing.Point(457, 114);
+            this.btnCreate.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCreate.Name = "btnCreate";
+            this.btnCreate.Size = new System.Drawing.Size(327, 36);
+            this.btnCreate.TabIndex = 5;
+            this.btnCreate.Text = "Create Conference";
+            this.btnCreate.UseVisualStyleBackColor = true;
+            this.btnCreate.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
+            // btnAdd
             // 
-            this.button2.Location = new System.Drawing.Point(457, 169);
-            this.button2.Margin = new System.Windows.Forms.Padding(4);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(327, 36);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "Add User to this Conference ";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnAdd.Location = new System.Drawing.Point(457, 169);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(327, 36);
+            this.btnAdd.TabIndex = 5;
+            this.btnAdd.Text = "Add User to this Conference ";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.button2_Click);
             // 
             // label4
             // 
@@ -177,8 +177,8 @@
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.textSelectedUserID);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnAdd);
+            this.Controls.Add(this.btnCreate);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.chkUseRandomNo);
             this.Controls.Add(this.textConfNo);
@@ -203,8 +203,8 @@
         private System.Windows.Forms.TextBox textConfNo;
         private System.Windows.Forms.CheckBox chkUseRandomNo;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnCreate;
+        private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textSelectedUserID;
         private System.Windows.Forms.ListBox listBox1;
