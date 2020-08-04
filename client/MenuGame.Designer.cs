@@ -420,10 +420,11 @@
             this.ClientSize = new System.Drawing.Size(1262, 703);
             this.Controls.Add(this.pnlMenu);
             this.Controls.Add(this.pnlLeft);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(1230, 680);
             this.Name = "MenuGame";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "#Name game";
+            this.Text = "GAME SHOW";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MenuGame_FormClosing);
             this.SizeChanged += new System.EventHandler(this.MenuGame_SizeChanged);
             this.pnlLeft.ResumeLayout(false);

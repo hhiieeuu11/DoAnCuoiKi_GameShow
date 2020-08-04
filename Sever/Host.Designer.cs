@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Host));
             this.pnlScheduleMGMT = new Guna.UI2.WinForms.Guna2Panel();
+            this.pnlDesktop = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -40,11 +41,10 @@
             this.btnAboutUs = new FontAwesome.Sharp.IconButton();
             this.btnQuestionMGMT = new FontAwesome.Sharp.IconButton();
             this.btnScheduleMGMT = new FontAwesome.Sharp.IconButton();
+            this.btnMC = new FontAwesome.Sharp.IconButton();
             this.btnHome = new FontAwesome.Sharp.IconButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnLogo = new Guna.UI2.WinForms.Guna2ImageButton();
-            this.pnlDesktop = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.btnMC = new FontAwesome.Sharp.IconButton();
             this.pnlScheduleMGMT.SuspendLayout();
             this.guna2GradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconCurrentChildForm)).BeginInit();
@@ -63,6 +63,16 @@
             this.pnlScheduleMGMT.ShadowDecoration.Parent = this.pnlScheduleMGMT;
             this.pnlScheduleMGMT.Size = new System.Drawing.Size(995, 703);
             this.pnlScheduleMGMT.TabIndex = 3;
+            // 
+            // pnlDesktop
+            // 
+            this.pnlDesktop.BackColor = System.Drawing.Color.Transparent;
+            this.pnlDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlDesktop.Location = new System.Drawing.Point(0, 53);
+            this.pnlDesktop.Name = "pnlDesktop";
+            this.pnlDesktop.ShadowDecoration.Parent = this.pnlDesktop;
+            this.pnlDesktop.Size = new System.Drawing.Size(995, 650);
+            this.pnlDesktop.TabIndex = 2;
             // 
             // guna2GradientPanel1
             // 
@@ -217,6 +227,29 @@
             this.btnScheduleMGMT.UseVisualStyleBackColor = true;
             this.btnScheduleMGMT.Click += new System.EventHandler(this.btnScheduleMGMT_Click);
             // 
+            // btnMC
+            // 
+            this.btnMC.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnMC.FlatAppearance.BorderSize = 0;
+            this.btnMC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMC.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnMC.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMC.ForeColor = System.Drawing.Color.White;
+            this.btnMC.IconChar = FontAwesome.Sharp.IconChar.Video;
+            this.btnMC.IconColor = System.Drawing.Color.White;
+            this.btnMC.IconSize = 50;
+            this.btnMC.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMC.Location = new System.Drawing.Point(0, 76);
+            this.btnMC.Name = "btnMC";
+            this.btnMC.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnMC.Rotation = 0D;
+            this.btnMC.Size = new System.Drawing.Size(270, 76);
+            this.btnMC.TabIndex = 15;
+            this.btnMC.Text = "MC";
+            this.btnMC.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnMC.UseVisualStyleBackColor = true;
+            this.btnMC.Click += new System.EventHandler(this.btnMC_Click);
+            // 
             // btnHome
             // 
             this.btnHome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(15)))), ((int)(((byte)(26)))));
@@ -269,39 +302,6 @@
             this.btnLogo.Size = new System.Drawing.Size(270, 209);
             this.btnLogo.TabIndex = 1;
             // 
-            // pnlDesktop
-            // 
-            this.pnlDesktop.BackColor = System.Drawing.Color.Transparent;
-            this.pnlDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlDesktop.Location = new System.Drawing.Point(0, 53);
-            this.pnlDesktop.Name = "pnlDesktop";
-            this.pnlDesktop.ShadowDecoration.Parent = this.pnlDesktop;
-            this.pnlDesktop.Size = new System.Drawing.Size(995, 650);
-            this.pnlDesktop.TabIndex = 2;
-            // 
-            // btnMC
-            // 
-            this.btnMC.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnMC.FlatAppearance.BorderSize = 0;
-            this.btnMC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMC.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.btnMC.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMC.ForeColor = System.Drawing.Color.White;
-            this.btnMC.IconChar = FontAwesome.Sharp.IconChar.Video;
-            this.btnMC.IconColor = System.Drawing.Color.White;
-            this.btnMC.IconSize = 50;
-            this.btnMC.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMC.Location = new System.Drawing.Point(0, 76);
-            this.btnMC.Name = "btnMC";
-            this.btnMC.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnMC.Rotation = 0D;
-            this.btnMC.Size = new System.Drawing.Size(270, 76);
-            this.btnMC.TabIndex = 15;
-            this.btnMC.Text = "MC";
-            this.btnMC.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnMC.UseVisualStyleBackColor = true;
-            this.btnMC.Click += new System.EventHandler(this.btnMC_Click);
-            // 
             // Host
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -309,9 +309,10 @@
             this.ClientSize = new System.Drawing.Size(1265, 703);
             this.Controls.Add(this.pnlScheduleMGMT);
             this.Controls.Add(this.pnlMenu);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Host";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Host";
+            this.Text = "HOST";
             this.pnlScheduleMGMT.ResumeLayout(false);
             this.guna2GradientPanel1.ResumeLayout(false);
             this.guna2GradientPanel1.PerformLayout();
